@@ -7,10 +7,18 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontSize: {
+      sm: ["14px", "20px"],
+      base: ["16px", "24px"],
+      lg: ["20px", "28px"],
+      xl: ["110px", "110px"],
+    },
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        black: {
+          DEFAULT: "#000",
+          title: "#282828",
+        },
       },
     },
   },
