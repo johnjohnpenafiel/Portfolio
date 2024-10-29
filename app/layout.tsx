@@ -28,7 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="fixed inset-y-[-100vh] left-[7.2%] w-px bg-gray-200 z-50"></div>
+        <div className="fixed inset-y-[-100vh] right-[7.2%] w-px bg-gray-200 z-50"></div>
+        <main className="mx-[7.2%]">{children}</main>
       </body>
     </html>
   );
