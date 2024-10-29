@@ -11,13 +11,16 @@ const Navbar = () => {
         alt="Picture of the author"
       />
       <div className="space-x-12 mr-2">
-        <a href="#work" className="text-gray-500 hover:text-gray-900 text-sm">
+        <a href="#work" className="text-gray-500 hover:text-gray-900 text-base">
           Work
         </a>
-        <a href="#about" className="text-gray-500 hover:text-gray-900 text-sm">
+        <a
+          href="#about"
+          className="text-gray-500 hover:text-gray-900 text-base"
+        >
           About
         </a>
-        <a href="#cv" className="text-gray-500 hover:text-gray-900 text-sm">
+        <a href="#cv" className="text-gray-500 hover:text-gray-900 text-base">
           CV
         </a>
       </div>
