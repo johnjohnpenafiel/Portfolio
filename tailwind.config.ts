@@ -14,8 +14,8 @@ const config: Config = {
       "2xl": "1.563rem",
       "3xl": "1.953rem",
       "4xl": "2.441rem",
-      "5xl": "3.052rem",
-      title: "7rem",
+      "5xl": "4.5rem",
+      title: "6.8rem",
     },
     extend: {
       colors: {
@@ -23,6 +23,9 @@ const config: Config = {
           DEFAULT: "#000",
           title: "#282828",
         },
+      },
+      fontFamily: {
+        kodchasan: ["Kodchasan", "sans-serif"],
       },
     },
   },

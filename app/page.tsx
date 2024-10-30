@@ -5,7 +5,7 @@ function Home() {
   return (
     <div>
       <Navbar />
-      <section className="w-full items-center justify-center -mt-[65px]">
+      <section className="-mt-[65px]">
         <Hero />
       </section>
       <div className="flex h-52 items-center justify-center text-2xl border-b">

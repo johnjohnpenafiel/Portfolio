@@ -2,20 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Kodchasan Font */
+
+@font-face {
+  font-family: "Kodchasan";
+  font-weight: 200;
+  font-style: normal;
+  src: url("./fonts/KodchasanFont/Kodchasan-Extralight.ttf") format("truetype");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Kodchasan";
+  font-weight: 300;
+  font-style: normal;
+  src: url("./fonts/KodchasanFont/Kodchasan-Light.ttf") format("truetype");
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+@font-face {
+  font-family: "Kodchasan";
+  font-weight: 400;
+  font-style: normal;
+  src: url("./fonts/KodchasanFont/Kodchasan-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Kodchasan";
+  font-weight: 500;
+  font-style: normal;
+  src: url("./fonts/KodchasanFont/Kodchasan-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Kodchasan";
+  font-weight: 600;
+  font-style: normal;
+  src: url("./fonts/KodchasanFont/Kodchasan-Semibold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Kodchasan";
+  font-weight: 700;
+  font-style: normal;
+  src: url("./fonts/KodchasanFont/Kodchasan-Bold.ttf") format("truetype");
+}
+
+/* Kodchasan Font Italic Styles */
+
+@font-face {
+  font-family: "Kodchasan";
+  font-weight: 200;
+  font-style: italic;
+  src: url("./fonts/KodchasanFont/Kodchasan-ExtraLightItalic.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Kodchasan";
+  font-weight: 300;
+  font-style: italic;
+  src: url("./fonts/KodchasanFont/Kodchasan-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Kodchasan";
+  font-weight: 400;
+  font-style: italic;
+  src: url("./fonts/KodchasanFont/Kodchasan-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Kodchasan";
+  font-weight: 500;
+  font-style: italic;
+  src: url("./fonts/KodchasanFont/Kodchasan-MediumItalic.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Kodchasan";
+  font-weight: 600;
+  font-style: italic;
+  src: url("./fonts/KodchasanFont/Kodchasan-SemiBoldItalic.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "Kodchasan";
+  font-weight: 700;
+  font-style: italic;
+  src: url("./fonts/KodchasanFont/Kodchasan-BoldItalic.ttf") format("truetype");
+}
