@@ -15,7 +15,7 @@ const config: Config = {
       "3xl": "1.953rem",
       "4xl": "2.441rem",
       "5xl": "4.5rem",
-      title: "6.8rem",
+      title: "6.2rem",
     },
     extend: {
       colors: {
