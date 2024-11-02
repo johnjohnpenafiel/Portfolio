@@ -5,10 +5,7 @@ const Work = () => {
   const workCards = [1, 2, 3];
   return (
     <div className="h-fit flex flex-col bg-white">
-      <div className="flex mt-10 ml-20 font-bold text-2xl text-gray-400">
-        Work
-      </div>
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center mt-16">
         {workCards.map((workcard) => (
           <WorkCard key={workcard} />
         ))}
