@@ -11,15 +11,17 @@ const Hero = () => {
           John Penafiel
         </h1>
       </div>
-      <div className="flex items-top pt-10 text-lg font-normal text-gray-500">
+      <div className="lg:flex hidden items-top pt-10 text-lg font-normal text-gray-500">
         <div className="flex ml-[75.11%] w-px border-l border-gray-400 h-6 mr-4"></div>
         <div className="flex flex-col text-gray-600">
           <p>I solve, I create.</p>
-          <div className="flex">
+          <div className="flex group">
             <a href="#about" className="underline hover:text-gray-900">
               More about me
             </a>
-            <div className="px-2">→</div>
+            <div className="px-1 group-hover:text-gray-900 group-hover:ml-1">
+              →
+            </div>
           </div>
         </div>
       </div>

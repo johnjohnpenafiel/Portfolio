@@ -2,12 +2,33 @@ import React from "react";
 import WorkCard from "./WorkCard";
 
 const Work = () => {
-  const workCards = [1, 2, 3];
+  const projects = [
+    {
+      title: "Parallax UI",
+      description:
+        "ParallaxUI lets users create customizable, multi-layer designs with parallax effects, and export the code for seamless integration.",
+      stack: ["React.js", "Typescript", "Material UI"],
+      image: "/images/ParallaxUI.jpeg",
+    },
+    {
+      title: "Next Game",
+      description:
+        "NextGame is a sleek video game discovery app that lets users explore, filter, and sort games using a modern UI.",
+      stack: ["React.js", "Typescript", "Python", "Chakra UI"],
+      image: "/images/NextGame.jpeg",
+    },
+  ];
   return (
     <div className="h-fit flex flex-col bg-white">
-      <div className="flex flex-col items-center mt-16">
-        {workCards.map((workcard) => (
-          <WorkCard key={workcard} />
+      <div className="flex flex-col items-center mt-10 mx-4">
+        {projects.map((project) => (
+          <WorkCard
+            title={project.title}
+            description={project.description}
+            stack={project.stack}
+            image={project.image}
+            key={project.title}
+          />
         ))}
       </div>
     </div>

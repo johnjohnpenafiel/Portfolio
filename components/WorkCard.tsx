@@ -1,31 +1,40 @@
-import Image from "next/image";
 import React from "react";
 
-const WorkCard = () => {
-  const techStacks = ["React.js", "•", "Typescript", "•", "Material UI"];
+interface Props {
+  title: string;
+  description: string;
+  stack: string[];
+  image: string;
+}
+
+const WorkCard = ({ title, description, stack, image }: Props) => {
+  const techStacks = ["React.js", "Typescript", "Material UI"];
   return (
-    <div className="flex w-[1100px] h-[400px] rounded-lg  bg-transparent border-[1px] border-gray-200 mb-4">
-      <div className="CardInfo w-[550px] h-[400px] flex flex-col">
-        <h1 className="mt-[40px] ml-[40px] text-3xl font-bold">Parallax UI</h1>
-        <div className="w-[360px] h-[180px]">
-          <p className="mt-[20px] ml-[40px] text-md font-semibold">
-            ParallaxUI lets users create customizable, multi-layer designs with
-            parallax effects, and export the code for seamless integration.
-          </p>
-        </div>
-        <ul className="inline-flex ml-[30px]">
-          {techStacks.map((teckStack) => (
-            <li className="mx-[10px] font-semibold">{teckStack}</li>
+    <div className="flex flex-col w-full md:max-w-[1100px] md:max-h-[400px] h-auto md:flex-row md:h-auto mb-5 || shadow-sm rounded-lg bg-transparent border border-gray-100 overflow-hidden">
+      {/* Card Description */}
+      <div className="flex flex-col p-5 mx-3 md:justify-center order-3 md:w-1/2 md:order-1">
+        <h1 className="text-2xl md:text-3xl font-bold">{title}</h1>
+        <p className="mt-4 text-sm md:text-md font-semibold text-gray-600">
+          {description}
+        </p>
+        <ul className="inline-flex mt-4 text-sm md:text-lg">
+          {stack.map((s, index) => (
+            <li key={index} className="font-semibold">
+              {s}
+              {index < stack.length - 1 && <span className="mx-2">•</span>}
+            </li>
           ))}
         </ul>
+        <div className="mt-6">
+          <button className="bg-black text-white rounded p-2">See more</button>
+        </div>
       </div>
-      <div className="Image flex w-[550px] h-[400px] justify-start items-center">
-        <Image
-          src="/images/PU1.png"
-          width="500"
-          height="312"
-          alt="pic"
-          className="rounded-lg drop-shadow-xl"
+      {/* Card Image */}
+      <div className="flex md:w-1/2 md:h-full md:shrink-1 order-2">
+        <img
+          src={image}
+          alt="Project Picture"
+          className="object-contain sm:object-contain h-auto w-full"
         />
       </div>
     </div>
