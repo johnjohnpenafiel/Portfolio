@@ -9,7 +9,7 @@ function Home() {
       <section className="-mt-[64px]">
         <Hero />
       </section>
-      <div className="flex h-52 items-center justify-center || text-2xl font-semibold border-b">
+      <div className="flex h-52 items-center justify-center || text-2xl font-normal border-b">
         Work
       </div>
       <section>
