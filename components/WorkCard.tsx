@@ -10,7 +10,7 @@ interface Props {
 const WorkCard = ({ title, description, stack, image }: Props) => {
   const techStacks = ["React.js", "Typescript", "Material UI"];
   return (
-    <div className="flex flex-col w-full md:max-w-[1100px] md:max-h-[400px] h-auto md:flex-row md:h-auto mb-5 || shadow-sm rounded-lg bg-transparent border border-gray-100 overflow-hidden">
+    <div className="flex flex-col w-full md:max-w-[1100px] md:max-h-[400px] h-auto md:flex-row md:h-auto mb-5 || shadow-sm border border-gray-100 overflow-hidden">
       {/* Card Description */}
       <div className="flex flex-col p-5 mx-3 md:justify-center order-3 md:w-1/2 md:order-1">
         <h1 className="text-2xl md:text-3xl font-bold">{title}</h1>
@@ -25,12 +25,12 @@ const WorkCard = ({ title, description, stack, image }: Props) => {
             </li>
           ))}
         </ul>
-        <div className="mt-6">
+        <div className="pt-5">
           <button className="bg-black text-white rounded p-2">See more</button>
         </div>
       </div>
       {/* Card Image */}
-      <div className="flex md:w-1/2 md:h-full md:shrink-1 order-2">
+      <div className="flex md:w-1/2 md:h-full md:shrink-1 order-2 justify-center">
         <img
           src={image}
           alt="Project Picture"
