@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Hero = () => {
@@ -16,9 +17,9 @@ const Hero = () => {
         <div className="flex flex-col text-gray-600">
           <p>I solve, I create.</p>
           <div className="flex group">
-            <a href="#about" className="underline hover:text-gray-900">
+            <Link href="/about" className="underline hover:text-gray-900">
               More about me
-            </a>
+            </Link>
             <div className="px-1 group-hover:text-gray-900 group-hover:ml-1">
               →
             </div>

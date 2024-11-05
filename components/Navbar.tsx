@@ -6,11 +6,30 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { FiMenu, FiX } from "react-icons/fi";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const MenuItems = ["Work", "About", "CV"];
+  const pathname = usePathname();
+
+  const MenuItems = [
+    {
+      label: "Work",
+      active: pathname == "/",
+      href: "/",
+    },
+    {
+      label: "About",
+      active: pathname == "/about",
+      href: "/about",
+    },
+    {
+      label: "CV",
+      active: pathname == "cv",
+      href: "cv",
+    },
+  ];
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -28,7 +47,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <div className="flex md:hidden">
-          <button className="text-2xl" onClick={toggleMenu}>
+          <button className="text-2xl text-gray-500" onClick={toggleMenu}>
             {isMenuOpen ? <FiX /> : <FiMenu />}
           </button>
         </div>
@@ -36,12 +55,14 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-12">
           {MenuItems.map((menuItem) => (
-            <li key={menuItem}>
+            <li key={menuItem.label}>
               <Link
-                href="/about"
-                className="text-gray-500 hover:text-gray-900 text-base"
+                href={menuItem.href}
+                className={`text-gray-700 hover:text-gray-900 ${
+                  menuItem.active && "underline text-gray-900"
+                }`}
               >
-                {menuItem}
+                {menuItem.label}
               </Link>
             </li>
           ))}
@@ -57,16 +78,18 @@ const Navbar = () => {
         }`}
       >
         {MenuItems.map((menuItem) => (
-          <li key={menuItem}>
+          <li key={menuItem.label}>
             <Link
-              href="/about"
-              className={`text-gray-500 hover:text-gray-900 text-2xl transition-opacity ease-in-out ${
-                isMenuOpen
-                  ? "opacity-100 delay-300 duration-300"
-                  : "opacity-0 duration-200"
-              }`}
+              href={menuItem.href}
+              className={`text-gray-700 hover:text-gray-900 text-2xl transition-opacity ease-in-out 
+                ${menuItem.active && "underline text-gray-900"} 
+                ${
+                  isMenuOpen
+                    ? "opacity-100 delay-300 duration-300"
+                    : "opacity-0 duration-200"
+                }`}
             >
-              {menuItem}
+              {menuItem.label}
             </Link>
           </li>
         ))}
