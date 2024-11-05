@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
+
 import Image from "next/image";
+import Link from "next/link";
 
 import { FiMenu, FiX } from "react-icons/fi";
 
@@ -35,12 +37,12 @@ const Navbar = () => {
         <ul className="hidden md:flex space-x-12">
           {MenuItems.map((menuItem) => (
             <li key={menuItem}>
-              <a
-                href="#"
+              <Link
+                href="/about"
                 className="text-gray-500 hover:text-gray-900 text-base"
               >
                 {menuItem}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -56,14 +58,14 @@ const Navbar = () => {
       >
         {MenuItems.map((menuItem) => (
           <li key={menuItem}>
-            <a
-              href="#"
-              className={`text-gray-500 hover:text-gray-900 text-2xl transition-opacity ease-in delay-300 duration-250 ${
+            <Link
+              href="/about"
+              className={`text-gray-500 hover:text-gray-900 text-2xl transition-opacity ease-in delay-300 duration-300 ${
                 isMenuOpen ? "opacity-100" : "opacity-0"
               }`}
             >
               {menuItem}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>

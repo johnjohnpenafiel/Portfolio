@@ -35,7 +35,7 @@ export default function RootLayout({
         <div className="fixed inset-y-0 left-[28.5%] w-px border-r border-dashed border-gray-100 -z-10"></div>
         <div className="fixed inset-y-0 left-[71.5%] w-px border-r border-dashed border-gray-100 -z-10"></div>
 
-        {children}
+        <main className="lg:mx-[7.2%]">{children}</main>
       </body>
     </html>
   );

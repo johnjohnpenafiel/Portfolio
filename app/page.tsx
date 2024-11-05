@@ -4,14 +4,14 @@ import Work from "@/components/Work";
 
 function Home() {
   return (
-    <div className="lg:mx-[7.2%]">
-      <section className="static">
+    <div>
+      <section>
         <Navbar />
       </section>
       <section className="-mt-[64px]">
         <Hero />
       </section>
-      <div className="flex h-52 items-center justify-center || text-2xl font-normal border-b">
+      <div className="flex h-32 items-center justify-center || bg-white text-2xl font-normal">
         Work
       </div>
       <section>

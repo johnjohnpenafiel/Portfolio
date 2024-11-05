@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="h-screen flex flex-col border-b">
+    <div className="h-screen flex flex-col border-b border-gray-200/80 ">
       <div className="flex flex-col h-3/4 text-center justify-end">
         <h5 className="sm:text-xl text-gray-400 font-kodchasan">
           Software Engineer
