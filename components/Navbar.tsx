@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav className="relative py-3 px-7 md:px-5 || border-b border-gray-200/80 bg-white">
       <div className="flex items-center justify-between">
         <Image
-          src="/images/logo4.png"
+          src="/images/logo.png"
           width={40}
           height={40}
           alt="Picture of the author"
@@ -50,18 +50,20 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <ul
-        className={`absolute flex flex-col top-full left-0 w-full md:hidden items-center space-y-2 py-4 || bg-white border-b border-gray-200/80 transition-transform origin-top duration-500 ease-out ${
+        className={`absolute flex flex-col left-0 w-full md:hidden items-center space-y-2 py-8 || bg-white border-b border-gray-200/80 transition-transform origin-top duration-500 ease-in-out ${
           isMenuOpen
             ? "scale-y-100 pointer-events-auto"
-            : "scale-y-0 pointer-events-none"
+            : "scale-y-0 delay-100 pointer-events-none"
         }`}
       >
         {MenuItems.map((menuItem) => (
           <li key={menuItem}>
             <Link
               href="/about"
-              className={`text-gray-500 hover:text-gray-900 text-2xl transition-opacity ease-in delay-300 duration-300 ${
-                isMenuOpen ? "opacity-100" : "opacity-0"
+              className={`text-gray-500 hover:text-gray-900 text-2xl transition-opacity ease-in-out ${
+                isMenuOpen
+                  ? "opacity-100 delay-300 duration-300"
+                  : "opacity-0 duration-200"
               }`}
             >
               {menuItem}
