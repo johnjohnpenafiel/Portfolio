@@ -5,7 +5,7 @@ export function useIsVisible(ref: React.RefObject<HTMLElement>) {
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
 
   useEffect(() => {
-    if (!ref.current) return; // Ensure ref is assigned to an element
+    if (!ref.current) return;
 
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
