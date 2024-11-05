@@ -5,7 +5,9 @@ import Work from "@/components/Work";
 function Home() {
   return (
     <div className="lg:mx-[7.2%]">
-      <Navbar />
+      <section className="static">
+        <Navbar />
+      </section>
       <section className="-mt-[64px]">
         <Hero />
       </section>

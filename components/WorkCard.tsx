@@ -21,12 +21,12 @@ const WorkCard = ({ title, description, stack, image }: Props) => {
       }`}
     >
       {/* Card Description */}
-      <div className="flex flex-col pl-5 pb-5 mx-3 md:mt-7 md:w-1/2 order-3 md:order-1">
-        <h1 className=" || text-2xl md:text-4xl font-bold">{title}</h1>
+      <div className="flex flex-col px-5 pb-5 mx-3 md:mt-7 md:w-1/2 order-3 md:order-1">
+        <h1 className="text-2xl md:text-4xl font-bold">{title}</h1>
         <p className="mt-4 || text-sm md:text-lg font-semibold text-gray-600">
           {description}
         </p>
-        <ul className="inline-flex mt-4 || text-sm md:text-base">
+        <ul className="inline-flex flex-wrap mt-4 || text-sm md:text-base">
           {stack.map((s, index) => (
             <li key={index} className=" || font-semibold">
               {s}
