@@ -12,7 +12,7 @@ const AboutCard = ({ title, content }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="py-5 border-b border-gray-200/80">
+    <div className="py-5 || border-b border-gray-200/80">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full justify-between items-center px-4"
@@ -32,7 +32,7 @@ const AboutCard = ({ title, content }: Props) => {
         }`}
       >
         <p
-          className={`px-4 pr-8 leading-loose overflow-hidden transition-all ease-in-out ${
+          className={`px-4 pr-8 || leading-loose overflow-hidden transition-all ease-in-out ${
             isOpen
               ? "opacity-100 delay-200 duration-200"
               : "opacity-0 duration-300"

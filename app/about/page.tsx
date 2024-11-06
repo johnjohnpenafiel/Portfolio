@@ -6,7 +6,7 @@ import { aboutInfo } from "@/data";
 
 const About = () => {
   return (
-    <div className="h-screen bg-white">
+    <div className="h-screen || bg-white">
       <section>
         <Navbar />
       </section>
@@ -14,7 +14,7 @@ const About = () => {
       <section className="md:mx-[17%]">
         <div className="flex flex-col m-10 mt-24 px-4">
           <h1 className="text-3xl font-semibold">John Penafiel</h1>
-          <p className="text-gray-600 pt-5 text-md">
+          <p className="pt-5 || text-gray-600 text-md font-light">
             I am Software Engineer specializing in Full Stack Development, I
             found programming to be an expansive creative platform with endless
             possibilities.
