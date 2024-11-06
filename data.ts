@@ -25,7 +25,8 @@ export const aboutInfo = [
   {
     id: 2,
     title: "Software Engineer",
-    content: "placeholder",
+    content:
+      " My role is to unravel intricate challenges through creativity and focused problem-solving, which helps me come up with practical and impactful solutions. To me, programming is both an art and a science, balancing creativity with rigorous logic.",
   },
   {
     id: 3,

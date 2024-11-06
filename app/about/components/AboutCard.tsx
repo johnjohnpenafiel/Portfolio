@@ -12,12 +12,12 @@ const AboutCard = ({ title, content }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="py-5 border-b">
+    <div className="py-5 border-b border-gray-200/80">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full justify-between items-center px-4"
       >
-        <span className="text-lg">{title}</span>
+        <span className="text-lg font-semibold text-stone-800">{title}</span>
         <span
           className={`text-gray-400 text-xl md:text-2xl transition-transform duration-500 ${
             isOpen && "rotate-45"
