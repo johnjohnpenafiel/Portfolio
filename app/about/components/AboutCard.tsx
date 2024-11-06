@@ -1,45 +1,39 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { FiPlus } from "react-icons/fi";
 
 interface Props {
-  handleClick: (id: number) => void;
-  isOpen: boolean;
-  id: number;
-  category: string;
+  title: string;
   content: string;
 }
 
-const AboutCard = ({ handleClick, isOpen, id, category, content }: Props) => {
+const AboutCard = ({ title, content }: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="flex flex-col mx-10">
-      <div className="flex justify-between py-4 || bg-white border-b">
-        <h3 className="px-2 || text-lg font-medium">{category}</h3>
-        <button
-          onClick={() => handleClick(id)}
-          className={`text-2xl text-gray-400 origin-center transition-transform duration-300 
-                ${isOpen && "rotate-45"}`}
+    <div className="py-5 border-b">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex w-full justify-between items-center px-4"
+      >
+        <span className="text-lg">{title}</span>
+        <span
+          className={`text-gray-400 text-xl md:text-2xl transition-transform duration-500 ${
+            isOpen && "rotate-45"
+          }`}
         >
           <FiPlus />
-        </button>
-      </div>
+        </span>
+      </button>
       <div
-        className={`-mt-1 || transition-transform origin-top duration-500 ease-in-out bg-white border-b 
-          ${
-            isOpen
-              ? "scale-y-100 pointer-events-auto"
-              : "scale-y-0 delay-100 pointer-events-none"
-          }`}
+        className={`grid overflow-hidden transition-all duration-300 ease-in-out text-slate-600 ${
+          isOpen
+            ? "grid-rows-[1fr] opacity-100 pt-2"
+            : "grid-rows-[0fr] opacity-0"
+        }`}
       >
-        <p
-          className={`bg-white px-2 pb-3 text-gray-700 font-light transition-opacity ease-in-out 
-                ${
-                  isOpen
-                    ? "opacity-100 delay-300 duration-500"
-                    : "opacity-0 duration-200"
-                }`}
-        >
-          {isOpen ? content : ""}
-        </p>
+        <p className="px-4 pr-8 overflow-hidden leading-loose">{content}</p>
       </div>
     </div>
   );

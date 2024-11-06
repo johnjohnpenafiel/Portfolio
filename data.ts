@@ -14,3 +14,22 @@ export const projects = [
     image: "/images/NextGame.png",
   },
 ];
+
+export const aboutInfo = [
+  {
+    id: 1,
+    title: "Background",
+    content:
+      "My role is to unravel intricate challenges through creativity and focused problem-solving, which helps me come up with practical and impactful solutions.",
+  },
+  {
+    id: 2,
+    title: "Software Engineer",
+    content: "placeholder",
+  },
+  {
+    id: 3,
+    title: "Things I love",
+    content: "placeholder",
+  },
+];

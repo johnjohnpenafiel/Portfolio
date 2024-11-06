@@ -16,7 +16,7 @@ const WorkCard = ({ title, description, stack, image }: Props) => {
   return (
     <div
       ref={cardRef}
-      className={`flex flex-col w-full md:max-w-[1100px] md:max-h-[400px] h-auto md:flex-row md:h-auto mb-5 || bg-white rounded-sm shadow-sm border border-gray-100 overflow-hidden || transition-transform ease-out delay-100 duration-1000 ${
+      className={`flex flex-col w-full md:max-w-[1100px] md:max-h-[400px] h-auto md:flex-row md:h-auto mb-5 || bg-white rounded-sm drop-shadow-sm border border-gray-100 overflow-hidden || transition-transform ease-out delay-100 duration-1000 ${
         hasBeenVisible ? "translate-y-0" : "translate-y-52"
       }`}
     >

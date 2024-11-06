@@ -1,6 +1,6 @@
 import React from "react";
 import WorkCard from "./WorkCard";
-import { projects } from "@/projects";
+import { projects } from "@/data";
 
 const Work = () => {
   return (
