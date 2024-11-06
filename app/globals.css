@@ -4,6 +4,10 @@
 
 /* Kodchasan Font */
 
+body {
+  background-color: rgb(249, 250, 251);
+}
+
 @font-face {
   font-family: "Kodchasan";
   font-weight: 200;

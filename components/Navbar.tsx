@@ -43,7 +43,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="relative py-3 px-7 md:px-5 || border-b border-gray-200/80 bg-white">
+    <nav className="relative py-3 px-7 md:px-5 || border-b border-gray-200/80 bg-[#f9fafb]">
       <div className="flex items-center justify-between">
         <Image
           src="/images/logo.png"
@@ -92,7 +92,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <ul
-        className={`absolute flex flex-col left-0 w-full md:hidden items-center space-y-5 py-14 || bg-white border-b border-gray-200/80 transition-transform origin-top duration-500 ease-in-out
+        className={`absolute flex flex-col left-0 w-full md:hidden items-center space-y-5 py-14 || bg-[#f9fafb] border-b border-gray-200/80 transition-transform origin-top duration-500 ease-in-out
            ${
              isMenuOpen
                ? "scale-y-100 pointer-events-auto"
