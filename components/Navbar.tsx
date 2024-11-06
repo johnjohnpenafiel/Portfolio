@@ -80,7 +80,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <ul
-        className={`absolute flex flex-col left-0 w-full md:hidden items-center space-y-2 py-8 || bg-white border-b border-gray-200/80 transition-transform origin-top duration-500 ease-in-out
+        className={`absolute flex flex-col left-0 w-full md:hidden items-center space-y-5 py-14 || bg-white border-b border-gray-200/80 transition-transform origin-top duration-500 ease-in-out
            ${
              isMenuOpen
                ? "scale-y-100 pointer-events-auto"
