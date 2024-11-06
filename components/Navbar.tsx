@@ -47,7 +47,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Toggle */}
         <div className="flex md:hidden">
-          <button className="text-2xl text-gray-500" onClick={toggleMenu}>
+          <button className="text-2xl text-gray-400" onClick={toggleMenu}>
             {isMenuOpen ? <FiX /> : <FiMenu />}
           </button>
         </div>
@@ -71,11 +71,12 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <ul
-        className={`absolute flex flex-col left-0 w-full md:hidden items-center space-y-2 py-8 || bg-white border-b border-gray-200/80 transition-transform origin-top duration-500 ease-in-out ${
-          isMenuOpen
-            ? "scale-y-100 pointer-events-auto"
-            : "scale-y-0 delay-100 pointer-events-none"
-        }`}
+        className={`absolute flex flex-col left-0 w-full md:hidden items-center space-y-2 py-8 || bg-white border-b border-gray-200/80 transition-transform origin-top duration-500 ease-in-out
+           ${
+             isMenuOpen
+               ? "scale-y-100 pointer-events-auto"
+               : "scale-y-0 delay-100 pointer-events-none"
+           }`}
       >
         {MenuItems.map((menuItem) => (
           <li key={menuItem.label}>
