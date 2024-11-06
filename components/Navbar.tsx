@@ -52,12 +52,24 @@ const Navbar = () => {
           alt="Picture of the author"
         />
 
-        {/* Mobile Menu Toggle */}
-        <div className="flex md:hidden">
-          <button className="text-2xl text-gray-400" onClick={toggleMenu}>
-            {isMenuOpen ? <FiX /> : <FiMenu />}
-          </button>
-        </div>
+        {/* Mobile Menu Button */}
+        <button
+          className="flex pt-[4px] md:hidden"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <div className="relative w-6 h-6">
+            <span
+              className={`absolute block w-6 h-0.5 bg-gray-400 rounded-md transition-all duration-300 ease-in-out ${
+                isMenuOpen ? "rotate-45 top-2.5" : "top-1"
+              }`}
+            ></span>
+            <span
+              className={`absolute block w-6 h-0.5 bg-gray-400 rounded-md transition-all duration-300 ease-in-out ${
+                isMenuOpen ? "-rotate-45 top-2.5" : "top-4"
+              }`}
+            ></span>
+          </div>
+        </button>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-12">

@@ -28,7 +28,7 @@ const AboutCard = ({ title, content }: Props) => {
       </button>
       <div
         className={`grid overflow-hidden transition-all duration-300 ease-in-out text-slate-600 ${
-          isOpen ? "grid-rows-[1fr] pt-2" : "grid-rows-[0fr] delay-75"
+          isOpen ? "grid-rows-[1fr] pt-3" : "grid-rows-[0fr] delay-75"
         }`}
       >
         <p
