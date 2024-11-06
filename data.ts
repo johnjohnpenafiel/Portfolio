@@ -34,3 +34,6 @@ export const aboutInfo = [
     content: "placeholder",
   },
 ];
+
+export const resumeLink =
+  "https://drive.google.com/file/d/1OyTFXFGX1lxj4gXY8dQLefFutnguILFj/view?usp=sharing";

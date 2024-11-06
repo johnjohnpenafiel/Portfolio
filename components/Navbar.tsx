@@ -7,6 +7,7 @@ import Link from "next/link";
 
 import { FiMenu, FiX } from "react-icons/fi";
 import { usePathname } from "next/navigation";
+import { resumeLink } from "@/data";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,16 +19,22 @@ const Navbar = () => {
       label: "Work",
       active: pathname == "/",
       href: "/",
+      target: "",
+      rel: "",
     },
     {
       label: "About",
       active: pathname == "/about",
       href: "/about",
+      target: "",
+      rel: "",
     },
     {
       label: "CV",
       active: pathname == "cv",
-      href: "cv",
+      href: resumeLink,
+      target: "_blank",
+      rel: "noopener noreferrer",
     },
   ];
 
@@ -58,6 +65,8 @@ const Navbar = () => {
             <li key={menuItem.label}>
               <Link
                 href={menuItem.href}
+                target={menuItem.target}
+                rel={menuItem.rel}
                 className={`text-gray-700 hover:text-gray-900 ${
                   menuItem.active && "underline text-gray-900"
                 }`}
@@ -82,6 +91,8 @@ const Navbar = () => {
           <li key={menuItem.label}>
             <Link
               href={menuItem.href}
+              target={menuItem.target}
+              rel={menuItem.rel}
               className={`text-gray-700 hover:text-gray-900 text-2xl transition-opacity ease-in-out 
                 ${menuItem.active && "underline text-gray-900"} 
                 ${
