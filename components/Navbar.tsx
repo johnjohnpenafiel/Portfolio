@@ -38,10 +38,6 @@ const Navbar = () => {
     },
   ];
 
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
-
   return (
     <nav className="relative py-3 px-7 md:px-5 || border-b border-gray-200/80 bg-[#f9fafb]">
       <div className="flex items-center justify-between">
