@@ -6,7 +6,7 @@ import { aboutInfo } from "@/data";
 
 const About = () => {
   return (
-    <div className="h-screen || bg-white">
+    <div className="h-screen bg-[#f9fafb] border-b">
       <section>
         <Navbar />
       </section>

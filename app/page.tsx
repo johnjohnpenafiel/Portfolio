@@ -18,9 +18,6 @@ function Home() {
       <section>
         <Work />
       </section>
-      <section>
-        <Footer />
-      </section>
     </div>
   );
 }
