@@ -72,7 +72,7 @@ const Navbar = () => {
         </button>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-12">
+        <ul className="hidden md:flex space-x-12 pr-2 || text-base">
           {MenuItems.map((menuItem) => (
             <li key={menuItem.label}>
               <Link

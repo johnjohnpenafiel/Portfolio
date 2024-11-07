@@ -16,27 +16,29 @@ const WorkCard = ({ title, description, stack, image }: Props) => {
   return (
     <div
       ref={cardRef}
-      className={`flex flex-col w-full md:max-w-[1100px] md:max-h-[400px] h-auto md:flex-row md:h-auto mb-5 || bg-white rounded-sm drop-shadow-sm border border-gray-100 overflow-hidden || transition-transform ease-in-out delay-100 duration-700 ${
+      className={`flex flex-col w-full md:max-w-[1100px] md:max-h-[400px] h-auto md:flex-row md:h-auto mb-10 || bg-[#f9fafb] rounded-sm border border-gray-200/80 overflow-hidden || transition-transform ease-in-out delay-100 duration-700 ${
         hasBeenVisible ? "translate-y-0" : "translate-y-52"
       }`}
     >
       {/* Card Description */}
-      <div className="flex flex-col px-5 pb-5 mx-3 md:mt-7 md:w-1/2 order-3 md:order-1">
-        <h1 className="text-2xl md:text-4xl font-bold">{title}</h1>
-        <p className="mt-4 || text-sm md:text-lg font-semibold text-gray-600">
+      <div className="flex flex-col px-5 md:pl-9 md:pr-4 pb-5 mx-3 md:mt-7 md:w-1/2 order-3 md:order-1">
+        <h1 className="text-2xl md:text-4xl font-bold text-black-title">
+          {title}
+        </h1>
+        <p className="mt-4 || text-sm md:text-lg font-light text-gray-600">
           {description}
         </p>
         <ul className="inline-flex flex-wrap mt-4 || text-sm md:text-base">
           {stack.map((s, index) => (
-            <li key={index} className=" || font-semibold">
+            <li key={index} className="text-stone-800 font-semibold ">
               {s}
               {index < stack.length - 1 && <span className="mx-2">•</span>}
             </li>
           ))}
         </ul>
         {/* Button */}
-        <div className="flex pt-5 items-end h-full">
-          <button className="md:w-32 md:mb-10 p-2  || bg-black text-white rounded">
+        <div className="flex pt-5 items-end h-full pb-5 md:pb-[1px]">
+          <button className="md:w-32 md:mb-10 p-2 || border bg-transparent text-black-title rounded hover:animate-pulse hover:bg-gray-100/20">
             See more
           </button>
         </div>
@@ -46,7 +48,7 @@ const WorkCard = ({ title, description, stack, image }: Props) => {
         <img
           src={image}
           alt="Project Picture"
-          className="object-contain h-auto w-full"
+          className="object-contain h-auto w-full md:pr-6"
         />
       </div>
     </div>

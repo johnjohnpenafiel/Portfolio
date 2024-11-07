@@ -13,6 +13,20 @@ export const projects = [
     stack: ["React.js", "Typescript", "Python", "Flask", "Chakra UI"],
     image: "/images/NextGame.png",
   },
+  {
+    title: "JackSpot",
+    description:
+      "JackSpot lets users create, share, and discover personalized collections of favorite locations based on friends' recommendations.",
+    stack: [
+      "Next.js",
+      "Python",
+      "Flask",
+      "SQLAlchemy",
+      "SQLite3",
+      "Tailwind CSS",
+    ],
+    image: "/images/JackSpot.png",
+  },
 ];
 
 export const aboutInfo = [
@@ -36,4 +50,4 @@ export const aboutInfo = [
 ];
 
 export const resumeLink =
-  "https://drive.google.com/file/d/1OyTFXFGX1lxj4gXY8dQLefFutnguILFj/view?usp=sharing";
+  "https://docs.google.com/document/d/10GD_M_ltTMUawSyMnTvt7jYHxlt8WtVPZBY48nYuS2s/edit?usp=sharing";

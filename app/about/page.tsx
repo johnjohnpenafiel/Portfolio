@@ -1,16 +1,11 @@
 import React from "react";
 
-import Navbar from "@/components/Navbar";
 import AboutCard from "./components/AboutCard";
 import { aboutInfo } from "@/data";
 
 const About = () => {
   return (
     <div className="h-screen bg-[#f9fafb] border-b">
-      <section>
-        <Navbar />
-      </section>
-
       <section className="md:mx-[17%]">
         <div className="flex flex-col m-10 mt-24 px-4">
           <h1 className="text-3xl font-semibold">John Penafiel</h1>
