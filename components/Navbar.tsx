@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { FiMenu, FiX } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 import { resumeLink } from "@/data";
 
@@ -101,6 +100,7 @@ const Navbar = () => {
               href={menuItem.href}
               target={menuItem.target}
               rel={menuItem.rel}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`text-gray-700 hover:text-gray-900 text-2xl transition-opacity ease-in-out 
                 ${menuItem.active && "underline text-gray-900"} 
                 ${
