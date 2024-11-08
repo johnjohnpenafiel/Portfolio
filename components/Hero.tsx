@@ -3,7 +3,26 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="h-screen flex flex-col border-b border-gray-200/80 ">
+    <div className=" h-screen flex flex-col border-b border-gray-200/80 overflow-hidden">
+      {/* Beam Effect Container */}
+
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Left Beam */}
+        <div className="absolute inset-y-0 left-[28.5%] w-px -z-10">
+          <div className="absolute top-0 left-0 w-full h-0 border-r border-dashed border-[#E0E0E0] animate-beam shadow-[0_0_2px_rgba(245,245,245,0.7)] [animation-delay:0.3s]"></div>
+        </div>
+        {/* Middle Beam */}
+        <div className="absolute inset-y-0 left-[50%] w-px -z-10">
+          <div className="absolute top-0 left-0 w-full h-0 border-r border-dashed border-[#E0E0E0] animate-beam shadow-[0_0_2px_rgba(245,245,245,0.7)] [animation-delay:0s]"></div>
+        </div>
+        {/* Right Beam */}
+        <div className="absolute inset-y-0 left-[71.5%] w-px -z-10">
+          <div className="abslute top-0 left-0 w-full h-0 border-r border-dashed border-[#E0E0E0] animate-beam shadow-[0_0_2px_rgba(245,245,245,0.7)] [animation-delay:0.6s]"></div>
+        </div>
+      </div>
+
+      {/* Existing Hero Content */}
+
       <div className="flex flex-col h-3/4 text-center justify-end">
         <h5 className="sm:text-xl text-gray-400 font-kodchasan">
           Software Engineer

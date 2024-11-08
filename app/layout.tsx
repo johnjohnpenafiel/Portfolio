@@ -34,9 +34,10 @@ export default function RootLayout({
           <div className="fixed inset-y-[-100vh] left-[7.2%] w-px lg:bg-gray-200/80 z-50"></div>
           <div className="fixed inset-y-[-100vh] right-[7.2%] w-px lg:bg-gray-200/80 z-50"></div>
 
-          <div className="fixed inset-y-0 left-[50%] w-px border-r border-dashed border-gray-200 -z-10"></div>
-          <div className="fixed inset-y-0 left-[28.5%] w-px border-r border-dashed border-gray-200 -z-10"></div>
-          <div className="fixed inset-y-0 left-[71.5%] w-px border-r border-dashed border-gray-200 -z-10"></div>
+          <div className="fixed inset-y-0 left-[28.5%] w-px border-r border-dashed border-neutral-200/50 -z-10"></div>
+          <div className="fixed inset-y-0 left-[50%] w-px border-r border-dashed border-neutral-200/50 -z-10"></div>
+          <div className="fixed inset-y-0 left-[71.5%] w-px border-r border-dashed border-neutral-200/50 -z-10"></div>
+
           <Navbar />
           {children}
           <Footer />

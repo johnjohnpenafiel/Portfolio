@@ -30,6 +30,16 @@ const config: Config = {
       fontFamily: {
         kodchasan: ["Kodchasan", "sans-serif"],
       },
+      keyframes: {
+        beam: {
+          "0%": { height: "0%", opacity: "1" },
+          "50%": { height: "100%", opacity: "1" },
+          "100%": { height: "100%", opacity: "0" },
+        },
+      },
+      animation: {
+        beam: "beam 1s ease-out forwards",
+      },
     },
   },
   plugins: [],
