@@ -9,15 +9,15 @@ const Hero = () => {
       <div className="absolute inset-0 pointer-events-none">
         {/* Left Beam */}
         <div className="absolute inset-y-0 left-[28.5%] w-px -z-10">
-          <div className="absolute top-0 left-0 w-full h-0 border-r border-dashed border-[#E0E0E0] animate-beam shadow-[0_0_2px_rgba(245,245,245,0.7)] [animation-delay:0.3s]"></div>
+          <div className="absolute top-0 left-0 w-full h-0 border-r border-dashed border-[#DCDCDC] animate-beam shadow-[0_0_2px_rgba(245,245,245,0.7)] [animation-delay:1.3s]"></div>
         </div>
         {/* Middle Beam */}
         <div className="absolute inset-y-0 left-[50%] w-px -z-10">
-          <div className="absolute top-0 left-0 w-full h-0 border-r border-dashed border-[#E0E0E0] animate-beam shadow-[0_0_2px_rgba(245,245,245,0.7)] [animation-delay:0s]"></div>
+          <div className="absolute top-0 left-0 w-full h-0 border-r border-dashed border-[#DCDCDC] animate-beam shadow-[0_0_2px_rgba(245,245,245,0.7)] [animation-delay:0.5s]"></div>
         </div>
         {/* Right Beam */}
         <div className="absolute inset-y-0 left-[71.5%] w-px -z-10">
-          <div className="abslute top-0 left-0 w-full h-0 border-r border-dashed border-[#E0E0E0] animate-beam shadow-[0_0_2px_rgba(245,245,245,0.7)] [animation-delay:0.6s]"></div>
+          <div className="abslute top-0 left-0 w-full h-0 border-r border-dashed border-[#DCDCDC] animate-beam shadow-[0_0_2px_rgba(245,245,245,0.7)] [animation-delay:0.9s]"></div>
         </div>
       </div>
 
