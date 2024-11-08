@@ -38,7 +38,7 @@ const config: Config = {
         },
       },
       animation: {
-        beam: "beam 1s ease-out forwards",
+        beam: "beam 1.5s ease-out forwards",
       },
     },
   },
