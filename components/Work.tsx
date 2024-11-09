@@ -8,6 +8,7 @@ const Work = () => {
       <div className="flex flex-col items-center mt-10 mx-4">
         {projects.map((project) => (
           <WorkCard
+            id={project.id}
             title={project.title}
             description={project.description}
             stack={project.stack}

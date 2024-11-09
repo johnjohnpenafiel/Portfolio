@@ -1,16 +1,18 @@
 "use client";
 
 import { useIsVisible } from "@/hooks/useIsVisible";
+import Link from "next/link";
 import React, { useRef } from "react";
 
 interface Props {
+  id: string;
   title: string;
   description: string;
   stack: string[];
   image: string;
 }
 
-const WorkCard = ({ title, description, stack, image }: Props) => {
+const WorkCard = ({ id, title, description, stack, image }: Props) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const hasBeenVisible = useIsVisible(cardRef);
   return (
@@ -39,9 +41,11 @@ const WorkCard = ({ title, description, stack, image }: Props) => {
         </ul>
         {/* Button */}
         <div className="flex pt-5 items-end h-full pb-5 md:pb-[1px]">
-          <button className="md:w-32 md:mb-10 p-2 || border border-stone-500 bg-transparent text-neutral-900 rounded group-hover:animate-pulse hover:bg-gray-100/20">
-            See more
-          </button>
+          <Link href={`/projects/${id}`}>
+            <button className="md:w-32 md:mb-10 p-2 || border border-stone-500 bg-transparent text-neutral-900 rounded group-hover:animate-pulse hover:bg-gray-100/20">
+              See more
+            </button>
+          </Link>
         </div>
       </div>
       {/* Card Image */}

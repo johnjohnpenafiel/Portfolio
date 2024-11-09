@@ -1,5 +1,6 @@
 export const projects = [
   {
+    id: "parallaxui",
     title: "Parallax UI",
     description:
       "ParallaxUI lets users create customizable, multi-layer designs with parallax effects, and export the code for seamless integration.",
@@ -7,6 +8,7 @@ export const projects = [
     image: "/images/ParallaxUIB.png",
   },
   {
+    id: "jackspot",
     title: "JackSpot",
     description:
       "JackSpot lets users create, share, and discover personalized collections of favorite locations based on friends' recommendations.",
@@ -21,6 +23,7 @@ export const projects = [
     image: "/images/JackSpotB.png",
   },
   {
+    id: "nextgame",
     title: "Next Game",
     description:
       "NextGame is a sleek video game discovery app that lets users explore, filter, and sort games using a modern UI.",
