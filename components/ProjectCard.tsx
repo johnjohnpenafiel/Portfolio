@@ -12,7 +12,7 @@ interface Props {
   image: string;
 }
 
-const WorkCard = ({ id, title, description, stack, image }: Props) => {
+const ProjectCard = ({ id, title, description, stack, image }: Props) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const hasBeenVisible = useIsVisible(cardRef);
   return (
@@ -60,4 +60,4 @@ const WorkCard = ({ id, title, description, stack, image }: Props) => {
   );
 };
 
-export default WorkCard;
+export default ProjectCard;
