@@ -27,7 +27,7 @@ const Hero = () => {
         <h5 className="sm:text-xl text-gray-400 font-kodchasan">
           Software Engineer
         </h5>
-        <h1 className="lg:text-title sm:text-5xl text-4xl text-black-title mb-36">
+        <h1 className="lg:text-title sm:text-5xl text-4xl text-neutral-900 mb-36">
           John Penafiel
         </h1>
       </div>
@@ -39,7 +39,7 @@ const Hero = () => {
             <Link href="/about" className="underline hover:text-gray-900">
               More about me
             </Link>
-            <div className="px-1 group-hover:text-gray-900 group-hover:ml-1">
+            <div className="px-1 group-hover:text-gray-900 group-hover:scale-105">
               →
             </div>
           </div>

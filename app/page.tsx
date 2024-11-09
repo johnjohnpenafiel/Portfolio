@@ -7,8 +7,8 @@ function Home() {
       <section className="-mt-[64px]">
         <Hero />
       </section>
-      <div className="flex h-52 items-center justify-center || bg-[#f9fafb]  text-xl md:text-2xl text-black-title font-medium">
-        WORK
+      <div className="flex h-52 items-center justify-center || bg-[#f9fafb]  text-xl md:text-2xl text-stone-800 font-medium">
+        Projects
       </div>
       <section>
         <Work />

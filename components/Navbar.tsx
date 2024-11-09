@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const MenuItems = [
     {
-      label: "Work",
+      label: "Projects",
       active: pathname == "/",
       href: "/",
       target: "",
@@ -29,7 +29,7 @@ const Navbar = () => {
       rel: "",
     },
     {
-      label: "CV",
+      label: "Resume",
       active: pathname == "cv",
       href: resumeLink,
       target: "_blank",
@@ -67,7 +67,7 @@ const Navbar = () => {
         </button>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-12 pr-2 || text-base">
+        <ul className="hidden md:flex space-x-12 pr-2 || text-sm">
           {MenuItems.map((menuItem) => (
             <li key={menuItem.label}>
               <Link

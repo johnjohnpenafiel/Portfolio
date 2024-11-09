@@ -21,12 +21,6 @@ const config: Config = {
       title: "5rem",
     },
     extend: {
-      colors: {
-        black: {
-          DEFAULT: "#000",
-          title: "#282828",
-        },
-      },
       fontFamily: {
         kodchasan: ["Kodchasan", "sans-serif"],
       },
