@@ -18,7 +18,7 @@ const WorkCard = ({ id, title, description, stack, image }: Props) => {
   return (
     <div
       ref={cardRef}
-      className={`flex flex-col w-full md:max-w-[1100px] md:max-h-[400px] h-auto md:flex-row md:h-auto mb-10 || group bg-[#f9fafb] shadow-xl shadow-gray-100 rounded border border-gray-200/80 overflow-hidden || transition-transform ease-in-out delay-100 duration-1000 ${
+      className={`flex flex-col w-full md:max-w-[1100px] md:max-h-[400px] h-auto md:flex-row-reverse md:h-auto mb-10 || group bg-[#f9fafb] rounded border border-gray-200/80 overflow-hidden || transition-transform ease-in-out delay-100 duration-1000 ${
         hasBeenVisible ? "translate-y-0" : "translate-y-40"
       }`}
     >
@@ -53,7 +53,7 @@ const WorkCard = ({ id, title, description, stack, image }: Props) => {
         <img
           src={image}
           alt="Project Picture"
-          className="object-contain h-auto w-full md:pr-6"
+          className="object-contain h-auto w-full md:pl-6 "
         />
       </div>
     </div>

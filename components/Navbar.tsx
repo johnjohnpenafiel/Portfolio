@@ -40,12 +40,14 @@ const Navbar = () => {
   return (
     <nav className="relative py-3 px-7 md:px-5 || border-b border-gray-200/80 bg-[#f9fafb]">
       <div className="flex items-center justify-between">
-        <Image
-          src="/images/logo.png"
-          width={40}
-          height={40}
-          alt="Picture of the author"
-        />
+        <Link href="/">
+          <Image
+            src="/images/logo.png"
+            width={40}
+            height={40}
+            alt="Picture of the author"
+          />
+        </Link>
 
         {/* Mobile Menu Button */}
         <button
