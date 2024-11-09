@@ -10,10 +10,10 @@ const Projects = () => {
 
   return (
     <div className="h-screen -mt-[64px] border-b">
-      <div className="mt-20">
+      <div className="mx-10 mt-20">
         <div className="text-4xl">{project?.title}</div>
         <div>{project?.description}</div>
-        <div>{project?.stack}</div>
+        <div className="font-medium">{project?.stack}</div>
       </div>
     </div>
   );

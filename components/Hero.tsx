@@ -32,8 +32,8 @@ const Hero = () => {
         </h1>
       </div>
       <div className="lg:flex hidden items-top pt-10 text-lg font-normal text-gray-500">
-        <div className="flex ml-[75.11%] w-px border-l border-gray-400 h-6 mr-4"></div>
-        <div className="flex flex-col text-gray-600 text-base">
+        <div className="flex ml-[75.12%] w-px border-l border-gray-400 h-6 mr-4"></div>
+        <div className="flex flex-col text-gray-700 text-base">
           <p>I solve, I create.</p>
           <div className="flex group">
             <Link href="/about" className="underline hover:text-gray-900">
