@@ -25,11 +25,11 @@ const Footer = () => {
   ];
 
   return (
-    <div className="h-72 || bg-[#f9fafb]">
+    <div className="h-72 || bg-[#f9fafb] border-t">
       <div className="md:flex">
         <div className="flex-col space-y-2 my-14 mx-20 pl-2 md:w-1/2 md:pr-32">
           {/* About */}
-          <h1 className="text-xm text-gray-500 font-semibold">ABOUT</h1>
+          <h1 className="text-sm text-gray-500 font-semibold">ABOUT</h1>
           <p className="text-sm">
             I am Software Engineer specializing in Full Stack Development, I
             found programming to be an expansive creative platform with endless
@@ -40,7 +40,7 @@ const Footer = () => {
         <div className="flex space-x-32 justify-center my-10 md:my-14">
           <div>
             {/* Projects */}
-            <h1 className="mb-2 text-xm text-gray-500 font-semibold">
+            <h1 className="mb-2 text-sm text-gray-500 font-semibold">
               PROJECTS
             </h1>
             <ul>
@@ -58,7 +58,7 @@ const Footer = () => {
           </div>
           <div>
             {/* Contact */}
-            <h1 className="mb-2 text-xm text-gray-500 font-semibold">
+            <h1 className="mb-2 text-sm text-gray-500 font-semibold">
               CONTACT
             </h1>
             <ul>

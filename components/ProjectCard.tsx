@@ -10,15 +10,23 @@ interface Props {
   description: string;
   stack: string[];
   image: string;
+  order: string;
 }
 
-const ProjectCard = ({ id, title, description, stack, image }: Props) => {
+const ProjectCard = ({
+  id,
+  title,
+  description,
+  stack,
+  image,
+  order,
+}: Props) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const hasBeenVisible = useIsVisible(cardRef);
   return (
     <div
       ref={cardRef}
-      className={`flex flex-col w-full md:max-w-[1100px] md:max-h-[400px] h-auto md:flex-row-reverse md:h-auto mb-10 || group bg-[#f9fafb] border-b border-gray-200/80 overflow-hidden || transition-transform ease-in-out delay-100 duration-1000 ${
+      className={`flex flex-col w-full md:max-w-[1100px] md:max-h-[400px] h-auto md:flex-row${order} md:h-auto mb-10 || group bg-[#f9fafb] border-b border-gray-200/80 overflow-hidden || transition-transform ease-in-out delay-100 duration-1000 ${
         hasBeenVisible ? "translate-y-0" : "translate-y-40"
       }`}
     >

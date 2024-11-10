@@ -5,8 +5,9 @@ export const projects = [
     description:
       "ParallaxUI lets users create customizable, multi-layer designs with parallax effects, and export the code for seamless integration.",
     stack: ["React.js", "Typescript", "Material UI"],
-    image: "/images/ParallaxUIB.png",
+    imageCard: "/images/ParallaxUIB.png",
     href: "/projects/parallaxui",
+    order: "",
   },
   {
     id: "jackspot",
@@ -21,8 +22,9 @@ export const projects = [
       "SQLite3",
       "Tailwind CSS",
     ],
-    image: "/images/JackSpotB.png",
+    imageCard: "/images/JackSpotB.png",
     href: "/projects/jackspot",
+    order: "-reverse",
   },
   {
     id: "nextgame",
@@ -30,8 +32,9 @@ export const projects = [
     description:
       "NextGame is a sleek video game discovery app that lets users explore, filter, and sort games using a modern UI.",
     stack: ["React.js", "Typescript", "Python", "Flask", "Chakra UI"],
-    image: "/images/NextGameB.png",
+    imageCard: "/images/NextGameB.png",
     href: "/projects/nextgame",
+    order: "",
   },
 ];
 
