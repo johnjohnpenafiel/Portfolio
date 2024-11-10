@@ -17,7 +17,7 @@ const AboutCard = ({ title, content }: Props) => {
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full justify-between items-center px-4"
       >
-        <span className="text-lg font-semibold text-stone-800">{title}</span>
+        <span className="text-lg font-semibold text-stone-900">{title}</span>
         <span
           className={`text-gray-400 text-xl md:text-2xl transition-transform duration-500 ${
             isOpen && "rotate-45"

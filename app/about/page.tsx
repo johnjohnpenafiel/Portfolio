@@ -8,7 +8,9 @@ const About = () => {
     <div className="h-screen flex -mt-[64px] || bg-[#f9fafb] border-b">
       <section className="md:mx-[17%]">
         <div className="flex flex-col m-10 mt-44 px-4">
-          <h1 className="text-3xl font-semibold">John Penafiel</h1>
+          <h1 className="text-3xl font-semibold text-stone-900">
+            John Penafiel
+          </h1>
           <p className="pt-5 || text-gray-600 text-md font-light">
             I am Software Engineer specializing in Full Stack Development, I
             found programming to be an expansive creative platform with endless

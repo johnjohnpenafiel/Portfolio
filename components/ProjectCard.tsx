@@ -18,7 +18,7 @@ const ProjectCard = ({ id, title, description, stack, image }: Props) => {
   return (
     <div
       ref={cardRef}
-      className={`flex flex-col w-full md:max-w-[1100px] md:max-h-[400px] h-auto md:flex-row-reverse md:h-auto mb-10 || group bg-[#f9fafb] rounded border border-gray-200/80 overflow-hidden || transition-transform ease-in-out delay-100 duration-1000 ${
+      className={`flex flex-col w-full md:max-w-[1100px] md:max-h-[400px] h-auto md:flex-row-reverse md:h-auto mb-10 || group bg-[#f9fafb] border-b border-gray-200/80 overflow-hidden || transition-transform ease-in-out delay-100 duration-1000 ${
         hasBeenVisible ? "translate-y-0" : "translate-y-40"
       }`}
     >
@@ -33,7 +33,7 @@ const ProjectCard = ({ id, title, description, stack, image }: Props) => {
         {/* Teck Stack */}
         <ul className="inline-flex flex-wrap mt-4 || text-sm md:text-base">
           {stack.map((s, index) => (
-            <li key={index} className="text-stone-600 font-semibold ">
+            <li key={index} className="text-stone-700 font-semibold ">
               {s}
               {index < stack.length - 1 && <span className="mx-2">•</span>}
             </li>
@@ -42,7 +42,7 @@ const ProjectCard = ({ id, title, description, stack, image }: Props) => {
         {/* Button */}
         <div className="flex pt-5 items-end h-full pb-5 md:pb-[1px]">
           <Link href={`/projects/${id}`}>
-            <button className="md:w-32 md:mb-10 p-2 || border border-stone-500 bg-transparent text-neutral-900 rounded group-hover:animate-pulse hover:bg-gray-100/20">
+            <button className="md:w-32 md:mb-10 p-2 || border border-stone-600 bg-transparent text-stone-700 rounded group-hover:animate-pulse hover:bg-gray-100/20">
               See more
             </button>
           </Link>
