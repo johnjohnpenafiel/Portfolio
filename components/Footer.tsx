@@ -25,7 +25,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="h-72 || bg-[#f9fafb] border-t">
+    <div className="h-fit || bg-[#f9fafb] border-t">
       <div className="md:flex">
         <div className="flex-col space-y-2 my-14 mx-20 pl-2 md:w-1/2 md:pr-32">
           {/* About */}

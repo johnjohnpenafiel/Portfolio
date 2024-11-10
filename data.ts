@@ -7,7 +7,6 @@ export const projects = [
     stack: ["React.js", "Typescript", "Material UI"],
     imageCard: "/images/ParallaxUIB.png",
     href: "/projects/parallaxui",
-    order: "",
   },
   {
     id: "jackspot",
@@ -24,7 +23,6 @@ export const projects = [
     ],
     imageCard: "/images/JackSpotB.png",
     href: "/projects/jackspot",
-    order: "-reverse",
   },
   {
     id: "nextgame",
@@ -34,7 +32,6 @@ export const projects = [
     stack: ["React.js", "Typescript", "Python", "Flask", "Chakra UI"],
     imageCard: "/images/NextGameB.png",
     href: "/projects/nextgame",
-    order: "",
   },
 ];
 
