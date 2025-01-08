@@ -5,7 +5,7 @@ import { projects } from "@/data";
 const ProjectSection = () => {
   return (
     <div className="h-fit flex flex-col || border-gray-200/80 ">
-      <div className="flex flex-col items-center mt-10 mx-4">
+      <div className="flex flex-col items-center mx-4">
         {projects.map((project) => (
           <ProjectCard
             key={project.title}
