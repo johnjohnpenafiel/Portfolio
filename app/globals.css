@@ -10,13 +10,6 @@ body {
 
 @font-face {
   font-family: "Kodchasan";
-  font-weight: 200;
-  font-style: normal;
-  src: url("./fonts/KodchasanFont/Kodchasan-Extralight.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Kodchasan";
   font-weight: 300;
   font-style: normal;
   src: url("./fonts/KodchasanFont/Kodchasan-Light.ttf") format("truetype");
@@ -34,13 +27,6 @@ body {
   font-weight: 500;
   font-style: normal;
   src: url("./fonts/KodchasanFont/Kodchasan-Medium.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Kodchasan";
-  font-weight: 600;
-  font-style: normal;
-  src: url("./fonts/KodchasanFont/Kodchasan-Semibold.ttf") format("truetype");
 }
 
 @font-face {
