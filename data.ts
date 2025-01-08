@@ -111,7 +111,7 @@ export const projectData = [
           "To create a useful tool while picking up new skills along the way",
       },
     ],
-    heroImage: "/images/ParallaxUILaptop.svg",
+    heroImage: "/images/ParallaxUIB.png",
     links: [
       {
         name: "Live site",
@@ -155,7 +155,7 @@ export const projectData = [
           "To create a useful tool while picking up new skills along the way",
       },
     ],
-    heroImage: "/images/NextGame.png",
+    heroImage: "/images/NextGameB.png",
     links: [
       {
         name: "Coming soon",
@@ -195,11 +195,10 @@ export const projectData = [
       },
       {
         name: "Purpose:",
-        description:
-          "Built as the final project of my Flatiron School program to demonstrate the technical skills and knowledge I gained.",
+        description: "Final project of my Flatiron School program.",
       },
     ],
-    heroImage: "/images/JackSpot.png",
+    heroImage: "/images/JackSpotB.png",
     links: [
       {
         name: "Coming soon",

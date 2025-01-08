@@ -25,30 +25,36 @@ const Footer = () => {
   ];
 
   return (
-    <div className="h-fit || bg-[#f9fafb] border-t">
-      <div className="md:flex">
-        <div className="flex-col space-y-2 my-14 mx-20 pl-2 md:w-1/2 md:pr-32">
-          {/* About */}
-          <h1 className="text-sm text-gray-500 font-semibold">ABOUT</h1>
-          <p className="text-sm">
+    <div className="h-96 bg-[#f9fafb] border-t">
+      {/* ----- FOOTER SECTION ----- */}
+      <div className="md:flex justify-between">
+        {/* ----- ABOUT SECTION ----- */}
+        <div className="flex-col my-14 mx-10 pl-2 md:w-1/2 md:pr-32 xl:ml-16">
+          <h1 className="text-sm md:text-md text-gray-500 font-medium mb-2">
+            About
+          </h1>
+          <p className="text-sm md:text-base text-wrap">
             I am Software Engineer specializing in Full Stack Development, I
             found programming to be an expansive creative platform with endless
-            possibilities.
+            possibilities. My role is to unravel intricate challenges through
+            creativity and focused problem-solving, which helps me come up with
+            practical and impactful solutions. To me, programming is both an art
+            and a science, balancing creativity with rigorous logic.
           </p>
         </div>
-        {/* Projects and Contact */}
-        <div className="flex space-x-32 justify-center my-10 md:my-14">
+        {/* ----- PROJECTS AND CONTACTS SECTION ----- */}
+        <div className="flex justify-around md:mr-10 xl:mr-32 md:space-x-32 md:justify-center my-10 md:my-14">
           <div>
-            {/* Projects */}
-            <h1 className="mb-2 text-sm text-gray-500 font-semibold">
-              PROJECTS
+            {/* PROJECTS */}
+            <h1 className="mb-1 text-sm md:text-md text-gray-500 font-medium">
+              Projects
             </h1>
             <ul>
               {projectCards.map((project) => (
                 <li key={project.id}>
                   <Link
                     href={project.href}
-                    className="text-sm text-stone-800 font-medium leading-8"
+                    className="text-sm md:text-md text-stone-800 leading-10 hover:text-stone-400"
                   >
                     {project.title}
                   </Link>
@@ -57,9 +63,9 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            {/* Contact */}
-            <h1 className="mb-2 text-sm text-gray-500 font-semibold">
-              CONTACT
+            {/* CONTACT */}
+            <h1 className="mb-1 text-sm md:text-md text-gray-500 font-medium">
+              Contact
             </h1>
             <ul>
               {contacts.map((contact) => (
@@ -68,7 +74,7 @@ const Footer = () => {
                     href={contact.href}
                     target={contact.target}
                     rel={contact.rel}
-                    className="text-sm text-stone-800 font-medium leading-8"
+                    className="text-sm md:text-md text-stone-800 leading-10 hover:text-stone-400"
                   >
                     {contact.title}
                     <span>↗</span>
@@ -80,9 +86,9 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Copywrite */}
+      {/* ----- COPYWRITE SECTION ----- */}
       <div className="flex justify-center md:justify-start pb-4">
-        <div className="flex md:mt-10 md:pl-2 mx-20 text-xm">
+        <div className="flex md:mt-20 mx-20 text-xm">
           © 2024 John Penafiel. All Rights Reserved.
         </div>
       </div>

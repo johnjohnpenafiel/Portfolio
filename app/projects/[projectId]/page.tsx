@@ -13,15 +13,15 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen -mt-[64px] bg-[#f9fafb]">
-      <div className="flex flex-col lg:flex-row w-full h-full pt-28 mb-10">
+      <div className="flex flex-col lg:flex-row w-full h-full pt-28 md:pt-40 mb-10">
         {/* ----- PROJECT DATA SECTION ------ */}
-        <div className="lg:w-1/2 mx-10 pl-0 md:mx-12">
+        <div className="lg:w-1/2 mx-10 md:ml-16">
           {/* NAME */}
           <div className="text-sm lg:text-md font-semibold text-stone-500">
             {project?.name}
           </div>
           {/* TITLE */}
-          <div className=" text-md md:text-2xl xl:text-4xl font-black text-stone-800">
+          <div className=" text-md md:text-2xl xl:text-3xl font-black text-stone-800">
             {project?.title}
           </div>
           {/* DESCRIPTION */}
@@ -29,7 +29,7 @@ const Projects = () => {
             {project?.description}
           </div>
           {/* DETAILS */}
-          <div className="mt-4">
+          <div className="mt-4 text-pretty">
             {project?.details!.map((detail) => (
               <div key={detail.name} className="flex text-xm md:text-sm mb-1">
                 <p className="mr-1 font-semibold">{detail.name}</p>
