@@ -1,6 +1,5 @@
 import Hero from "@/components/Hero";
 import ProjectSection from "@/components/ProjectSection";
-import Work from "@/components/ProjectSection";
 
 function Home() {
   return (

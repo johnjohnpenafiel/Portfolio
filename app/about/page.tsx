@@ -5,7 +5,7 @@ import { aboutInfo } from "@/data";
 
 const About = () => {
   return (
-    <div className="h-screen flex -mt-[64px] || bg-[#f9fafb] border-b">
+    <div className="min-h-screen flex -mt-[64px] || bg-[#f9fafb]">
       <section className="md:mx-[17%]">
         <div className="flex flex-col m-10 mt-44 px-4">
           <h1 className="text-3xl font-semibold text-stone-900">

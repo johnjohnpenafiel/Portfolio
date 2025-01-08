@@ -4,12 +4,12 @@ import React from "react";
 
 import Link from "next/link";
 
-import { projects } from "@/data";
+import { projectCards } from "@/data";
 
 const Footer = () => {
   const contacts = [
     {
-      id: "Linkedin",
+      id: "linkedin",
       title: "LinkedIn",
       href: "https://www.linkedin.com/in/johnjohnpenafiel",
       target: "_blank",
@@ -44,7 +44,7 @@ const Footer = () => {
               PROJECTS
             </h1>
             <ul>
-              {projects.map((project) => (
+              {projectCards.map((project) => (
                 <li key={project.id}>
                   <Link
                     href={project.href}

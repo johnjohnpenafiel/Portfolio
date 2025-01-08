@@ -42,7 +42,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between">
         <Link href="/">
           <Image
-            src="/images/logo.png"
+            src="/images/Logo.svg"
             width={40}
             height={40}
             alt="Picture of the author"

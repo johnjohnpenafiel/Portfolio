@@ -4,15 +4,30 @@ import { useIsVisible } from "@/hooks/useIsVisible";
 import Link from "next/link";
 import React, { useRef } from "react";
 
+interface Link {
+  url: string;
+  icon: React.ElementType;
+}
+
 interface Props {
   id: string;
   title: string;
   description: string;
   stack: string[];
   image: string;
+  duration: string;
+  links: Link[];
 }
 
-const ProjectCard = ({ id, title, description, stack, image }: Props) => {
+const ProjectCard = ({
+  id,
+  title,
+  description,
+  stack,
+  image,
+  duration,
+  links,
+}: Props) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const hasBeenVisible = useIsVisible(cardRef);
   return (
@@ -22,38 +37,61 @@ const ProjectCard = ({ id, title, description, stack, image }: Props) => {
         hasBeenVisible ? "translate-y-0" : "translate-y-40"
       }`}
     >
-      {/* Card Description */}
+      {/* ----- CARD DATA SECTION ----- */}
       <div className="flex flex-col px-5 md:pl-9 md:pr-4 pb-5 mx-3 md:mt-7 md:w-1/2 order-3 md:order-1">
-        <h1 className="text-2xl md:text-3xl font-bold md:mt-4 text-stone-700">
-          {title}
-        </h1>
+        {/* CARD TITLE AND DURATION */}
+        <div className="flex justify-between md:mt-4">
+          <h1 className="flex text-2xl md:text-3xl font-bold text-stone-800">
+            {title}
+          </h1>
+          <p className="flex items-center text-xm text-stone-700">{duration}</p>
+        </div>
+        {/* CARD DESCRIPTION */}
         <p className="mt-4 || text-sm md:text-lg font-light text-gray-600">
           {description}
         </p>
-        {/* Teck Stack */}
-        <ul className="inline-flex flex-wrap mt-4 || text-sm md:text-base">
+        {/* TECH STACK */}
+        <ul className="inline-flex flex-wrap mt-4 || text-sm md:text-sm">
           {stack.map((s, index) => (
-            <li key={index} className="text-stone-700 font-semibold ">
+            <li key={index} className="text-stone-600 font-semibold ">
               {s}
               {index < stack.length - 1 && <span className="mx-2">•</span>}
             </li>
           ))}
         </ul>
-        {/* Button */}
-        <div className="flex pt-5 items-end h-full pb-5 md:pb-[1px]">
+        {/* ----- BUTTONS ----- */}
+        <div className="flex pt-5 justify-between items-center h-full pb-5 md:pb-[1px] md:mb-10">
+          {/* SEE MORE BUTTON */}
           <Link href={`/projects/${id}`}>
-            <button className="md:w-32 md:mb-10 p-2 || border border-stone-600 bg-transparent text-stone-700 rounded hover:bg-gray-100">
+            <button className="md:w-32 p-2 || border border-stone-600 bg-transparent text-stone-700 rounded hover:bg-gray-100/80">
               See more
             </button>
           </Link>
+          {/* SOCIAL LINKS */}
+          <div className="flex items-center pr-2">
+            {links.map((link, index) => {
+              const Icon = link.icon;
+              return (
+                <a
+                  key={index}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Icon className="ml-3 text-xl text-stone-500 hover:text-stone-700" />
+                </a>
+              );
+            })}
+          </div>
         </div>
       </div>
-      {/* Card Image */}
-      <div className="flex md:w-1/2 md:h-full md:shrink-1 order-2 items-center justify-center">
+      {/* ----- IMAGE SECTION ----- */}
+      {/* IMAGE */}
+      <div className="flex h-auto md:w-1/2 order-2 items-center justify-center">
         <img
           src={image}
           alt="Project Picture"
-          className="object-contain h-auto w-full md:pl-6 "
+          className="flex h-full object-contain w-full md:pl-6 "
         />
       </div>
     </div>
