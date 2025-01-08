@@ -40,14 +40,6 @@ body {
 
 @font-face {
   font-family: "Kodchasan";
-  font-weight: 200;
-  font-style: italic;
-  src: url("./fonts/KodchasanFont/Kodchasan-ExtraLightItalic.ttf")
-    format("truetype");
-}
-
-@font-face {
-  font-family: "Kodchasan";
   font-weight: 300;
   font-style: italic;
   src: url("./fonts/KodchasanFont/Kodchasan-LightItalic.ttf") format("truetype");
@@ -65,14 +57,6 @@ body {
   font-weight: 500;
   font-style: italic;
   src: url("./fonts/KodchasanFont/Kodchasan-MediumItalic.ttf")
-    format("truetype");
-}
-
-@font-face {
-  font-family: "Kodchasan";
-  font-weight: 600;
-  font-style: italic;
-  src: url("./fonts/KodchasanFont/Kodchasan-SemiBoldItalic.ttf")
     format("truetype");
 }
 
