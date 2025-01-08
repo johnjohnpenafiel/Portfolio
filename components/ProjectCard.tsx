@@ -78,7 +78,7 @@ const ProjectCard = ({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon className="ml-3 text-xl text-stone-500 hover:text-stone-700" />
+                  <Icon className="ml-3 text-xl text-stone-400 hover:text-stone-600" />
                 </a>
               );
             })}

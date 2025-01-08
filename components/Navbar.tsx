@@ -77,7 +77,7 @@ const Navbar = () => {
                 target={menuItem.target}
                 rel={menuItem.rel}
                 className={`text-gray-700 hover:text-gray-900 ${
-                  menuItem.active && "underline text-gray-900"
+                  menuItem.active && "underline decoration-2 text-gray-900"
                 }`}
               >
                 {menuItem.label}

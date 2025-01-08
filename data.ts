@@ -219,7 +219,7 @@ export const aboutInfo = [
     id: 1,
     title: "Background",
     content:
-      "I combine creative and technical expertise, transitioning from film production—where I developed project management and communication skills on high-profile productions like a Netflix documentary—to software engineering. After completing an intensive Flatiron School bootcamp, I gained proficiency in full-stack development with JavaScript, React, Python, Flask, and SQLAlchemy. My projects showcase intuitive UI design, scalable backends, and modern web practices, blending a creative mindset with technical precision to deliver innovative software solutions.",
+      "Ever since I was a teenager navigating a new culture and language after moving to the United States, I’ve been fascinated by how people adapt and connect through shared experiences. This fascination initially drew me to film production, where I explored storytelling as a medium for human connection. Over time, my curiosity shifted to the technology shaping those experiences, leading me to dive into software engineering. Here, I discovered an expansive creative platform where I could combine technical precision with a desire to build tools that bring people closer to what inspires them.",
   },
   {
     id: 2,
