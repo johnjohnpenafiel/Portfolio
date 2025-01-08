@@ -14,7 +14,6 @@ const ProjectSection = () => {
             description={project.description}
             stack={project.stack}
             image={project.imageCard}
-            order={project.order}
           />
         ))}
       </div>

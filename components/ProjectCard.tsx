@@ -10,17 +10,9 @@ interface Props {
   description: string;
   stack: string[];
   image: string;
-  order: string;
 }
 
-const ProjectCard = ({
-  id,
-  title,
-  description,
-  stack,
-  image,
-  order,
-}: Props) => {
+const ProjectCard = ({ id, title, description, stack, image }: Props) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const hasBeenVisible = useIsVisible(cardRef);
   return (
