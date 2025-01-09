@@ -12,28 +12,32 @@ body {
   font-family: "Kodchasan";
   font-weight: 300;
   font-style: normal;
-  src: url("./fonts/KodchasanFont/Kodchasan-Light.ttf") format("truetype");
+  src: url("../public/fonts/KodchasanFont/Kodchasan-Light.ttf")
+    format("truetype");
 }
 
 @font-face {
   font-family: "Kodchasan";
   font-weight: 400;
   font-style: normal;
-  src: url("./fonts/KodchasanFont/Kodchasan-Regular.ttf") format("truetype");
+  src: url("../public/fonts/KodchasanFont/Kodchasan-Regular.ttf")
+    format("truetype");
 }
 
 @font-face {
   font-family: "Kodchasan";
   font-weight: 500;
   font-style: normal;
-  src: url("./fonts/KodchasanFont/Kodchasan-Medium.ttf") format("truetype");
+  src: url("../public/fonts/KodchasanFont/Kodchasan-Medium.ttf")
+    format("truetype");
 }
 
 @font-face {
   font-family: "Kodchasan";
   font-weight: 700;
   font-style: normal;
-  src: url("./fonts/KodchasanFont/Kodchasan-Bold.ttf") format("truetype");
+  src: url("../public/fonts/KodchasanFont/Kodchasan-Bold.ttf")
+    format("truetype");
 }
 
 /* Kodchasan Font Italic Styles */
@@ -42,21 +46,23 @@ body {
   font-family: "Kodchasan";
   font-weight: 300;
   font-style: italic;
-  src: url("./fonts/KodchasanFont/Kodchasan-LightItalic.ttf") format("truetype");
+  src: url("../public/fonts/KodchasanFont/Kodchasan-LightItalic.ttf")
+    format("truetype");
 }
 
 @font-face {
   font-family: "Kodchasan";
   font-weight: 400;
   font-style: italic;
-  src: url("./fonts/KodchasanFont/Kodchasan-Italic.ttf") format("truetype");
+  src: url("../public/fonts/KodchasanFont/Kodchasan-Italic.ttf")
+    format("truetype");
 }
 
 @font-face {
   font-family: "Kodchasan";
   font-weight: 500;
   font-style: italic;
-  src: url("./fonts/KodchasanFont/Kodchasan-MediumItalic.ttf")
+  src: url("../public/fonts/KodchasanFont/Kodchasan-MediumItalic.ttf")
     format("truetype");
 }
 
@@ -64,5 +70,6 @@ body {
   font-family: "Kodchasan";
   font-weight: 700;
   font-style: italic;
-  src: url("./fonts/KodchasanFont/Kodchasan-BoldItalic.ttf") format("truetype");
+  src: url("../public/fonts/KodchasanFont/Kodchasan-BoldItalic.ttf")
+    format("truetype");
 }
