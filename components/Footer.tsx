@@ -29,11 +29,9 @@ const Footer = () => {
       {/* ----- FOOTER SECTION ----- */}
       <div className="md:flex justify-between">
         {/* ----- ABOUT SECTION ----- */}
-        <div className="flex-col my-14 mx-10 pl-2 md:w-1/2 md:pr-32 xl:ml-16">
-          <h1 className="text-sm md:text-md text-gray-500 font-medium mb-2">
-            About
-          </h1>
-          <p className="text-sm md:text-base text-wrap">
+        <div className="flex-col my-14 mx-10 pl-2 md:w-1/2 md:pr-20 xl:ml-16">
+          <h1 className="text-sm text-gray-500 font-medium mb-2">About me</h1>
+          <p className="text-sm text-wrap">
             I am Software Engineer specializing in Full Stack Development, I
             found programming to be an expansive creative platform with endless
             possibilities. My role is to unravel intricate challenges through
@@ -46,15 +44,13 @@ const Footer = () => {
         <div className="flex justify-around md:mr-10 xl:mr-32 md:space-x-32 md:justify-center my-10 md:my-14">
           <div>
             {/* PROJECTS */}
-            <h1 className="mb-1 text-sm md:text-md text-gray-500 font-medium">
-              Projects
-            </h1>
+            <h1 className="mb-1 text-sm text-gray-500 font-medium">Projects</h1>
             <ul>
               {projectCards.map((project) => (
                 <li key={project.id}>
                   <Link
                     href={project.href}
-                    className="text-sm md:text-md text-stone-800 leading-10 hover:text-stone-400"
+                    className="text-sm md:text-base text-stone-800 leading-10 hover:text-stone-400"
                   >
                     {project.title}
                   </Link>
@@ -64,9 +60,7 @@ const Footer = () => {
           </div>
           <div>
             {/* CONTACT */}
-            <h1 className="mb-1 text-sm md:text-md text-gray-500 font-medium">
-              Contact
-            </h1>
+            <h1 className="mb-1 text-sm text-gray-500 font-medium">Contact</h1>
             <ul>
               {contacts.map((contact) => (
                 <li key={contact.id}>
@@ -74,7 +68,7 @@ const Footer = () => {
                     href={contact.href}
                     target={contact.target}
                     rel={contact.rel}
-                    className="text-sm md:text-md text-stone-800 leading-10 hover:text-stone-400"
+                    className="text-sm md:text-base text-stone-800 leading-10 hover:text-stone-400"
                   >
                     {contact.title}
                     <span>↗</span>
