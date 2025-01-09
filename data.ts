@@ -112,10 +112,13 @@ export const projectData = [
       },
     ],
     images: [
-      "/images/ParallaxUICanva1.svg",
-      "/images/ParallaxUICanva2.svg",
-      "/images/ParallaxUICanva3.svg",
-      "/images/ParallaxUICanva4.svg",
+      {
+        src: "/images/ParallaxUICanva1.svg",
+        description: "Costumizable Design",
+      },
+      { src: "/images/ParallaxUICanva2.svg", description: "Design Area" },
+      { src: "/images/ParallaxUICanva3.svg", description: "Parallax Effect" },
+      { src: "/images/ParallaxUICanva4.svg", description: "Export Design" },
     ],
     links: [
       {
@@ -161,10 +164,19 @@ export const projectData = [
       },
     ],
     images: [
-      "/images/NextGameCanva1.svg",
-      "/images/NextGameCanva3.svg",
-      "/images/NextGameCanva4.svg",
-      "/images/NextGameCanva2.svg",
+      {
+        src: "/images/NextGameCanva1.svg",
+        description: "Get Platforms, Ratings and Enjoyment game details",
+      },
+      {
+        src: "/images/NextGameCanva3.svg",
+        description: "Filter by Genre, Platform and Order",
+      },
+      {
+        src: "/images/NextGameCanva4.svg",
+        description: "Search through a vast library of games.",
+      },
+      { src: "/images/NextGameCanva2.svg", description: "Light/Dark Mode" },
     ],
     links: [
       {
@@ -208,7 +220,7 @@ export const projectData = [
         description: "Final project of my Flatiron School program.",
       },
     ],
-    images: ["/images/JackSpotB.png"],
+    images: [{ src: "/images/JackSpotB.png", description: "test 1" }],
     links: [
       {
         name: "Coming soon",

@@ -1,31 +1,47 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
-
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
-
 import { projectData } from "@/data";
 
 const Projects = () => {
   const { projectId } = useParams();
   const project = projectData.find((project) => project.id === projectId);
   const carouselRef = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleScroll = () => {
+    if (carouselRef.current) {
+      const scrollLeft = carouselRef.current.scrollLeft;
+      const width = carouselRef.current.offsetWidth;
+      const newIndex = Math.round(scrollLeft / width);
+      setCurrentIndex(newIndex);
+    }
+  };
+
+  useEffect(() => {
+    const carousel = carouselRef.current;
+    if (carousel) {
+      carousel.addEventListener("scroll", handleScroll);
+      return () => {
+        carousel.removeEventListener("scroll", handleScroll);
+      };
+    }
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (carouselRef.current) {
-        const { scrollLeft, clientWidth, scrollWidth } = carouselRef.current;
-        const isLastSlide = scrollLeft + clientWidth >= scrollWidth;
+        const { scrollLeft, clientWidth } = carouselRef.current;
 
         carouselRef.current.scrollTo({
           left: scrollLeft + clientWidth,
           behavior: "smooth",
         });
       }
-    }, 8000);
+    }, 10000);
 
-    // Cleanup the interval when the component unmounts
     return () => clearInterval(interval);
   }, []);
 
@@ -81,21 +97,21 @@ const Projects = () => {
             ))}
           </div>
         </div>
-        {/* ----- IMAGE SECTION ----- */}
-        {/* IMAGE */}
-        <div className="xl:w-1/2 flex justify-center items-center mx-10 md:mt-10 lg:mt-20 lg:mr-5">
+        {/* ----- IMAGE CAROUSEL SECTION ----- */}
+        <div className="xl:w-1/2 flex-col justify-center items-center mx-10 md:mt-10 lg:mt-20 lg:mr-5">
           {project?.images?.length ? (
             <div
               ref={carouselRef}
               className="snap-x snap-mandatory flex overflow-x-scroll w-[525px] h-[400px]"
             >
+              {/* IMAGE */}
               {project.images.map((image, index) => (
                 <div
                   key={index}
                   className="snap-always snap-center flex-shrink-0 w-full h-full flex justify-center items-center"
                 >
                   <Image
-                    src={image}
+                    src={image.src}
                     alt={`Project ${project.title} - Image ${index + 1}`}
                     width={525}
                     height={400}
@@ -106,6 +122,9 @@ const Projects = () => {
           ) : (
             <p>No images available</p>
           )}
+          <p className="text-center font-light">
+            {project?.images[currentIndex]?.description}
+          </p>
         </div>
       </div>
     </div>
