@@ -30,7 +30,7 @@ const Projects = () => {
           </div>
           {/* DETAILS */}
           <div className="mt-4 text-pretty">
-            {project?.details!.map((detail) => (
+            {project?.details.map((detail) => (
               <div key={detail.name} className="flex text-xm md:text-sm mb-1">
                 <p className="mr-1 font-semibold">{detail.name}</p>
                 <p>{detail.description}</p>
@@ -66,12 +66,16 @@ const Projects = () => {
         {/* ----- IMAGE SECTION ----- */}
         {/* IMAGE */}
         <div className="lg:w-1/2 flex justify-center items-center mx-10 mt-10 lg:mt-20 lg:mr-5">
-          <Image
-            src={project?.heroImage!}
-            width={525}
-            height={525}
-            alt="ParallaxUI website view"
-          />
+          {project?.heroImage ? (
+            <Image
+              src={project.heroImage}
+              width={525}
+              height={525}
+              alt="ParallaxUI website view"
+            />
+          ) : (
+            <p>Image not available</p>
+          )}
         </div>
       </div>
     </div>

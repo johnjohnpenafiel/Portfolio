@@ -1,6 +1,7 @@
 "use client";
 
 import { useIsVisible } from "@/hooks/useIsVisible";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useRef } from "react";
 
@@ -88,8 +89,10 @@ const ProjectCard = ({
       {/* ----- IMAGE SECTION ----- */}
       {/* IMAGE */}
       <div className="flex h-auto md:w-1/2 order-2 items-center justify-center">
-        <img
+        <Image
           src={image}
+          width={500}
+          height={500}
           alt="Project Picture"
           className="flex h-full object-contain w-full md:pl-6 "
         />
