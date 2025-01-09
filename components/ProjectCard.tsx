@@ -34,7 +34,7 @@ const ProjectCard = ({
   return (
     <div
       ref={cardRef}
-      className={`flex flex-col w-full md:max-w-[1100px] md:max-h-[400px] h-auto md:flex-row md:h-auto mb-6 || group bg-[#f9fafb] border-b border-gray-200/80 overflow-hidden || transition-transform ease-in-out delay-100 duration-1000 ${
+      className={`flex flex-col w-full md:max-w-[1100px] md:max-h-[400px] h-auto md:flex-row md:h-auto mb-6 || bg-[#f9fafb] border-b border-gray-200/80 overflow-hidden || transition-transform ease-in-out delay-100 duration-1000 ${
         hasBeenVisible ? "translate-y-0" : "translate-y-40"
       }`}
     >
@@ -42,10 +42,12 @@ const ProjectCard = ({
       <div className="flex flex-col px-5 md:pl-9 md:pr-4 pb-5 mx-3 md:mt-7 md:w-1/2 order-3 md:order-1">
         {/* CARD TITLE AND DURATION */}
         <div className="flex justify-between md:mt-4">
-          <h1 className="flex text-2xl md:text-3xl font-bold text-stone-800">
+          <h1 className="flex text-2xl md:text-3xl font-bold text-neutral-800">
             {title}
           </h1>
-          <p className="flex items-center text-xm text-stone-700">{duration}</p>
+          <p className="flex items-center text-xm text-neutral-500">
+            {duration}
+          </p>
         </div>
         {/* CARD DESCRIPTION */}
         <p className="mt-4 || text-sm md:text-lg font-light text-gray-600">
@@ -54,7 +56,7 @@ const ProjectCard = ({
         {/* TECH STACK */}
         <ul className="inline-flex flex-wrap mt-4 || text-sm md:text-sm">
           {stack.map((s, index) => (
-            <li key={index} className="text-stone-600 font-semibold ">
+            <li key={index} className="text-neutral-500 font-semibold ">
               {s}
               {index < stack.length - 1 && <span className="mx-2">•</span>}
             </li>
@@ -64,11 +66,11 @@ const ProjectCard = ({
         <div className="flex pt-5 justify-between items-center h-full pb-5 md:pb-[1px] md:mb-10">
           {/* SEE MORE BUTTON */}
           <Link href={`/projects/${id}`}>
-            <button className="md:w-32 p-2 || border border-stone-600 bg-transparent text-stone-700 rounded hover:bg-gray-100/80">
+            <button className="md:w-32 p-1 || border border-neutral-500 bg-transparent text-neutral-700 rounded hover:text-neutral-400 hover:border-neutral-400">
               See more
             </button>
           </Link>
-          {/* SOCIAL LINKS */}
+          {/* PROJECT LINKS */}
           <div className="flex items-center pr-2">
             {links.map((link, index) => {
               const Icon = link.icon;
@@ -79,7 +81,7 @@ const ProjectCard = ({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Icon className="ml-3 text-xl text-stone-400 hover:text-stone-600" />
+                  <Icon className="ml-3 text-xl text-neutral-400 hover:text-neutral-500" />
                 </a>
               );
             })}

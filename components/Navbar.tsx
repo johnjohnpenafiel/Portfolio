@@ -40,6 +40,7 @@ const Navbar = () => {
   return (
     <nav className="relative py-3 px-7 md:px-5 || border-b border-gray-200/80 bg-[#f9fafb]">
       <div className="flex items-center justify-between">
+        {/* PARALLAX UI LOGO */}
         <Link href="/">
           <Image
             src="/images/Logo.svg"
@@ -49,7 +50,7 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* Mobile Menu Button */}
+        {/* MOBILE MENU BUTTON */}
         <button
           className="flex pt-[4px] md:hidden"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -68,7 +69,7 @@ const Navbar = () => {
           </div>
         </button>
 
-        {/* Desktop Menu */}
+        {/* DESKTOP MENU */}
         <ul className="hidden md:flex space-x-12 pr-2 || text-sm">
           {MenuItems.map((menuItem) => (
             <li key={menuItem.label}>
@@ -77,7 +78,7 @@ const Navbar = () => {
                 target={menuItem.target}
                 rel={menuItem.rel}
                 className={`text-gray-700 hover:text-gray-900 ${
-                  menuItem.active && "underline decoration-2 text-gray-900"
+                  menuItem.active && "underline decoration-1 text-gray-900"
                 }`}
               >
                 {menuItem.label}
@@ -87,7 +88,7 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* Mobile Menu */}
+      {/* MOBILE MENU */}
       <ul
         className={`absolute flex flex-col left-0 w-full md:hidden items-center space-y-5 py-14 || bg-[#f9fafb] border-b border-gray-200/80 transition-transform origin-top duration-500 ease-in-out
            ${

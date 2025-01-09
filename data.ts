@@ -18,7 +18,7 @@ export const projectCards = [
       "Material UI",
     ],
     duration: "Oct - Dec 2024",
-    imageCard: "/images/ParallaxUIB.png",
+    imageCard: "/images/ParallaxUICanva2.svg",
     href: "/projects/parallaxui",
     links: [
       {
@@ -111,7 +111,12 @@ export const projectData = [
           "To create a useful tool while picking up new skills along the way",
       },
     ],
-    heroImage: "/images/ParallaxUIB.png",
+    images: [
+      "/images/ParallaxUICanva1.svg",
+      "/images/ParallaxUICanva2.svg",
+      "/images/ParallaxUICanva3.svg",
+      "/images/ParallaxUICanva4.svg",
+    ],
     links: [
       {
         name: "Live site",
@@ -155,7 +160,7 @@ export const projectData = [
           "To create a useful tool while picking up new skills along the way",
       },
     ],
-    heroImage: "/images/NextGameB.png",
+    images: ["/images/NextGameB.png"],
     links: [
       {
         name: "Coming soon",
@@ -198,7 +203,7 @@ export const projectData = [
         description: "Final project of my Flatiron School program.",
       },
     ],
-    heroImage: "/images/JackSpotB.png",
+    images: ["/images/JackSpotB.png"],
     links: [
       {
         name: "Coming soon",
@@ -218,19 +223,19 @@ export const aboutInfo = [
     id: 1,
     title: "Background",
     content:
-      "Ever since I was a teenager navigating a new culture and language after moving to the United States, I’ve been fascinated by how people adapt and connect through shared experiences. This fascination initially drew me to film production, where I explored storytelling as a medium for human connection. Over time, my curiosity shifted to the technology shaping those experiences, leading me to dive into software engineering. Here, I discovered an expansive creative platform where I could combine technical precision with a desire to build tools that bring people closer to what inspires them.",
+      "Ever since I was a teenager navigating a new culture and language after moving to the United States, I’ve been fascinated by how people adapt and connect through shared experiences. This fascination initially drew me to film production, where I explored storytelling as a medium for human connection. Over time, my curiosity shifted to the technology shaping those experiences, leading me to dive into software engineering.",
   },
   {
     id: 2,
     title: "Software Engineer",
     content:
-      "I am Software Engineer specializing in Full Stack Development, I found programming to be an expansive creative platform with endless possibilities. My role is to unravel intricate challenges through creativity and focused problem-solving, which helps me come up with practical and impactful solutions. To me, programming is both an art and a science, balancing creativity with rigorous logic.",
+      "As a Software Engineer specializing in Full Stack Development, I thrive at the intersection of creativity and technical precision. My journey into programming was sparked by a fascination with how technology drives innovation, and this curiosity has fueled my commitment to mastering both frontend and backend development. I excel at breaking down complex challenges into manageable solutions, crafting efficient APIs, and building intuitive user interfaces. With experience in Python, JavaScript, TypeScript, React, Next, Flask, and SQLAlchemy, I am equipped to design and deliver scalable, high-quality applications. For me, programming is a creative medium, an opportunity to blend logical problem-solving with innovative design to develop solutions that are both functional and impactful.",
   },
   {
     id: 3,
     title: "Things I love",
     content:
-      "When I'm not coding, you'll often find me staying active through running or eating pizza. I also enjoy capturing moments through photography and brewing the perfect cup of coffee.🏃 🍕 ☕ 📷 🎞️",
+      "When I'm not coding, you'll often find me staying active through running or eating pizza. I also enjoy capturing moments through photography and brewing the perfect cup of coffee. 🏃 🍕 ☕ 📷 ",
   },
 ];
 

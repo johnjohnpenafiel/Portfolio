@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import { useParams } from "next/navigation";
 import Image from "next/image";
@@ -10,12 +10,30 @@ import { projectData } from "@/data";
 const Projects = () => {
   const { projectId } = useParams();
   const project = projectData.find((project) => project.id === projectId);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (carouselRef.current) {
+        const { scrollLeft, clientWidth, scrollWidth } = carouselRef.current;
+        const isLastSlide = scrollLeft + clientWidth >= scrollWidth;
+
+        carouselRef.current.scrollTo({
+          left: scrollLeft + clientWidth,
+          behavior: "smooth",
+        });
+      }
+    }, 8000);
+
+    // Cleanup the interval when the component unmounts
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="min-h-screen -mt-[64px] bg-[#f9fafb]">
-      <div className="flex flex-col lg:flex-row w-full h-full pt-28 md:pt-40 mb-10">
+      <div className="flex flex-col xl:flex-row w-full h-full pt-28 md:pt-40 md:pb-10">
         {/* ----- PROJECT DATA SECTION ------ */}
-        <div className="lg:w-1/2 mx-10 md:ml-16">
+        <div className="xl:w-1/2 mx-10 md:ml-16">
           {/* NAME */}
           <div className="text-sm lg:text-md font-semibold text-stone-500">
             {project?.name}
@@ -65,16 +83,28 @@ const Projects = () => {
         </div>
         {/* ----- IMAGE SECTION ----- */}
         {/* IMAGE */}
-        <div className="lg:w-1/2 flex justify-center items-center mx-10 mt-10 lg:mt-20 lg:mr-5">
-          {project?.heroImage ? (
-            <Image
-              src={project.heroImage}
-              width={525}
-              height={525}
-              alt="ParallaxUI website view"
-            />
+        <div className="xl:w-1/2 flex justify-center items-center mx-10 md:mt-10 lg:mt-20 lg:mr-5">
+          {project?.images?.length ? (
+            <div
+              ref={carouselRef}
+              className="snap-x snap-mandatory flex overflow-x-scroll w-[525px] h-[400px]"
+            >
+              {project.images.map((image, index) => (
+                <div
+                  key={index}
+                  className="snap-always snap-center flex-shrink-0 w-full h-full flex justify-center items-center"
+                >
+                  <Image
+                    src={image}
+                    alt={`Project ${project.title} - Image ${index + 1}`}
+                    width={525}
+                    height={400}
+                  />
+                </div>
+              ))}
+            </div>
           ) : (
-            <p>Image not available</p>
+            <p>No images available</p>
           )}
         </div>
       </div>
