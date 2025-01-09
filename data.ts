@@ -46,7 +46,7 @@ export const projectCards = [
       "Chakra UI",
     ],
     duration: "Sept - Oct 2024",
-    imageCard: "/images/NextGameB.png",
+    imageCard: "/images/NextGameCanva1.svg",
     href: "/projects/nextgame",
     links: [
       {
@@ -160,7 +160,12 @@ export const projectData = [
           "To create a useful tool while picking up new skills along the way",
       },
     ],
-    images: ["/images/NextGameB.png"],
+    images: [
+      "/images/NextGameCanva1.svg",
+      "/images/NextGameCanva3.svg",
+      "/images/NextGameCanva4.svg",
+      "/images/NextGameCanva2.svg",
+    ],
     links: [
       {
         name: "Coming soon",
