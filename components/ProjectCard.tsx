@@ -66,7 +66,7 @@ const ProjectCard = ({
         <div className="flex pt-5 justify-between items-center h-full pb-5 md:pb-[1px] md:mb-10">
           {/* SEE MORE BUTTON */}
           <Link href={`/projects/${id}`}>
-            <button className="md:w-32 p-1 || border border-neutral-500 bg-transparent text-neutral-700 rounded hover:text-neutral-400 hover:border-neutral-400">
+            <button className="md:w-32 p-2 || border border-neutral-500 bg-transparent text-neutral-700 rounded hover:text-neutral-400 hover:border-neutral-400">
               See more
             </button>
           </Link>

@@ -98,11 +98,11 @@ const Projects = () => {
           </div>
         </div>
         {/* ----- IMAGE CAROUSEL SECTION ----- */}
-        <div className="xl:w-1/2 flex-col justify-center items-center mx-10 md:mt-10 lg:mt-20 lg:mr-5">
+        <div className="xl:w-1/2 flex-col justify-center items-center mx-5 my-10 md:my-0 md:mx-10 md:mt-10 lg:mt-20 lg:mr-5">
           {project?.images?.length ? (
             <div
               ref={carouselRef}
-              className="snap-x snap-mandatory flex overflow-x-scroll w-[525px] h-[400px]"
+              className="snap-x snap-mandatory flex overflow-x-scroll w-auto h-auto md:w-[525px] md:h-[400px]"
             >
               {/* IMAGE */}
               {project.images.map((image, index) => (

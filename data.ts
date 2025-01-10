@@ -41,6 +41,7 @@ export const projectCards = [
       "Typescript",
       "Python",
       "Flask",
+      "API",
       "SQLite3",
       "SQLAlchemy",
       "Chakra UI",
@@ -150,7 +151,7 @@ export const projectData = [
       },
       {
         name: "Backend:",
-        description: "Python, Flask, SQLAlchemy, SQLite3",
+        description: "Python, Flask, API, SQLAlchemy, SQLite3",
       },
       {
         name: "Deployment:",
