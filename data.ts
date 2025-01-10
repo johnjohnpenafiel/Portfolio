@@ -46,7 +46,7 @@ export const projectCards = [
       "Chakra UI",
     ],
     duration: "Sept - Oct 2024",
-    imageCard: "/images/NextGameCanva1.svg",
+    imageCard: "/images/NextGameCanva2.svg",
     href: "/projects/nextgame",
     links: [
       {
@@ -69,7 +69,7 @@ export const projectCards = [
       "Tailwind CSS",
     ],
     duration: "Jul - Aug 2024",
-    imageCard: "/images/JackSpotB.png",
+    imageCard: "/images/JackSpotCanva2.svg",
     href: "/projects/jackspot",
     links: [
       {
@@ -117,7 +117,10 @@ export const projectData = [
         description: "Costumizable Design",
       },
       { src: "/images/ParallaxUICanva2.svg", description: "Design Area" },
-      { src: "/images/ParallaxUICanva3.svg", description: "Parallax Effect" },
+      {
+        src: "/images/ParallaxUICanva3.svg",
+        description: "Parallax Effect Preview",
+      },
       { src: "/images/ParallaxUICanva4.svg", description: "Export Design" },
     ],
     links: [
@@ -160,13 +163,13 @@ export const projectData = [
       {
         name: "Purpose:",
         description:
-          "To create a useful tool while picking up new skills along the way",
+          "To build a sleek, functional app that enhances game discovery while refining my technical expertise.",
       },
     ],
     images: [
       {
         src: "/images/NextGameCanva1.svg",
-        description: "Get Platforms, Ratings and Enjoyment game details",
+        description: "Get Platforms, Rating and Score game details",
       },
       {
         src: "/images/NextGameCanva3.svg",
@@ -220,7 +223,24 @@ export const projectData = [
         description: "Final project of my Flatiron School program.",
       },
     ],
-    images: [{ src: "/images/JackSpotB.png", description: "test 1" }],
+    images: [
+      {
+        src: "/images/JackSpotCanva1.svg",
+        description: "View recent created Spots",
+      },
+      { src: "/images/JackSpotCanva2.svg", description: "Select a Collection" },
+      {
+        src: "/images/JackSpotCanva3.svg",
+        description: "Select a Spot to view related information",
+      },
+      {
+        src: "/images/JackSpotCanva4.svg",
+        description: "Search by name or type",
+      },
+      { src: "/images/JackSpotCanva5.svg", description: "Add a Collection" },
+      { src: "/images/JackSpotCanva6.svg", description: "Add a Spot" },
+      { src: "/images/JackSpotCanva7.svg", description: "Mobile View" },
+    ],
     links: [
       {
         name: "Coming soon",
