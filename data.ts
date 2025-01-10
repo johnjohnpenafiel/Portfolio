@@ -3,6 +3,7 @@ import { FaGithub } from "react-icons/fa";
 import { TfiWorld } from "react-icons/tfi";
 
 export const projectCards = [
+  // PARALLAX UI
   {
     id: "parallaxui",
     title: "ParallaxUI",
@@ -31,6 +32,7 @@ export const projectCards = [
       },
     ],
   },
+  // NEXTGAME
   {
     id: "nextgame",
     title: "NextGame",
@@ -42,8 +44,8 @@ export const projectCards = [
       "Python",
       "Flask",
       "API",
-      "SQLite3",
       "SQLAlchemy",
+      "SQLite3",
       "Chakra UI",
     ],
     duration: "Sept - Oct 2024",
@@ -56,6 +58,7 @@ export const projectCards = [
       },
     ],
   },
+  // JACKSPOT
   {
     id: "jackspot",
     title: "JackSpot",
@@ -82,6 +85,7 @@ export const projectCards = [
 ];
 
 export const projectData = [
+  // PARALLAX UI
   {
     id: "parallaxui",
     name: "ParallaxUI",
@@ -137,6 +141,7 @@ export const projectData = [
       },
     ],
   },
+  // NEXTGAME
   {
     id: "nextgame",
     name: "NextGame",
@@ -195,6 +200,7 @@ export const projectData = [
       },
     ],
   },
+  // JACKSPOT
   {
     id: "jackspot",
     name: "JackSpot",
@@ -229,7 +235,9 @@ export const projectData = [
         src: "/images/JackSpotCanva1.svg",
         description: "View recent created Spots",
       },
+      { src: "/images/JackSpotCanva5.svg", description: "Create a Collection" },
       { src: "/images/JackSpotCanva2.svg", description: "Select a Collection" },
+      { src: "/images/JackSpotCanva6.svg", description: "Create a Spot" },
       {
         src: "/images/JackSpotCanva3.svg",
         description: "Select a Spot to view related information",
@@ -238,8 +246,6 @@ export const projectData = [
         src: "/images/JackSpotCanva4.svg",
         description: "Search by name or type",
       },
-      { src: "/images/JackSpotCanva5.svg", description: "Add a Collection" },
-      { src: "/images/JackSpotCanva6.svg", description: "Add a Spot" },
       { src: "/images/JackSpotCanva7.svg", description: "Mobile View" },
     ],
     links: [

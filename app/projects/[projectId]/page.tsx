@@ -98,7 +98,7 @@ const Projects = () => {
           </div>
         </div>
         {/* ----- IMAGE CAROUSEL SECTION ----- */}
-        <div className="xl:w-1/2 flex-col justify-center items-center mx-5 my-10 md:my-0 md:mx-10 md:mt-10 lg:mt-20 lg:mr-5">
+        <div className="xl:w-1/2 flex flex-col justify-center items-center mx-5 my-10 md:my-0 md:mx-10 md:mt-10 lg:mt-20 lg:mr-5">
           {project?.images?.length ? (
             <div
               ref={carouselRef}
@@ -108,13 +108,14 @@ const Projects = () => {
               {project.images.map((image, index) => (
                 <div
                   key={index}
-                  className="snap-always snap-center flex-shrink-0 w-full h-full flex justify-center items-center"
+                  className="flex w-full h-full snap-always snap-center flex-shrink-0 justify-center items-center"
                 >
                   <Image
                     src={image.src}
                     alt={`Project ${project.title} - Image ${index + 1}`}
                     width={525}
                     height={400}
+                    style={{ width: "auto", height: "auto" }}
                   />
                 </div>
               ))}
