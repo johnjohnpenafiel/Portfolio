@@ -16,6 +16,7 @@ export const projectCards = [
       "Flask",
       "SQLAlchemy",
       "PostgreSQL",
+      "AWS Cloud Services",
       "Material UI",
     ],
     duration: "Oct - Dec 2024",
@@ -273,7 +274,7 @@ export const aboutInfo = [
     id: 2,
     title: "Software Engineer",
     content:
-      "As a Software Engineer specializing in Full Stack Development, I thrive at the intersection of creativity and technical precision. My journey into programming was sparked by a fascination with how technology drives innovation, and this curiosity has fueled my commitment to mastering both frontend and backend development. I excel at breaking down complex challenges into manageable solutions, crafting efficient APIs, and building intuitive user interfaces. With experience in Python, JavaScript, TypeScript, React, Next, Flask, and SQLAlchemy, I am equipped to design and deliver scalable, high-quality applications. For me, programming is a creative medium, an opportunity to blend logical problem-solving with innovative design to develop solutions that are both functional and impactful.",
+      "I excel at breaking down complex challenges into manageable solutions, crafting efficient APIs, and building intuitive user interfaces. With experience in Python, JavaScript, TypeScript, React, Next, Flask, SQL databases, SQLAlchemy, APIs, AWS Cloud Services, TailwindCss and MaterialUI, I am equipped to design and deliver scalable, high-quality applications. For me, programming is a creative medium, an opportunity to blend logical problem-solving with innovative design to develop solutions that are both functional and impactful.",
   },
   {
     id: 3,
