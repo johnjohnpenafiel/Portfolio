@@ -1,90 +1,31 @@
-import { TbWorldWww } from "react-icons/tb";
+import { IconType } from "react-icons";
 import { FaGithub } from "react-icons/fa";
-import { TfiWorld } from "react-icons/tfi";
+import { TbWorldWww } from "react-icons/tb";
 
-export const projectCards = [
-  // PARALLAX UI
-  {
-    id: "parallaxui",
-    title: "ParallaxUI",
-    description:
-      "ParallaxUI lets users create customizable, multi-layer designs with parallax effects, and export the code for seamless integration.",
-    stack: [
-      "React.js",
-      "Typescript",
-      "Python",
-      "Flask",
-      "SQLAlchemy",
-      "PostgreSQL",
-      "AWS Cloud Services",
-      "Material UI",
-    ],
-    duration: "Oct - Dec 2024",
-    imageCard: "/images/ParallaxUICanva2.svg",
-    href: "/projects/parallaxui",
-    links: [
-      {
-        url: "https://www.parallaxui.com/",
-        icon: TfiWorld,
-      },
-      {
-        url: "https://github.com/johnjohnpenafiel/ParallaxUI",
-        icon: FaGithub,
-      },
-    ],
-  },
-  // NEXTGAME
-  {
-    id: "nextgame",
-    title: "NextGame",
-    description:
-      "NextGame is a sleek video game discovery app that lets users explore, filter, and sort games using a modern UI.",
-    stack: [
-      "React.js",
-      "Typescript",
-      "Python",
-      "Flask",
-      "API",
-      "SQLAlchemy",
-      "SQLite3",
-      "Chakra UI",
-    ],
-    duration: "Sept - Oct 2024",
-    imageCard: "/images/NextGameCanva2.svg",
-    href: "/projects/nextgame",
-    links: [
-      {
-        url: "https://github.com/johnjohnpenafiel/NextGame",
-        icon: FaGithub,
-      },
-    ],
-  },
-  // JACKSPOT
-  {
-    id: "jackspot",
-    title: "JackSpot",
-    description:
-      "JackSpot lets users create, share, and discover personalized collections of favorite locations based on friends' recommendations.",
-    stack: [
-      "Next.js",
-      "Python",
-      "Flask",
-      "SQLAlchemy",
-      "SQLite3",
-      "Tailwind CSS",
-    ],
-    duration: "Jul - Aug 2024",
-    imageCard: "/images/JackSpotCanva2.svg",
-    href: "/projects/jackspot",
-    links: [
-      {
-        url: "https://github.com/johnjohnpenafiel/JackSpot",
-        icon: FaGithub,
-      },
-    ],
-  },
-];
+export interface ProjectDetail {
+  name: string;
+  description: string;
+}
 
+export interface ProjectImage {
+  src: string;
+  description: string;
+}
+
+export interface ProjectLink {
+  name: string;
+  url: string;
+  icon: IconType;
+}
+export interface Project {
+  id: string;
+  name: string;
+  title: string;
+  description: string;
+  details: ProjectDetail[];
+  images: ProjectImage[];
+  links: ProjectLink[];
+}
 export const projectData = [
   // PARALLAX UI
   {
@@ -268,26 +209,3 @@ export const projectData = [
     ],
   },
 ];
-export const aboutInfo = [
-  {
-    id: 1,
-    title: "Background",
-    content:
-      "Ever since I was a teenager navigating a new culture and language after moving to the United States, I’ve been fascinated by how people adapt and connect through shared experiences. This fascination initially drew me to film production, where I explored storytelling as a medium for human connection. Over time, my curiosity shifted to the technology shaping those experiences, leading me to dive into software engineering.",
-  },
-  {
-    id: 2,
-    title: "Software Engineer",
-    content:
-      "I excel at breaking down complex challenges into manageable solutions, crafting efficient APIs, and building intuitive user interfaces. With experience in Python, JavaScript, TypeScript, React, Next, Flask, SQL databases, SQLAlchemy, APIs, AWS Cloud Services, TailwindCss and MaterialUI, I am equipped to design and deliver scalable, high-quality applications. For me, programming is a creative medium, an opportunity to blend logical problem-solving with innovative design to develop solutions that are both functional and impactful.",
-  },
-  {
-    id: 3,
-    title: "Things I love",
-    content:
-      "When I'm not coding, you'll often find me staying active through running or eating pizza. I also enjoy capturing moments through photography and brewing the perfect cup of coffee. 🏃 🍕 ☕ 📷 ",
-  },
-];
-
-export const resumeLink =
-  "https://docs.google.com/document/d/10GD_M_ltTMUawSyMnTvt7jYHxlt8WtVPZBY48nYuS2s/edit?usp=sharing";

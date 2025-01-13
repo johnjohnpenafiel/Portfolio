@@ -1,7 +1,7 @@
 import React from "react";
 
 import AboutCard from "./components/AboutCard";
-import { aboutInfo } from "@/data";
+import { aboutData } from "@/data/aboutData";
 
 const About = () => {
   return (
@@ -20,7 +20,7 @@ const About = () => {
         </div>
 
         <div className="m-10">
-          {aboutInfo.map((item) => (
+          {aboutData.map((item) => (
             <AboutCard
               key={item.id}
               title={item.title}

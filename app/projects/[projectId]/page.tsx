@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
-import { projectData } from "@/data";
+import { projectData } from "@/data/projectPageData";
 
 const Projects = () => {
   const { projectId } = useParams();
@@ -104,7 +104,7 @@ const Projects = () => {
         </div>
         {/* ----- IMAGE CAROUSEL SECTION ----- */}
         <div className="xl:w-1/2 flex flex-col justify-center items-center mx-5 my-10 md:my-0 md:mx-10 md:mt-10 lg:mt-20 lg:mr-5">
-          {project?.images?.length ? (
+          {project?.images.length ? (
             <div
               ref={carouselRef}
               className="snap-x snap-mandatory flex overflow-x-scroll w-auto h-auto md:w-[525px] md:h-[400px]"

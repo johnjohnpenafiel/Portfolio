@@ -5,7 +5,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import { projectCards } from "@/data";
+import { projectCards } from "@/data/projectCardData";
 
 const Footer = () => {
   // OBFUSCATE EMAIL //

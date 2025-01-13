@@ -7,7 +7,7 @@ import Link from "next/link";
 
 import ThemeSwitch from "./ThemeSwitch";
 import { usePathname } from "next/navigation";
-import { resumeLink } from "@/data";
+import { resumeLink } from "@/data/resumeData";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
