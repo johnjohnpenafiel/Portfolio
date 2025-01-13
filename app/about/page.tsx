@@ -11,7 +11,7 @@ const About = () => {
           <h1 className="text-3xl font-semibold text-stone-900 dark:text-neutral-200">
             John Penafiel
           </h1>
-          <p className="pt-5 || text-gray-600 text-md font-light dark:text-neutral-100">
+          <p className="pt-5 || text-gray-600 text-sm md:text-md font-light dark:text-neutral-100 text-pretty">
             I am a Full Stack Software Engineer who sees programming as a
             creative and logical platform for solving complex challenges and
             building impactful solutions. To me, it’s a blend of art and

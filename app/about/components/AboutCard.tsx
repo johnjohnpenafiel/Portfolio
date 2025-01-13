@@ -34,7 +34,7 @@ const AboutCard = ({ title, content }: Props) => {
         }`}
       >
         <p
-          className={`px-4 pr-14 || text-xs md:text-base leading-loose overflow-hidden transition-all ease-in-out ${
+          className={`px-4 pr-14 || text-xs text-pretty md:text-base leading-loose overflow-hidden transition-all ease-in-out ${
             isOpen
               ? "opacity-100 delay-200 duration-200"
               : "opacity-0 duration-300"
