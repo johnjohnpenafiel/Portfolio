@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import ThemeSwitch from "./ThemeSwitch";
 import { usePathname } from "next/navigation";
 import { resumeLink } from "@/data";
 
@@ -38,18 +39,20 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="relative py-3 px-7 md:px-5 || border-b border-gray-200/80 bg-[#f9fafb]">
-      <div className="flex items-center justify-between">
+    <nav className="relative py-3 px-7 md:px-5 || border-b border-gray-200/80 bg-[#f9fafb] dark:bg-blue-950">
+      <div className="flex items-center justify-between h-[40px]">
         {/* PARALLAX UI LOGO */}
-        <Link href="/">
+        <div className="bg-neutral-200/30 hover:bg-neutral-300/30 rounded-full w-10 h-10 items-center justify-center flex">
+          <ThemeSwitch />
+        </div>
+        {/* <Link href="/">
           <Image
             src="/images/Logo.svg"
             width={40}
             height={40}
             alt="Picture of the author"
           />
-        </Link>
-
+        </Link> */}
         {/* MOBILE MENU BUTTON */}
         <button
           className="flex pt-[4px] md:hidden"

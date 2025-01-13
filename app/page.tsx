@@ -9,7 +9,7 @@ function Home() {
         <Hero />
       </section>
       {/* ----- PROJECT SECTION ----- */}
-      <section className="flex flex-col h-44 items-center justify-center || bg-[#f9fafb]">
+      <section className="flex flex-col h-44 items-center justify-center || bg-[#f9fafb] dark:bg-blue-900">
         <div className="border-b w-8 border-gray-500"></div>
         <div className="text-xl md:text-2xl text-stone-800 font-medium mb-2">
           Projects
