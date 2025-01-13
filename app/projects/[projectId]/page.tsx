@@ -86,7 +86,7 @@ const Projects = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center text-sm text-stone-500 dark:text-neutral-400 border-2 rounded-md md:border-none ${
+                  className={`flex items-center text-sm text-stone-500 dark:text-neutral-400 border border-neutral-500 rounded-md md:border-none ${
                     link.url &&
                     "hover:text-stone-700 dark:hover:text-neutral-200"
                   }`}

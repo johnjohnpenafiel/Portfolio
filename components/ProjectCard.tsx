@@ -39,7 +39,7 @@ const ProjectCard = ({
       }`}
     >
       {/* ----- CARD DATA SECTION ----- */}
-      <div className="flex flex-col px-5 md:pl-9 md:pr-4 pb-5 mx-3 md:mt-7 md:w-1/2 order-3 md:order-1">
+      <div className="flex flex-col px-5 md:pl-9 md:pr-4 pb-5 md:mt-7 md:w-1/2 order-3 md:order-1">
         {/* CARD TITLE AND DURATION */}
         <div className="flex justify-between md:mt-4">
           <h1 className="flex text-2xl md:text-3xl font-bold text-neutral-800 dark:text-neutral-200">

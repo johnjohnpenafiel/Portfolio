@@ -30,7 +30,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="h-96 bg-[#f9fafb] dark:bg-black border-t border-gray-200/80 dark:border-neutral-900/80">
+    <div className="h-auto bg-[#f9fafb] dark:bg-black border-t border-gray-200/80 dark:border-neutral-900/80">
       {/* ----- FOOTER SECTION ----- */}
       <div className="md:flex">
         {/* ----- ABOUT AND PROFILE PICTURE SECTION ----- */}
@@ -75,7 +75,7 @@ const Footer = () => {
                 <li key={project.id}>
                   <Link
                     href={project.href}
-                    className="text-sm md:text-base text-neutral-700 dark:text-neutral-200 leading-loose hover:text-stone-400 dark:hover:text-neutral-400"
+                    className="text-sm md:text-base text-neutral-700 dark:text-neutral-200 leading-9 hover:text-stone-400 dark:hover:text-neutral-400"
                   >
                     {project.title}
                   </Link>
@@ -95,7 +95,7 @@ const Footer = () => {
                     href={contact.href}
                     target={contact.target}
                     rel={contact.rel}
-                    className="text-sm md:text-base text-neutral-700 dark:text-neutral-200 leading-loose hover:text-stone-400 dark:hover:text-neutral-400"
+                    className="text-sm md:text-base text-neutral-700 dark:text-neutral-200 leading-9 hover:text-stone-400 dark:hover:text-neutral-400"
                   >
                     {contact.title}
                     <span>↗</span>
@@ -109,10 +109,10 @@ const Footer = () => {
 
       {/* ----- COPYWRITE SECTION ----- */}
       <div className="flex justify-center md:justify-start pb-4">
-        <div className="flex md:mt-20 md:mx-14 mx-10 text-xm dark:text-neutral-100">
+        <p className="flex mt-24 md:mt-20 md:mx-14 mx-10 text-xm dark:text-neutral-100">
           © 2025 John John Penafiel. All Rights Reserved. Build with Next.js,
-          Typescript and TailwindCss. 🛠️
-        </div>
+          Typescript, and TailwindCSS. 🛠️
+        </p>
       </div>
     </div>
   );
