@@ -5,13 +5,13 @@ import { aboutInfo } from "@/data";
 
 const About = () => {
   return (
-    <div className="min-h-screen flex -mt-[64px] || bg-[#f9fafb]">
+    <div className="min-h-screen flex -mt-[64px] || bg-[#f9fafb] dark:bg-black">
       <section className="md:mx-[17%]">
         <div className="flex flex-col m-10 mt-28 md:mt-44 px-4">
-          <h1 className="text-3xl font-semibold text-stone-900">
+          <h1 className="text-3xl font-semibold text-stone-900 dark:text-neutral-200">
             John Penafiel
           </h1>
-          <p className="pt-5 || text-gray-600 text-md font-light">
+          <p className="pt-5 || text-gray-600 text-md font-light dark:text-neutral-100">
             I am a Full Stack Software Engineer who sees programming as a
             creative and logical platform for solving complex challenges and
             building impactful solutions. To me, it’s a blend of art and

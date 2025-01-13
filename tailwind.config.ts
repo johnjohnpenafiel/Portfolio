@@ -22,6 +22,9 @@ const config: Config = {
       title: "5rem",
     },
     extend: {
+      colors: {
+        lightBackground: "rgb(249, 250, 251)",
+      },
       fontFamily: {
         kodchasan: ["Kodchasan", "sans-serif"],
       },

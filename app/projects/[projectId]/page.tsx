@@ -46,7 +46,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="min-h-screen -mt-[64px] bg-[#f9fafb]">
+    <div className="min-h-screen -mt-[64px] bg-[#f9fafb] dark:bg-black">
       <div className="flex flex-col xl:flex-row w-full h-full pt-28 md:pt-40 md:pb-10">
         {/* ----- PROJECT DATA SECTION ------ */}
         <div className="xl:w-1/2 mx-10 md:ml-16">
@@ -55,19 +55,23 @@ const Projects = () => {
             {project?.name}
           </div>
           {/* TITLE */}
-          <div className=" text-md md:text-2xl xl:text-3xl font-black text-stone-800">
+          <div className=" text-md md:text-2xl xl:text-3xl font-black text-stone-800 dark:text-neutral-300">
             {project?.title}
           </div>
           {/* DESCRIPTION */}
-          <div className="mt-4 mb-8 font-light text-sm md:text-base lg:text-md text-pretty">
+          <div className="mt-4 mb-8 font-light text-sm md:text-base lg:text-md text-pretty dark:text-neutral-200">
             {project?.description}
           </div>
           {/* DETAILS */}
           <div className="mt-4 text-pretty">
             {project?.details.map((detail) => (
               <div key={detail.name} className="flex text-xm md:text-sm mb-1">
-                <p className="mr-1 font-semibold">{detail.name}</p>
-                <p>{detail.description}</p>
+                <p className="mr-1 font-semibold dark:text-neutral-400">
+                  {detail.name}
+                </p>
+                <p className="dark:text-neutral-100 dark:font-normal">
+                  {detail.description}
+                </p>
               </div>
             ))}
           </div>
@@ -82,8 +86,9 @@ const Projects = () => {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center text-sm text-stone-500 border-2 rounded-md md:border-none ${
-                    link.url && "hover:text-stone-700"
+                  className={`flex items-center text-sm text-stone-500 dark:text-neutral-400 border-2 rounded-md md:border-none ${
+                    link.url &&
+                    "hover:text-stone-700 dark:hover:text-neutral-200"
                   }`}
                 >
                   <div className="flex m-2">

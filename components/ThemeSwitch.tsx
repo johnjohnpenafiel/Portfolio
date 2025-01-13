@@ -26,13 +26,18 @@ export default function ThemeSwitch() {
     );
 
   if (resolvedTheme === "dark") {
-    return <LuSun className="text-xl" onClick={() => setTheme("light")} />;
+    return (
+      <LuSun
+        className="text-4xl text-neutral-200 bg-neutral-900 hover:bg-neutral-800 rounded-full p-[10px]"
+        onClick={() => setTheme("light")}
+      />
+    );
   }
 
   if (resolvedTheme === "light") {
     return (
       <PiMoonLight
-        className="text-xl text-gray-800"
+        className="text-4xl text-gray-800 bg-neutral-200/30 hover:bg-neutral-300/50 rounded-full p-[10px]"
         onClick={() => setTheme("dark")}
       />
     );

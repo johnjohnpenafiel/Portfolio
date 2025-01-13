@@ -29,15 +29,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-black bg-lightBackground`}
       >
         <main className="lg:mx-[7.2%]">
-          <div className="fixed inset-y-[-100vh] left-[7.2%] w-px lg:bg-gray-200/80 z-50"></div>
-          <div className="fixed inset-y-[-100vh] right-[7.2%] w-px lg:bg-gray-200/80 z-50"></div>
+          <div className="fixed inset-y-[-100vh] left-[7.2%] w-px lg:bg-gray-200/80 dark:lg:bg-neutral-900/80 z-50"></div>
+          <div className="fixed inset-y-[-100vh] right-[7.2%] w-px lg:bg-gray-200/80 dark:lg:bg-neutral-900/80 z-50"></div>
 
-          <div className="fixed inset-y-0 left-[28.5%] w-px border-r border-dashed border-neutral-200/40 -z-10"></div>
-          <div className="fixed inset-y-0 left-[50%] w-px border-r border-dashed border-neutral-200/40 -z-10"></div>
-          <div className="fixed inset-y-0 left-[71.5%] w-px border-r border-dashed border-neutral-200/40 -z-10"></div>
+          <div className="fixed inset-y-0 left-[28.5%] w-px border-r border-dashed border-neutral-200/40 dark:border-neutral-800/40 -z-10"></div>
+          <div className="fixed inset-y-0 left-[50%] w-px border-r border-dashed border-neutral-200/40 dark:border-neutral-800/40 -z-10"></div>
+          <div className="fixed inset-y-0 left-[71.5%] w-px border-r border-dashed border-neutral-200/40 dark:border-neutral-800/40 -z-10"></div>
           <Providers>
             <Navbar />
             {children}

@@ -30,17 +30,17 @@ const Footer = () => {
   ];
 
   return (
-    <div className="h-96 bg-[#f9fafb] border-t">
+    <div className="h-96 bg-[#f9fafb] dark:bg-black border-t border-gray-200/80 dark:border-neutral-900/80">
       {/* ----- FOOTER SECTION ----- */}
       <div className="md:flex">
         {/* ----- ABOUT AND PROFILE PICTURE SECTION ----- */}
         <div className="flex flex-col my-14 mx-10 md:mx-0 pl-2 md:w-1/2 md:pl-16 xl:flex-row">
           {/* ABOUT */}
           <div className="flex flex-col xl:w-4/6">
-            <h1 className="text-sm text-neutral-800 font-semibold mb-2">
+            <h1 className="text-sm text-neutral-800 dark:text-neutral-100 font-semibold mb-2">
               About me
             </h1>
-            <p className="text-sm text-neutral-700 text-pretty">
+            <p className="text-sm text-neutral-700 dark:text-neutral-200 text-pretty">
               Precise and fast-learning software engineer with experience in
               <b> Python</b>, <b> JavaScript</b>, <b> Typescript</b>,{" "}
               <b> React</b>, <b> Next</b>, <b> Flask</b>, <b> SQL databases</b>,{" "}
@@ -67,7 +67,7 @@ const Footer = () => {
         <div className="flex justify-around md:space-x-28 md:justify-center md:w-1/2 my-10 md:my-14">
           <div>
             {/* PROJECTS */}
-            <h1 className="flex mb-2 text-sm text-neutral-800 font-semibold">
+            <h1 className="flex mb-2 text-sm text-neutral-800 dark:text-neutral-100 font-semibold">
               Projects
             </h1>
             <ul>
@@ -75,7 +75,7 @@ const Footer = () => {
                 <li key={project.id}>
                   <Link
                     href={project.href}
-                    className="text-sm md:text-base text-neutral-700 leading-loose hover:text-stone-400"
+                    className="text-sm md:text-base text-neutral-700 dark:text-neutral-200 leading-loose hover:text-stone-400 dark:hover:text-neutral-400"
                   >
                     {project.title}
                   </Link>
@@ -85,7 +85,7 @@ const Footer = () => {
           </div>
           <div>
             {/* CONTACTS */}
-            <h1 className="mb-2 text-sm text-neutral-800 font-semibold">
+            <h1 className="mb-2 text-sm text-neutral-800 dark:text-neutral-100 font-semibold">
               Contact
             </h1>
             <ul>
@@ -95,7 +95,7 @@ const Footer = () => {
                     href={contact.href}
                     target={contact.target}
                     rel={contact.rel}
-                    className="text-sm md:text-base text-neutral-700 leading-loose hover:text-stone-400"
+                    className="text-sm md:text-base text-neutral-700 dark:text-neutral-200 leading-loose hover:text-stone-400 dark:hover:text-neutral-400"
                   >
                     {contact.title}
                     <span>↗</span>
@@ -109,9 +109,9 @@ const Footer = () => {
 
       {/* ----- COPYWRITE SECTION ----- */}
       <div className="flex justify-center md:justify-start pb-4">
-        <div className="flex md:mt-20 md:mx-14 mx-10 text-xm">
+        <div className="flex md:mt-20 md:mx-14 mx-10 text-xm dark:text-neutral-100">
           © 2025 John John Penafiel. All Rights Reserved. Build with Next.js,
-          Typescript and TailwindCss.
+          Typescript and TailwindCss. 🛠️
         </div>
       </div>
     </div>

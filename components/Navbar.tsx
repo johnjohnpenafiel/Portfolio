@@ -39,20 +39,11 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="relative py-3 px-7 md:px-5 || border-b border-gray-200/80 bg-[#f9fafb] dark:bg-blue-950">
+    <nav className="relative py-3 px-7 md:px-5 || border-b border-gray-200/80 dark:border-neutral-900/80 bg-[#f9fafb] dark:bg-black">
       <div className="flex items-center justify-between h-[40px]">
-        {/* PARALLAX UI LOGO */}
-        <div className="bg-neutral-200/30 hover:bg-neutral-300/30 rounded-full w-10 h-10 items-center justify-center flex">
-          <ThemeSwitch />
-        </div>
-        {/* <Link href="/">
-          <Image
-            src="/images/Logo.svg"
-            width={40}
-            height={40}
-            alt="Picture of the author"
-          />
-        </Link> */}
+        {/* LIGHT/DARK SWITCH BUTTON */}
+        <ThemeSwitch />
+
         {/* MOBILE MENU BUTTON */}
         <button
           className="flex pt-[4px] md:hidden"
@@ -80,7 +71,7 @@ const Navbar = () => {
                 href={menuItem.href}
                 target={menuItem.target}
                 rel={menuItem.rel}
-                className={`text-gray-700 hover:text-gray-900 ${
+                className={`text-gray-700 dark:text-neutral-100 hover:text-gray-900 dark:hover:text-neutral-400 ${
                   menuItem.active && "underline decoration-1 text-gray-900"
                 }`}
               >
@@ -93,7 +84,7 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       <ul
-        className={`absolute flex flex-col left-0 w-full md:hidden items-center space-y-5 py-14 || bg-[#f9fafb] border-b border-gray-200/80 transition-transform origin-top duration-500 ease-in-out
+        className={`absolute flex flex-col left-0 w-full md:hidden items-center space-y-5 py-14 || bg-[#f9fafb] dark:bg-black border-b border-gray-200/80 dark:border-neutral-900/80 transition-transform origin-top duration-500 ease-in-out
            ${
              isMenuOpen
                ? "scale-y-100 pointer-events-auto"
@@ -107,7 +98,7 @@ const Navbar = () => {
               target={menuItem.target}
               rel={menuItem.rel}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className={`text-gray-700 hover:text-gray-900 text-2xl transition-opacity ease-in-out 
+              className={`text-gray-700 dark:text-neutral-100 hover:text-gray-900 dark:hover:text-neutral-400 text-2xl transition-opacity ease-in-out 
                 ${menuItem.active && "underline text-gray-900"} 
                 ${
                   isMenuOpen
