@@ -114,7 +114,7 @@ export const projectData = [
       {
         name: "Purpose:",
         description:
-          "To create a useful tool while picking up new skills along the way",
+          "To build a practical tool while enhancing my technical skills and exploring new technologies.",
       },
     ],
     images: [
@@ -219,6 +219,10 @@ export const projectData = [
         description: "Python, Flask, SQLAlchemy, SQLite3",
       },
       {
+        name: "Design:",
+        description: "FigJam",
+      },
+      {
         name: "Deployment:",
         description: "Not deployed",
       },
@@ -248,6 +252,7 @@ export const projectData = [
         description: "Search by name or type",
       },
       { src: "/images/JackSpotCanva7.svg", description: "Mobile View" },
+      { src: "/images/JackSpotFigma.svg", description: "Design Structure" },
     ],
     links: [
       {
