@@ -30,7 +30,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="h-auto bg-[#f9fafb] dark:bg-black border-t border-gray-200/80 dark:border-neutral-900/80">
+    <div className="h-auto bg-[#f9fafb] dark:bg-black border-t border-gray-200/80 dark:border-neutral-900/80 cursor-default">
       {/* ----- FOOTER SECTION ----- */}
       <div className="md:flex">
         {/* ----- ABOUT AND PROFILE PICTURE SECTION ----- */}
@@ -64,7 +64,7 @@ const Footer = () => {
           </div>
         </div>
         {/* ----- PROJECTS AND CONTACTS SECTION ----- */}
-        <div className="flex justify-around md:space-x-28 md:justify-center md:w-1/2 my-10 md:my-14">
+        <div className="flex justify-around md:space-x-28 md:justify-center md:w-1/2 my-10 md:my-14 mt-20">
           <div>
             {/* PROJECTS */}
             <h1 className="flex mb-2 text-sm text-neutral-800 dark:text-neutral-100 font-semibold">
@@ -109,7 +109,7 @@ const Footer = () => {
 
       {/* ----- COPYWRITE SECTION ----- */}
       <div className="flex justify-center md:justify-start pb-4">
-        <p className="flex mt-24 md:mt-20 md:mx-14 mx-10 text-xm dark:text-neutral-100">
+        <p className="flex mt-16 md:mx-14 mx-10 text-xm dark:text-neutral-100">
           © 2025 John John Penafiel. All Rights Reserved. Build with Next.js,
           Typescript, and TailwindCSS. 🛠️
         </p>

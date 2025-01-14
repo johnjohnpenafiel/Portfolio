@@ -66,7 +66,7 @@ export const projectCards: ProjectCard[] = [
       "Chakra UI",
     ],
     duration: "Sept - Oct 2024",
-    imageCard: "/images/NextGameCanva2.svg",
+    imageCard: "/images/NextGameCanva1.svg",
     href: "/projects/nextgame",
     links: [
       {

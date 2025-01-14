@@ -34,7 +34,7 @@ const ProjectCard = ({
   return (
     <div
       ref={cardRef}
-      className={`flex flex-col w-full md:max-w-[1200px] md:max-h-[400px] h-auto md:flex-row md:h-auto mb-6 || bg-[#f9fafb] dark:bg-black border-b border-gray-200/80 dark:border-neutral-900/80 overflow-hidden || transition-transform ease-in-out delay-100 duration-1000 ${
+      className={`flex flex-col w-full h-auto mb-6 md:max-w-[1200px] md:max-h-[400px] md:flex-row md:h-auto || bg-[#f9fafb] dark:bg-black border-b border-gray-200/80 dark:border-neutral-900/80 overflow-hidden || transition-transform ease-in-out delay-100 duration-1000 ${
         hasBeenVisible ? "translate-y-0" : "translate-y-40"
       }`}
     >
@@ -45,7 +45,7 @@ const ProjectCard = ({
           <h1 className="flex text-2xl md:text-3xl font-bold text-neutral-800 dark:text-neutral-200">
             {title}
           </h1>
-          <p className="flex items-center text-xm text-neutral-500 dark:text-neutral-400">
+          <p className="flex items-center text-xm text-neutral-500 dark:text-neutral-400/90">
             {duration}
           </p>
         </div>
@@ -58,7 +58,7 @@ const ProjectCard = ({
           {stack.map((s, index) => (
             <li
               key={index}
-              className="text-neutral-500 dark:text-neutral-500 font-semibold "
+              className="text-neutral-500 dark:text-neutral-400/90 font-semibold "
             >
               {s}
               {index < stack.length - 1 && <span className="mx-2">•</span>}

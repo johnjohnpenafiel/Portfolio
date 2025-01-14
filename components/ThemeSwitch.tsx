@@ -1,5 +1,5 @@
 "use client";
-
+import { HiMiniMoon } from "react-icons/hi2";
 import { PiMoonLight } from "react-icons/pi";
 import { LuSun } from "react-icons/lu";
 import { useState, useEffect } from "react";
@@ -28,7 +28,8 @@ export default function ThemeSwitch() {
   if (resolvedTheme === "dark") {
     return (
       <LuSun
-        className="text-4xl text-neutral-200 bg-neutral-900 hover:bg-neutral-800 rounded-full p-[10px]"
+        title="Light Mode"
+        className="text-4xl text-neutral-200 hover:text-yellow-400 bg-neutral-900/70 hover:bg-neutral-900 rounded-lg p-[10px] cursor-pointer"
         onClick={() => setTheme("light")}
       />
     );
@@ -36,8 +37,9 @@ export default function ThemeSwitch() {
 
   if (resolvedTheme === "light") {
     return (
-      <PiMoonLight
-        className="text-4xl text-gray-800 bg-neutral-200/30 hover:bg-neutral-300/50 rounded-full p-[10px]"
+      <HiMiniMoon
+        title="Dark Mode"
+        className="text-4xl text-neutral-600 bg-neutral-200/40 hover:bg-neutral-200/80 rounded-lg p-[10px] cursor-pointer"
         onClick={() => setTheme("dark")}
       />
     );

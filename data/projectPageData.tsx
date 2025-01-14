@@ -90,7 +90,7 @@ export const projectData = [
     title:
       "Discover, Explore, and Filter Games with a Seamless React & TypeScript Web App",
     description:
-      "NextGame is a beautiful video game discovery web application that allows users to explore games, filter them by genre and platform, and toggle between light and dark mode. Built with modern web technologies, this project demonstrates the use of React, TypeScript, and Flask for a seamless user experience.",
+      "NextGame is a sleek and modern web application for discovering video games, offering users the ability to explore, filter by genre and platform, and enjoy a dynamic user interface. Powered by the RAWG API, NextGame fetches real-time game data securely through a Flask backend, acting as a proxy to protect sensitive API keys. Built with React, TypeScript, and Flask, this project demonstrates advanced integration of frontend and backend technologies for a seamless user experience.",
     details: [
       {
         name: "Frontend:",

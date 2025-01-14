@@ -23,7 +23,7 @@ const Hero = () => {
 
       {/* Existing Hero Content */}
 
-      <div className="flex flex-col h-3/4 text-center justify-end">
+      <div className="flex flex-col h-3/4 text-center justify-end cursor-default">
         <h5 className="sm:text-xl text-gray-400 font-kodchasan">
           Software Engineer
         </h5>
@@ -34,7 +34,7 @@ const Hero = () => {
       <div className="lg:flex hidden items-top pt-10 text-lg font-normal text-gray-500">
         <div className="flex ml-[75.12%] w-px border-l border-gray-400 h-6 mr-4"></div>
         <div className="flex flex-col text-gray-700 dark:text-neutral-200 text-base">
-          <p>I solve, I create.</p>
+          <p className="cursor-default">I solve, I create.</p>
           <div className="flex group">
             <Link
               href="/about"
@@ -42,9 +42,11 @@ const Hero = () => {
             >
               More about me
             </Link>
-            <div className="px-1 group-hover:text-gray-900 dark:group-hover:text-neutral-400 group-hover:scale-105">
-              →
-            </div>
+            <Link href="/about">
+              <div className="px-1 group-hover:text-gray-900 dark:group-hover:text-neutral-400 group-hover:scale-105">
+                →
+              </div>
+            </Link>
           </div>
         </div>
       </div>

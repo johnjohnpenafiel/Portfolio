@@ -6,7 +6,7 @@ import { projectCards } from "@/data/projectCardData";
 
 const ProjectSection = () => {
   return (
-    <div className="h-fit -mt-10 flex flex-col mb-8 || border-gray-200/80 ">
+    <div className="h-fit flex flex-col mb-4 || border-gray-200/80 cursor-default">
       <div className="flex flex-col items-center mx-4">
         {projectCards.map((project) => (
           <ProjectCard

@@ -38,8 +38,15 @@ const config: Config = {
       animation: {
         beam: "beam 1.5s ease-out forwards",
       },
+      scrollbar: {
+        none: {
+          "&::-webkit-scrollbar": { display: "none" },
+          "-ms-overflow-style": "none",
+          "scrollbar-width": "none",
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar")],
 };
 export default config;

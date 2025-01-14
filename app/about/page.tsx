@@ -5,7 +5,7 @@ import { aboutData } from "@/data/aboutData";
 
 const About = () => {
   return (
-    <div className="min-h-screen flex -mt-[64px] || bg-[#f9fafb] dark:bg-black">
+    <div className="min-h-screen flex -mt-[64px] || bg-[#f9fafb] dark:bg-black cursor-default">
       <section className="md:mx-[17%]">
         <div className="flex flex-col m-10 mt-28 md:mt-44 px-4">
           <h1 className="text-3xl font-semibold text-stone-900 dark:text-neutral-200">
