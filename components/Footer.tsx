@@ -9,7 +9,7 @@ import { projectCards } from "@/data/projectCardData";
 
 const Footer = () => {
   // OBFUSCATE EMAIL //
-  const email = ["johnjohnpenafiel", "@", "hotmail.com"].join("");
+  const email = ["dev.johnpenafiel", "@", "gmail.com"].join("");
   const href = `mailto:${email}`;
 
   const contacts = [
