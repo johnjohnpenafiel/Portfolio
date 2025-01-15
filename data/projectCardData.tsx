@@ -89,7 +89,7 @@ export const projectCards: ProjectCard[] = [
       "SQLite3",
       "Tailwind CSS",
     ],
-    duration: "Jul - Aug 2024",
+    duration: "Aug 2024",
     imageCard: "/images/JackSpotCanva2.svg",
     href: "/projects/jackspot",
     links: [

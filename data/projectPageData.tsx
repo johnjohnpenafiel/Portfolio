@@ -169,7 +169,7 @@ export const projectData = [
       },
       {
         name: "Duration:",
-        description: "Jul 2024 - Aug 2024",
+        description: "Aug 2024",
       },
       {
         name: "Purpose:",
