@@ -17,6 +17,11 @@ function Home() {
           </p>
         </div>
         <ProjectSection />
+        <iframe
+          src="http://parallaxui.com/embed/33"
+          width="273"
+          height="273"
+        ></iframe>
       </section>
     </div>
   );
