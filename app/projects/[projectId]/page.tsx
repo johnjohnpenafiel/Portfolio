@@ -10,6 +10,7 @@ const Projects = () => {
   const project = projectData.find((project) => project.id === projectId);
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loadedImage, setLoadedImage] = useState(false);
 
   const handleScroll = () => {
     if (carouselRef.current) {
@@ -57,7 +58,7 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen -mt-[64px] bg-[#f9fafb] dark:bg-black cursor-default">
-      <div className="flex flex-col xl:flex-row w-full h-full pt-28 md:pt-40 md:pb-10">
+      <div className="flex flex-col xl:flex-row w-full h-full pt-28 md:pt-32 md:pb-10">
         {/* ----- PROJECT DATA SECTION ------ */}
         <div className="xl:w-1/2 mx-10 md:ml-16">
           {/* PROJECT NAME */}
@@ -133,7 +134,10 @@ const Projects = () => {
                       width={525}
                       height={400}
                       priority={index === 0}
-                      style={{ width: "auto", height: "auto" }}
+                      className={`w-auto h-auto transition-opacity duration-700 ${
+                        !loadedImage ? "opacity-0" : "opacity-100"
+                      }`}
+                      onLoad={() => setLoadedImage(true)}
                     />
                   </div>
                 ))}

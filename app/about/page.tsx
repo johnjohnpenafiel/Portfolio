@@ -1,12 +1,26 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 
 import AboutCard from "./components/AboutCard";
 import { aboutData } from "@/data/aboutData";
 
 const About = () => {
+  const [fadeIn, setFadeIn] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setFadeIn(true);
+    }, 50);
+  }, []);
+
   return (
     <div className="min-h-screen flex -mt-[64px] || bg-[#f9fafb] dark:bg-black cursor-default">
-      <section className="md:mx-[17%]">
+      <section
+        className={`md:mx-[17%] transition-opacity duration-500 ${
+          !fadeIn ? "opacity-0" : "opacity-100"
+        }`}
+      >
         <div className="flex flex-col m-10 mt-28 md:mt-44 px-4">
           <h1 className="text-3xl font-semibold text-stone-900 dark:text-neutral-200">
             John Penafiel

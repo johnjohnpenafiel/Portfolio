@@ -1,7 +1,17 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [fadeIn, setFadeIn] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setFadeIn(true);
+    }, 50);
+  }, []);
+
   return (
     <div className=" h-screen flex flex-col border-b border-gray-200/80 dark:border-neutral-900/50 overflow-hidden">
       {/* Beam Effect Container */}
@@ -23,7 +33,11 @@ const Hero = () => {
 
       {/* Existing Hero Content */}
 
-      <div className="flex flex-col h-3/4 text-center justify-end cursor-default">
+      <div
+        className={`flex flex-col h-3/4 text-center justify-end cursor-default transition-opacity duration-500 ${
+          !fadeIn ? "opacity-0" : "opacity-100"
+        }`}
+      >
         <h5 className="sm:text-xl text-gray-400 font-kodchasan">
           Software Engineer
         </h5>
