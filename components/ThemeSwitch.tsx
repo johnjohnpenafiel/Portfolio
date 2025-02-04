@@ -1,6 +1,5 @@
 "use client";
 import { HiMiniMoon } from "react-icons/hi2";
-import { PiMoonLight } from "react-icons/pi";
 import { LuSun } from "react-icons/lu";
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
@@ -10,7 +9,9 @@ export default function ThemeSwitch() {
   const [mounted, setMounted] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   if (!mounted)
     return (
