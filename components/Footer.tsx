@@ -30,7 +30,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="h-auto bg-[#f9fafb] dark:bg-black border-t border-gray-200/80 dark:border-neutral-900/80 cursor-default">
+    <div className="h-auto bg-[#f9fafb] dark:bg-black border-t border-gray-200/80 dark:border-neutral-900/80 cursor-default absolute">
       {/* ----- FOOTER SECTION ----- */}
       <div className="md:flex">
         {/* ----- ABOUT AND PROFILE PICTURE SECTION ----- */}
