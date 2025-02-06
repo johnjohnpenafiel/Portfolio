@@ -7,7 +7,7 @@ const SpotifyPlayer = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [fadeIn, setFadeIn] = useState<boolean>(false);
   return (
-    <div className=" flex fixed bottom-5 right-6 z-50">
+    <div className=" sm:flex hidden fixed bottom-5 right-6 z-50">
       <button
         className="flex items-start overflow-visible justify-start"
         onClick={() => {
