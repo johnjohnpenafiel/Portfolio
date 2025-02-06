@@ -105,7 +105,7 @@ const ProjectCard = ({
       </div>
       {/* ----- IMAGE SECTION ----- */}
       {/* IMAGE */}
-      <div className="flex h-auto md:w-1/2 order-2 items-center justify-center p-3 md:p-3 grayscale transition-all duration-700 ease-in-out group-hover:grayscale-0">
+      <div className="flex h-auto md:w-1/2 order-2 items-center justify-center p-3 md:p-3 grayscale transition-all duration-500 ease-in-out group-hover:grayscale-0">
         <Image
           src={image}
           width={500}
