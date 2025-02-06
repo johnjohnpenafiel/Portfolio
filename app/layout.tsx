@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 
 import "./globals.css";
 import { Providers } from "./providers";
+import SpotifyPlayer from "@/components/SpotifyPlayer";
 
 const geistSans = localFont({
   src: "../public/fonts/GeistVF.woff",
@@ -47,6 +48,7 @@ export default function RootLayout({
             {children}
             <Analytics />
             <Footer />
+            <SpotifyPlayer />
           </Providers>
         </main>
       </body>
