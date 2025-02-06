@@ -16,9 +16,13 @@ const SpotifyPlayer = () => {
         }}
       >
         {!isOpen ? (
-          <FaSpotify className="transition-all text-4xl hover:scale-125 animate-[bounce_1s_ease-in-out_4.5] hover:animate-none" />
+          <FaSpotify
+            title="Open Spotify Player"
+            className="transition-all text-4xl hover:scale-125 animate-[bounce_1s_ease-in-out_4.5] hover:animate-none"
+          />
         ) : fadeIn ? (
           <IoIosClose
+            title="Close Spotify Player"
             size={25}
             className="-mb-1 mr-2 text-neutral-100 hover:text-neutral-300 hover:bg-neutral-400 bg-neutral-500 rounded-full "
           />
