@@ -7,20 +7,20 @@ const SpotifyPlayer = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [fadeIn, setFadeIn] = useState<boolean>(false);
   return (
-    <div className=" flex fixed bottom-4 right-5 z-50 overflow-hidden">
+    <div className=" flex fixed bottom-5 right-6 z-50">
       <button
-        className="flex justify-start"
+        className="flex items-start overflow-visible justify-start"
         onClick={() => {
           setIsOpen(!isOpen);
           setFadeIn(false);
         }}
       >
         {!isOpen ? (
-          <FaSpotify className="transition-all text-3xl hover:text-4xl" />
+          <FaSpotify className="transition-all text-4xl hover:scale-125 animate-[bounce_1s_ease-in-out_4.5] hover:animate-none" />
         ) : fadeIn ? (
           <IoIosClose
             size={25}
-            className="-mb-1 text-neutral-500 hover:text-neutral-300"
+            className="-mb-1 mr-2 text-neutral-100 hover:text-neutral-300 hover:bg-neutral-400 bg-neutral-500 rounded-full "
           />
         ) : (
           <></>
@@ -34,7 +34,7 @@ const SpotifyPlayer = () => {
           className={`rounded-2xl transition-opacity duration-500 ${
             !fadeIn ? "opacity-0" : "opacity-100"
           }`}
-          src="https://open.spotify.com/embed/artist/1URnnhqYAYcrqrcwql10ft?utm_source=generator"
+          src="https://open.spotify.com/embed/artist/3AA28KZvwAUcZuOKwyblJQ?utm_source=generator"
           width="350"
           height="152"
           allowFullScreen
