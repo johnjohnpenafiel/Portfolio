@@ -9,9 +9,10 @@ const About = () => {
   const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       setFadeIn(true);
     }, 50);
+    return () => clearTimeout(timeout);
   }, []);
 
   return (

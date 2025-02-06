@@ -173,15 +173,18 @@ const Projects = () => {
       </div>
       <div className="hidden lg:flex lg:justify-center xl:justify-start">
         {project?.id === "parallaxui" ? (
-          <iframe
-            src="https://parallaxui.com/embed/41"
-            width="410"
-            height="410"
-            className={`transition-opacity duration-500 ${
-              !loadedIframe ? "opacity-0" : "opacity-100"
-            }`}
-            onLoad={() => setLoadedIframe(true)}
-          ></iframe>
+          <div>
+            <h3 className="text-center text-xl -mb-8 pt-10">Demo</h3>
+            <iframe
+              src="https://parallaxui.com/embed/41"
+              width="410"
+              height="410"
+              className={`transition-opacity duration-500 ${
+                !loadedIframe ? "opacity-0" : "opacity-100"
+              }`}
+              onLoad={() => setLoadedIframe(true)}
+            ></iframe>
+          </div>
         ) : (
           <></>
         )}

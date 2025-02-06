@@ -35,7 +35,7 @@ export const projectCards: ProjectCard[] = [
       "AWS Cloud Services",
       "Material UI",
     ],
-    duration: "Oct - Dec 2024",
+    duration: "Oct - Present",
     imageCard: "/images/ParallaxUICanva2.svg",
     href: "/projects/parallaxui",
     links: [

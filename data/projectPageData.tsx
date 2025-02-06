@@ -50,7 +50,7 @@ export const projectData = [
       },
       {
         name: "Duration:",
-        description: "Oct 2024 - Dec 2024",
+        description: "Oct 2024 - Present",
       },
       {
         name: "Purpose:",
@@ -65,10 +65,13 @@ export const projectData = [
       },
       { src: "/images/ParallaxUICanva2.svg", description: "Design Area" },
       {
-        src: "/images/ParallaxUICanva3.svg",
-        description: "Parallax Effect Preview",
+        src: "/images/ParallaxUICanva4.svg",
+        description: "Export Embeded Design",
       },
-      { src: "/images/ParallaxUICanva4.svg", description: "Export Design" },
+      {
+        src: "/images/ParallaxUICanva5.svg",
+        description: "Implementing Design",
+      },
     ],
     links: [
       {
@@ -181,6 +184,8 @@ export const projectData = [
         src: "/images/JackSpotCanva1.svg",
         description: "View recent created Spots",
       },
+      { src: "/images/JackSpotCanva7.svg", description: "Mobile View" },
+      { src: "/images/JackSpotFigma.svg", description: "Design Structure" },
       { src: "/images/JackSpotCanva5.svg", description: "Create a Collection" },
       { src: "/images/JackSpotCanva2.svg", description: "Select a Collection" },
       { src: "/images/JackSpotCanva6.svg", description: "Create a Spot" },
@@ -192,8 +197,6 @@ export const projectData = [
         src: "/images/JackSpotCanva4.svg",
         description: "Search by name or type",
       },
-      { src: "/images/JackSpotCanva7.svg", description: "Mobile View" },
-      { src: "/images/JackSpotFigma.svg", description: "Design Structure" },
     ],
     links: [
       {
