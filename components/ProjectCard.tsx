@@ -53,7 +53,7 @@ const ProjectCard = ({
   return (
     <div
       ref={cardRef}
-      className={`flex flex-col w-full h-auto mb-6 md:max-w-[1200px] md:max-h-[400px] md:flex-row md:h-auto || bg-neutral-100/40 dark:bg-[#1B1212]/25 backdrop-blur-xm border-[1px] rounded-xl border-gray-200/80 dark:border-neutral-900/80 overflow-hidden || transition-transform ease-in-out delay-100 duration-1000 ${
+      className={`flex flex-col w-full h-auto mb-6 md:max-w-[1200px] md:max-h-[400px] md:flex-row md:h-auto || bg-neutral-200/10 dark:bg-[#1B1212]/25 backdrop-blur-xm border-[1px] rounded-xl border-gray-200/80 dark:border-neutral-900/80 overflow-hidden || transition-transform ease-in-out delay-100 duration-1000 ${
         hasBeenVisible ? "translate-y-0" : "translate-y-40"
       }`}
     >
