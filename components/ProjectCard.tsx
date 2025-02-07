@@ -116,7 +116,7 @@ const ProjectCard = ({
       {/* IMAGE */}
       <div
         ref={imageRef}
-        className={`flex h-auto md:w-1/2 order-2 items-center justify-center p-3 md:p-3 lg:transition-all lg:duration-700 lg:ease-in-out ${
+        className={`flex h-auto md:w-1/2 order-2 items-center justify-center p-3 md:p-3 transition-all duration-700 ease-in-out ${
           isInView ? "" : "brightness-50"
         }`}
       >
