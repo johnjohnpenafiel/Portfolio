@@ -1,9 +1,12 @@
 "use client";
 
-import { useIsVisible } from "@/hooks/useIsVisible";
+import React, { useEffect, useRef, useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useRef, useState } from "react";
+
+import useInView from "@/hooks/useInView";
+import { useIsVisible } from "@/hooks/useIsVisible";
 
 interface Link {
   url: string;
@@ -32,19 +35,25 @@ const ProjectCard = ({
   const cardRef = useRef<HTMLDivElement>(null);
   const hasBeenVisible = useIsVisible(cardRef);
   const [currentIndex, setCurrentIndex] = useState(0);
+  // TRACK WHEN THE IMAGE IS IN THE MIDDLE OF THE WINDOW
+  const [imageRef, isInView] = useInView({
+    root: null,
+    rootMargin: "-40% 0px -40% 0px",
+    threshold: 0.1,
+  });
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % stack.length);
     }, 2000);
 
-    return () => clearInterval(interval); // Clean up the interval on component unmount
+    return () => clearInterval(interval);
   }, [stack.length]);
 
   return (
     <div
       ref={cardRef}
-      className={`flex flex-col w-full h-auto mb-6 md:max-w-[1200px] md:max-h-[400px] md:flex-row md:h-auto group || bg-[#f9fafb]/10 dark:bg-[#1B1212]/15 backdrop-blur-xm border-[1px] rounded-xl border-gray-200/80 dark:border-neutral-900/80 overflow-hidden || transition-transform ease-in-out delay-100 duration-1000 ${
+      className={`flex flex-col w-full h-auto mb-6 md:max-w-[1200px] md:max-h-[400px] md:flex-row md:h-auto || bg-neutral-100/40 dark:bg-[#1B1212]/25 backdrop-blur-xm border-[1px] rounded-xl border-gray-200/80 dark:border-neutral-900/80 overflow-hidden || transition-transform ease-in-out delay-100 duration-1000 ${
         hasBeenVisible ? "translate-y-0" : "translate-y-40"
       }`}
     >
@@ -69,7 +78,7 @@ const ProjectCard = ({
             <li
               key={index}
               className={`text-neutral-500 dark:text-neutral-400/90 font-semibold ${
-                index === currentIndex ? "group-hover:animate-pulse" : ""
+                !isInView ? "" : index === currentIndex ? "animate-pulse" : ""
               }`}
             >
               {s}
@@ -105,7 +114,12 @@ const ProjectCard = ({
       </div>
       {/* ----- IMAGE SECTION ----- */}
       {/* IMAGE */}
-      <div className="flex h-auto md:w-1/2 order-2 items-center justify-center p-3 md:p-3 lg:grayscale lg:transition-all lg:duration-500 lg:ease-in-out lg:group-hover:grayscale-0">
+      <div
+        ref={imageRef}
+        className={`flex h-auto md:w-1/2 order-2 items-center justify-center p-3 md:p-3 lg:transition-all lg:duration-700 lg:ease-in-out ${
+          isInView ? "" : "brightness-50"
+        }`}
+      >
         <Image
           src={image}
           width={500}
