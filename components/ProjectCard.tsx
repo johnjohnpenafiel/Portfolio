@@ -36,7 +36,7 @@ const ProjectCard = ({
   // TRACK WHEN THE IMAGE IS IN THE MIDDLE OF THE WINDOW
   const [cardRef, isInView] = useInView({
     root: null,
-    rootMargin: "-35% 0px -35% 0px",
+    rootMargin: "-40% 0px -40% 0px",
     threshold: 0.1,
   });
   const hasBeenVisible = useIsVisible(cardRef);
@@ -52,12 +52,16 @@ const ProjectCard = ({
   return (
     <div
       ref={cardRef}
-      className={`flex flex-col w-full h-auto mb-6 md:max-w-[1200px] md:max-h-[400px] md:flex-row md:h-auto || bg-neutral-200/10 dark:bg-[#1B1212]/25 backdrop-blur-xm border-[1px] rounded-xl border-gray-200/80 dark:border-neutral-900/80 overflow-hidden ||  transition-all ease-in-out delay-100 duration-1000 ${
+      className={`flex flex-col w-full h-auto mb-6 md:max-w-[1200px] md:max-h-[400px] md:flex-row md:h-auto || bg-neutral-200/10 dark:bg-[#1B1212]/25 backdrop-blur-xm border-[1px] rounded-xl border-gray-200/80 dark:border-neutral-900/80 overflow-hidden ||  transition-transform ease-in-out delay-100 duration-1000 ${
         hasBeenVisible ? "translate-y-0" : "translate-y-40"
-      } ${isInView ? "" : "brightness-50"}`}
+      }`}
     >
       {/* ----- CARD DATA SECTION ----- */}
-      <div className="flex flex-col px-5 md:pl-9 md:pr-4 pb-5 md:mt-7 md:w-1/2 order-3 md:order-1">
+      <div
+        className={`flex flex-col px-5 md:pl-9 md:pr-4 pb-5 md:mt-7 md:w-1/2 order-3 md:order-1 transition-all ease-in-out delay-100 duration-1000 ${
+          isInView ? "" : "brightness-50"
+        }`}
+      >
         {/* CARD TITLE AND DURATION */}
         <div className="flex justify-between md:mt-4">
           <h1 className="flex text-2xl md:text-3xl font-bold text-neutral-800 dark:text-neutral-200">
@@ -114,7 +118,9 @@ const ProjectCard = ({
       {/* ----- IMAGE SECTION ----- */}
       {/* IMAGE */}
       <div
-        className={`flex h-auto md:w-1/2 order-2 items-center justify-center p-3 md:p-3 `}
+        className={`flex h-auto md:w-1/2 order-2 items-center justify-center p-3 md:p-3 transition-all ease-in-out duration-700 ${
+          isInView ? "" : "brightness-50"
+        }`}
       >
         <Image
           src={image}
