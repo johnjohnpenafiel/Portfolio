@@ -14,7 +14,7 @@ export interface ProjectImage {
 
 export interface ProjectLink {
   name: string;
-  url: string;
+  url?: string;
   icon: IconType;
 }
 export interface Project {
