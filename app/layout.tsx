@@ -33,9 +33,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-black bg-lightBackground`}
       >
-        <main className="relative lg:mx-[7.2%] dark:bg-black bg-lightBackground">
+        <main className="relative lg:mx-[7.2%]">
           <div className="fixed inset-y-[-100vh] left-[7.2%] w-px lg:bg-gray-200/80 dark:lg:bg-neutral-900/80 z-50"></div>
           <div className="fixed inset-y-[-100vh] right-[7.2%] w-px lg:bg-gray-200/80 dark:lg:bg-neutral-900/80 z-50"></div>
 
