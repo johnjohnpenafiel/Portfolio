@@ -38,7 +38,7 @@ const SpotifyPlayer = () => {
           className={`rounded-2xl transition-opacity duration-500 ${
             !fadeIn ? "opacity-0" : "opacity-100"
           }`}
-          src="https://open.spotify.com/embed/artist/3AA28KZvwAUcZuOKwyblJQ?utm_source=generator"
+          src="https://open.spotify.com/embed/artist/3AA28KZvwAUcZuOKwyblJQ?utm_source=generator&theme=0"
           width="350"
           height="152"
           allowFullScreen
