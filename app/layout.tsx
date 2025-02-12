@@ -1,13 +1,12 @@
+import "./globals.css";
+import { Providers } from "./providers";
+
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-
 import { Analytics } from "@vercel/analytics/next";
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-
-import "./globals.css";
-import { Providers } from "./providers";
 import SpotifyPlayer from "@/components/SpotifyPlayer";
 
 const geistSans = localFont({
@@ -34,9 +33,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-black bg-lightBackground`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className="relative lg:mx-[7.2%]">
+        <main className="relative lg:mx-[7.2%] dark:bg-black bg-lightBackground">
           <div className="fixed inset-y-[-100vh] left-[7.2%] w-px lg:bg-gray-200/80 dark:lg:bg-neutral-900/80 z-50"></div>
           <div className="fixed inset-y-[-100vh] right-[7.2%] w-px lg:bg-gray-200/80 dark:lg:bg-neutral-900/80 z-50"></div>
 
