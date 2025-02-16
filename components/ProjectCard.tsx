@@ -58,9 +58,7 @@ const ProjectCard = ({
     >
       {/* ----- CARD DATA SECTION ----- */}
       <div
-        className={`flex flex-col px-5 md:pl-9 md:pr-4 pb-5 md:mt-7 md:w-1/2 order-3 md:order-1 transition-all ease-in-out delay-100 duration-1000 ${
-          isInView ? "" : "brightness-50"
-        }`}
+        className={`flex flex-col px-5 md:pl-9 md:pr-4 pb-5 md:mt-7 md:w-1/2 order-3 md:order-1 transition-all ease-in-out delay-100 duration-1000 `}
       >
         {/* CARD TITLE AND DURATION */}
         <div className="flex justify-between md:mt-4">
@@ -118,8 +116,8 @@ const ProjectCard = ({
       {/* ----- IMAGE SECTION ----- */}
       {/* IMAGE */}
       <div
-        className={`flex h-auto md:w-1/2 order-2 items-center justify-center p-3 md:p-3 transition-all ease-in-out duration-700 ${
-          isInView ? "" : "brightness-50"
+        className={`flex h-auto md:w-1/2 order-2 items-center justify-center p-3 md:p-3 transition-all ease-in-out duration-1000 delay-100 ${
+          isInView ? "" : "brightness-75"
         }`}
       >
         <Image

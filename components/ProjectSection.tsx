@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import ProjectCard from "./ProjectCard";
 import { projectCards } from "@/data/projectCardData";
 
