@@ -27,6 +27,85 @@ export interface Project {
   links: ProjectLink[];
 }
 export const projectData = [
+  // SIRENBASE
+  {
+    id: "sirenbase",
+    name: "SirenBase",
+    title: "A Digital Operations Platform for Coffee House Partners",
+    description:
+      "SirenBase is a comprehensive digital operations platform built for coffee house partners. It replaces manual paper-based systems with a unified suite of specialized tools: an Inventory Tracking System with unique 4-digit codes for basement stock, a Milk Count System with automated calculations for dairy ordering, and an RTD&E System for display restocking with auto-generated pull lists. Built with Next.js, Flask, and PostgreSQL, the platform features JWT authentication, role-based access control, drag-and-drop interfaces, and complete audit logging. Mobile-first design ensures fast, touch-friendly access from anywhere in the store.",
+    details: [
+      {
+        name: "Frontend:",
+        description: "Next.js, TypeScript, Tailwind CSS, Shadcn/ui",
+      },
+      {
+        name: "Backend:",
+        description: "Python, Flask, PostgreSQL",
+      },
+      {
+        name: "Deployment:",
+        description: "Vercel, Render, Neon",
+      },
+      {
+        name: "Duration:",
+        description: "Nov 2025 - Dec 2025",
+      },
+      {
+        name: "Purpose:",
+        description:
+          "To digitize coffee house operations, replacing paper-based inventory tracking and counting systems with fast, accountable digital tools for retail partners and shift supervisors.",
+      },
+    ],
+    images: [
+      { src: "/images/sirenbase/Login.svg", description: "Login Page" },
+      {
+        src: "/images/sirenbase/Admin Dashboard.svg",
+        description: "Admin Dashboard",
+      },
+      { src: "/images/sirenbase/Admin Panel Mobile.svg", description: "Admin Panel (Mobile)" },
+      {
+        src: "/images/sirenbase/Admin User Managment.svg",
+        description: "User Management",
+      },
+      {
+        src: "/images/sirenbase/Inventory Tracking Tool Mobile.svg",
+        description: "Inventory Tracking (Mobile)",
+      },
+      {
+        src: "/images/sirenbase/Inventory Category.svg",
+        description: "Inventory Categories",
+      },
+      {
+        src: "/images/sirenbase/Inventory History.svg",
+        description: "Inventory History & Audit Log",
+      },
+      {
+        src: "/images/sirenbase/RTD&E Count.svg",
+        description: "RTD&E Count System",
+      },
+      {
+        src: "/images/sirenbase/RTD&E Pull.svg",
+        description: "RTD&E Auto-Generated Pull List",
+      },
+      {
+        src: "/images/sirenbase/RTD&E Tool Mobile.svg",
+        description: "Mobile-First Design",
+      },
+    ],
+    links: [
+      {
+        name: "Live site",
+        url: "https://www.sirenbase.com/",
+        icon: TbWorldWww,
+      },
+      {
+        name: "Code",
+        url: "https://github.com/johnjohnpenafiel/SirenBase",
+        icon: FaGithub,
+      },
+    ],
+  },
   // PARALLAX UI
   {
     id: "parallaxui",

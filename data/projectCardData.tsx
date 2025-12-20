@@ -19,6 +19,35 @@ export interface ProjectCard {
 }
 
 export const projectCards: ProjectCard[] = [
+  // SIRENBASE
+  {
+    id: "sirenbase",
+    title: "SirenBase",
+    description:
+      "A mobile-first operations platform that digitizes daily workflows for coffee house staff, replacing paper-based inventory tracking, counting, and restocking systems with fast, accountable digital tools.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn/ui",
+      "Python",
+      "Flask",
+      "PostgreSQL",
+    ],
+    duration: "Nov - Dec 2025",
+    imageCard: "/images/sirenbase/RTD&E Tool Mobile.svg",
+    href: "/projects/sirenbase",
+    links: [
+      {
+        url: "https://www.sirenbase.com/",
+        icon: TfiWorld,
+      },
+      {
+        url: "https://github.com/johnjohnpenafiel/SirenBase",
+        icon: FaGithub,
+      },
+    ],
+  },
   // PARALLAX UI
   {
     id: "parallaxui",
