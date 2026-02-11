@@ -27,9 +27,21 @@ const Projects = () => {
           details={project.details}
           links={project.links}
         />
-        {/* ----- IMAGE CAROUSEL ----- */}
+        {/* ----- IMAGE CAROUSEL / VIDEO ----- */}
         <div className="xl:w-1/2 flex flex-col justify-center items-center mx-5 my-10 md:my-0 md:mx-10 md:mt-10 lg:mt-0 lg:mr-10">
-          <ImageCarousel images={project.images} />
+          {project.video ? (
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="rounded-lg max-h-[700px]"
+            >
+              <source src={project.video} type="video/mp4" />
+            </video>
+          ) : (
+            <ImageCarousel images={project.images} />
+          )}
         </div>
       </div>
       {/* ----- IFRAME ----- */}

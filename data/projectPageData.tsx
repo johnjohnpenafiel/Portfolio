@@ -24,6 +24,7 @@ export interface Project {
   description: string;
   details: ProjectDetail[];
   images: ProjectImage[];
+  video?: string;
   links: ProjectLink[];
 }
 export const projectData = [
@@ -93,6 +94,7 @@ export const projectData = [
         description: "Mobile-First Design",
       },
     ],
+    video: "/video/sirenbase-vertical.mp4",
     links: [
       {
         name: "Live site",
