@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 import { useParams } from "next/navigation";
 
@@ -35,7 +35,8 @@ const Projects = () => {
               loop
               muted
               playsInline
-              className="rounded-lg max-h-[700px]"
+              onCanPlay={(e) => e.currentTarget.classList.replace("opacity-0", "opacity-100")}
+              className="rounded-2xl max-h-[700px] opacity-0 transition-opacity duration-700"
             >
               <source src={project.video} type="video/mp4" />
             </video>
