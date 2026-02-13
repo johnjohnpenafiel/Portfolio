@@ -36,7 +36,7 @@ const Projects = () => {
               muted
               playsInline
               onCanPlay={(e) => e.currentTarget.classList.replace("opacity-0", "opacity-100")}
-              className="rounded-2xl max-h-[700px] opacity-0 transition-opacity duration-700"
+              className="rounded-3xl max-h-[700px] opacity-0 transition-opacity duration-700"
             >
               <source src={project.video} type="video/mp4" />
             </video>
