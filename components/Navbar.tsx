@@ -39,7 +39,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="relative py-3 px-7 md:px-5 || border-b border-gray-200/80 dark:border-neutral-900/80 bg-[#f9fafb] dark:bg-black">
+    <nav className="relative z-10 py-3 px-7 md:px-5 || border-b border-gray-200/80 dark:border-neutral-900/80 bg-[#f9fafb] dark:bg-black">
       <div className="flex items-center justify-between h-[40px]">
         {/* LIGHT/DARK SWITCH BUTTON */}
         <ThemeSwitch />

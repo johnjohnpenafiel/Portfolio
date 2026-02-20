@@ -1,4 +1,5 @@
 import React from "react";
+import { Package, ShoppingBasket, Milk } from "lucide-react";
 
 // ── Types ──────────────────────────────────────────────
 
@@ -8,7 +9,7 @@ export interface HeroStat {
 }
 
 export interface ProblemCard {
-  icon: string;
+  icon: React.ReactNode;
   title: string;
   body: string;
 }
@@ -40,7 +41,7 @@ export interface RoadmapItem {
 
 export const heroContent = {
   label: "Full-Stack Platform",
-  title: "SirenBase",
+  title: "Sirenbase",
   subtitle:
     "Built for a working coffeehouse, this modular platform replaces fragmented daily workflows with fast, accountable digital operations.",
 };
@@ -62,17 +63,17 @@ export const problemIntro =
 
 export const problemCards: ProblemCard[] = [
   {
-    icon: "\u2610",
+    icon: <Package size={28} strokeWidth={1.5} />,
     title: "Inventory Ordering",
     body: "Daily ordering lacks a reliable source of truth. Inventory changes throughout the day without shared visibility, forcing partners to compensate with time, repetition, and caution. What should be a straightforward decision becomes a recurring liability.",
   },
   {
-    icon: "\u2692",
+    icon: <ShoppingBasket size={28} strokeWidth={1.5} />,
     title: "Milk Counting",
     body: "Daily milk counts rely on slow, manual processes that pile up frustration and errors. Partners track totals, carry numbers forward, and calculate orders by hand every day, turning a routine task into repetitive friction.",
   },
   {
-    icon: "\u21BB",
+    icon: <Milk size={28} strokeWidth={1.5} />,
     title: "Display Restocking",
     body: "Daily restocking depends on repeated checks and back-and-forth trips, as missing items are easy to overlook. Partners spend time verifying what\u2019s needed instead of acting, turning a routine task into a slow, frustrating cycle.",
   },
@@ -137,7 +138,7 @@ export const impactSummary =
 // ── Technical Decisions ────────────────────────────────
 
 export const techDecisionsIntro =
-  "The architecture behind SirenBase was shaped by one constraint: this platform needed to support multiple independent tools without any of them interfering with each other \u2014 and it needed to be built in a way where adding a fourth tool wouldn\u2019t require touching the first three.";
+  "The architecture behind Sirenbase was shaped by one constraint: this platform needed to support multiple independent tools without any of them interfering with each other \u2014 and it needed to be built in a way where adding a fourth tool wouldn\u2019t require touching the first three.";
 
 export const techDecisions: TechDecision[] = [
   {
@@ -222,7 +223,7 @@ export const techStackBadges = [
 // ── Built with AI ──────────────────────────────────────
 
 export const aiNarrative = [
-  "SirenBase was built over 4.5 months and 281 commits using Claude Code as a development and research partner throughout the process.",
+  "Sirenbase was built over 4.5 months and 281 commits using Claude Code as a development and research partner throughout the process.",
   "I drove every product and architecture decision \u2014 which tools to build, how the workflows should feel, how the database should be structured, and what standards the codebase should follow. That direction lives in the project\u2019s CLAUDE.md \u2014 a 500+ line document defining architecture rules, code style, testing requirements, and documentation standards. It\u2019s both the instruction set that guided every implementation session and an artifact of the workflow itself.",
   "Claude Code accelerated the implementation: generating boilerplate, writing test suites, building out endpoints, and iterating on components faster than I could alone. Directing AI effectively is its own skill \u2014 knowing what to ask for, how to validate the output, and when to override it. The architecture, the testing discipline, the documentation, and the product decisions are mine. The velocity is the partnership.",
 ];

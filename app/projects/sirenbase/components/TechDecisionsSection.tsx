@@ -14,7 +14,7 @@ const TechDecisionsSection = () => {
   const hasBeenVisible = useIsVisible(sectionRef);
 
   return (
-    <SectionWrapper variant="transparent">
+    <SectionWrapper variant="solid">
       <div ref={sectionRef}>
         <p className="text-xm font-semibold text-neutral-500/70 dark:text-neutral-400/70 tracking-widest mb-4">
           Technical Decisions

@@ -28,6 +28,7 @@ const config: Config = {
       fontFamily: {
         kodchasan: ["Kodchasan", "sans-serif"],
         mono: ["var(--font-geist-mono)", "monospace"],
+        zcool: ["var(--font-zcool)", "sans-serif"],
       },
       keyframes: {
         beam: {

@@ -10,7 +10,7 @@ const ProblemSection = () => {
   const hasBeenVisible = useIsVisible(sectionRef);
 
   return (
-    <SectionWrapper variant="solid">
+    <SectionWrapper variant="transparent">
       <div ref={sectionRef}>
         <p className="text-xm font-semibold text-neutral-500/70 dark:text-neutral-400/70 tracking-widest mb-4">
           The Problem
@@ -26,12 +26,12 @@ const ProblemSection = () => {
           {problemCards.map((card, i) => (
             <div
               key={card.title}
-              className={`border border-gray-200/80 dark:border-neutral-900/80 rounded-xl p-7 bg-neutral-200/10 dark:bg-[#1B1212]/25 backdrop-blur-[4px] transition-all duration-700 ease-out ${
+              className={`border border-gray-200/80 dark:border-neutral-900/80 rounded-xl p-7 bg-neutral-200/10 dark:bg-[#1B1212]/25 backdrop-blur-xm transition-transform ease-in-out duration-1000 ${
                 hasBeenVisible
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-8"
+                  ? "translate-y-0"
+                  : "translate-y-40"
               }`}
-              style={{ transitionDelay: `${i * 150}ms` }}
+              style={{ transitionDelay: `${300 + i * 150}ms` }}
             >
               <div className="text-2xl mb-4 opacity-70">{card.icon}</div>
               <h3 className="text-base font-semibold text-stone-800 dark:text-neutral-200 mb-3">

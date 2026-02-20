@@ -3,6 +3,7 @@ import { Providers } from "./providers";
 
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { ZCOOL_QingKe_HuangYou } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 
 import Footer from "@/components/Footer";
@@ -19,6 +20,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const zcoolFont = ZCOOL_QingKe_HuangYou({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-zcool",
+});
 
 export const metadata: Metadata = {
   title: "John John's Portfolio",
@@ -33,15 +39,15 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-black bg-lightBackground`}
+        className={`${geistSans.variable} ${geistMono.variable} ${zcoolFont.variable} antialiased dark:bg-black bg-lightBackground`}
       >
         <main className="relative lg:mx-[7.2%]">
           <div className="fixed inset-y-[-100vh] left-[7.2%] w-px lg:bg-gray-200/80 dark:lg:bg-neutral-900/80 z-50"></div>
           <div className="fixed inset-y-[-100vh] right-[7.2%] w-px lg:bg-gray-200/80 dark:lg:bg-neutral-900/80 z-50"></div>
 
-          <div className="fixed inset-y-0 left-[25%] md:left-[28.5%] w-px border-r border-dashed border-neutral-200/50 dark:border-neutral-800/50 -z-10"></div>
-          <div className="fixed inset-y-0 left-[50%] w-px border-r border-dashed border-neutral-200/50 dark:border-neutral-800/50 -z-10"></div>
-          <div className="fixed inset-y-0 left-[75%] md:left-[71.5%] w-px border-r border-dashed border-neutral-200/50 dark:border-neutral-800/50 -z-10"></div>
+          <div className="fixed inset-y-0 left-[25%] md:left-[28.5%] w-px border-r border-dashed border-neutral-300/80 dark:border-neutral-800/80 -z-10"></div>
+          <div className="fixed inset-y-0 left-[50%] w-px border-r border-dashed border-neutral-300/80 dark:border-neutral-800/80 -z-10"></div>
+          <div className="fixed inset-y-0 left-[75%] md:left-[71.5%] w-px border-r border-dashed border-neutral-300/80 dark:border-neutral-800/80 -z-10"></div>
           <Providers>
             <Navbar />
             {children}

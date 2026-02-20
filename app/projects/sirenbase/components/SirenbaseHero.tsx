@@ -1,46 +1,91 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useTheme } from "next-themes";
 import { heroContent, heroStats, heroTechStack } from "../data/sirenbaseData";
+
+const CountUp = ({
+  end,
+  duration = 1200,
+  decimals = 0,
+  start,
+}: {
+  end: number;
+  duration?: number;
+  decimals?: number;
+  start: boolean;
+}) => {
+  const [value, setValue] = useState(0);
+  const rafRef = useRef<number>();
+
+  const animate = useCallback(() => {
+    const startTime = performance.now();
+    const step = (now: number) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      setValue(eased * end);
+      if (progress < 1) rafRef.current = requestAnimationFrame(step);
+    };
+    rafRef.current = requestAnimationFrame(step);
+  }, [end, duration]);
+
+  useEffect(() => {
+    if (start) animate();
+    return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current); };
+  }, [start, animate]);
+
+  return <>{value.toFixed(decimals)}</>;
+};
 
 const SirenbaseHero = () => {
   const [visible, setVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
+
+  const videoSrc =
+    resolvedTheme === "dark"
+      ? "/video/sirenbase-vertical-dark.mp4"
+      : "/video/sirenbase-vertical-light.mp4";
 
   useEffect(() => {
+    setMounted(true);
     const timer = setTimeout(() => setVisible(true), 50);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <section
-      className={`min-h-screen flex flex-col justify-center pt-[8vh] relative transition-opacity duration-500 ${
+      className={`min-h-screen flex flex-col justify-center pt-[8vh] relative transition-opacity duration-500 -mx-8 md:-mx-16 px-8 md:px-16 bg-lightBackground dark:bg-black ${
         visible ? "opacity-100" : "opacity-0"
       }`}
     >
       {/* Phone mockup — absolute on lg+, stacked below on mobile */}
-      <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          onCanPlay={(e) =>
-            e.currentTarget.classList.replace("opacity-0", "opacity-100")
-          }
-          className="w-[400px] h-auto rounded-[2rem] object-contain opacity-0 transition-opacity duration-700"
-        >
-          <source src="/video/sirenbase-vertical.mp4" type="video/mp4" />
-        </video>
+      <div className="hidden lg:flex justify-center absolute left-[60%] right-0 top-1/2 -translate-y-1/2 pointer-events-none">
+        {mounted && (
+          <video
+            key={videoSrc}
+            autoPlay
+            loop
+            muted
+            playsInline
+            onCanPlay={(e) =>
+              e.currentTarget.classList.replace("opacity-0", "opacity-100")
+            }
+            className="w-[400px] h-auto rounded-[2rem] object-contain opacity-0 transition-opacity duration-700"
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        )}
       </div>
 
-      <div className="lg:max-w-[60%]">
+      <div className="lg:max-w-[60%] lg:mt-[6vh]">
         {/* Label */}
         <p className="text-sm font-semibold text-neutral-500 dark:text-neutral-400/90 tracking-wide mb-3">
           {heroContent.label}
         </p>
 
         {/* Title */}
-        <h1 className="text-4xl md:text-5xl lg:text-title font-normal text-stone-900 dark:text-neutral-200 tracking-tighter leading-[1.05] mb-5">
+        <h1 className="text-4xl md:text-5xl lg:text-title font-semibold text-stone-900 dark:text-neutral-200 tracking-tighter leading-[1.05] mb-5">
           {heroContent.title}
         </h1>
 
@@ -50,11 +95,15 @@ const SirenbaseHero = () => {
         </p>
 
         {/* Stats bar */}
-        <div className="flex flex-wrap gap-8 md:gap-12 mb-10">
+        <div className="flex flex-wrap gap-8 md:gap-8 mb-10">
           {heroStats.map((stat) => (
-            <div key={stat.label} className="flex flex-col">
-              <span className="text-3xl font-semibold text-stone-900 dark:text-neutral-200 tracking-tight leading-tight">
-                {stat.value}
+            <div key={stat.label} className="flex flex-col min-w-[3.5rem]">
+              <span className="text-4xl font-semibold font-zcool text-stone-900 dark:text-neutral-200 tracking-tight leading-tight tabular-nums">
+                <CountUp
+                  end={parseFloat(stat.value)}
+                  decimals={stat.value.includes(".") ? 1 : 0}
+                  start={visible}
+                />
               </span>
               <span className="text-xm text-neutral-500 dark:text-neutral-400 mt-1">
                 {stat.label}
@@ -91,18 +140,21 @@ const SirenbaseHero = () => {
 
       {/* Phone mockup — stacked on mobile only */}
       <div className="lg:hidden flex justify-center mt-12">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          onCanPlay={(e) =>
-            e.currentTarget.classList.replace("opacity-0", "opacity-100")
-          }
-          className="w-[320px] h-auto rounded-[2rem] object-contain opacity-0 transition-opacity duration-700"
-        >
-          <source src="/video/sirenbase-vertical.mp4" type="video/mp4" />
-        </video>
+        {mounted && (
+          <video
+            key={videoSrc}
+            autoPlay
+            loop
+            muted
+            playsInline
+            onCanPlay={(e) =>
+              e.currentTarget.classList.replace("opacity-0", "opacity-100")
+            }
+            className="w-[320px] h-auto rounded-[2rem] object-contain opacity-0 transition-opacity duration-700"
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        )}
       </div>
     </section>
   );

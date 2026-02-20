@@ -6,10 +6,9 @@ import ImpactSection from "./components/ImpactSection";
 import TechDecisionsSection from "./components/TechDecisionsSection";
 import BuiltWithAISection from "./components/BuiltWithAISection";
 import RoadmapSection from "./components/RoadmapSection";
-import FooterCTA from "./components/FooterCTA";
 
 export const metadata: Metadata = {
-  title: "SirenBase | John John's Portfolio",
+  title: "Sirenbase | John John's Portfolio",
   description:
     "A digital operations platform built for a working coffeehouse — replacing fragmented daily workflows with fast, accountable digital operations.",
 };
@@ -25,7 +24,6 @@ export default function SirenbasePage() {
         <TechDecisionsSection />
         <BuiltWithAISection />
         <RoadmapSection />
-        <FooterCTA />
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ const RoadmapSection = () => {
   const hasBeenVisible = useIsVisible(sectionRef);
 
   return (
-    <SectionWrapper variant="transparent">
+    <SectionWrapper variant="solid">
       <div
         ref={sectionRef}
         className={`transition-all duration-700 ease-out ${

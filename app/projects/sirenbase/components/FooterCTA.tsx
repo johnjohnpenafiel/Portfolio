@@ -10,7 +10,7 @@ const FooterCTA = () => {
   const hasBeenVisible = useIsVisible(sectionRef);
 
   return (
-    <SectionWrapper variant="solid">
+    <SectionWrapper variant="transparent">
       <div
         ref={sectionRef}
         className={`transition-all duration-700 ease-out ${
