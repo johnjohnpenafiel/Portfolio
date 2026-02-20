@@ -1,0 +1,97 @@
+"use client";
+
+import React, { useEffect, useRef } from "react";
+import { X } from "lucide-react";
+import { VideoDemoCard } from "../data/sirenbaseData";
+
+interface VideoModalProps {
+  card: VideoDemoCard;
+  onClose: () => void;
+}
+
+const VideoModal = ({ card, onClose }: VideoModalProps) => {
+  const modalRef = useRef<HTMLDivElement>(null);
+  const previousFocus = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    previousFocus.current = document.activeElement as HTMLElement;
+    modalRef.current?.focus();
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+
+      if (e.key === "Tab") {
+        const focusable = modalRef.current?.querySelectorAll<HTMLElement>(
+          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        if (!focusable || focusable.length === 0) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "";
+      previousFocus.current?.focus();
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
+      onClick={onClose}
+    >
+      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+
+      <div
+        ref={modalRef}
+        tabIndex={-1}
+        role="dialog"
+        aria-modal="true"
+        aria-label={`${card.title} demo video`}
+        className="relative z-10 w-full max-w-3xl outline-none"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          onClick={onClose}
+          className="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+          aria-label="Close video"
+        >
+          <X size={20} className="text-white" />
+        </button>
+
+        <div className="mb-4">
+          <p className="text-xm text-neutral-400 tracking-widest">
+            {card.eyebrow}
+          </p>
+          <h3 className="text-lg font-semibold text-white">{card.title}</h3>
+        </div>
+
+        <div className="rounded-2xl overflow-hidden bg-black aspect-video">
+          <video
+            src={card.videoSrc}
+            controls
+            autoPlay
+            playsInline
+            className="w-full h-full object-contain"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default VideoModal;

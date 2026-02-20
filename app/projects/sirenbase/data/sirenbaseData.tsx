@@ -20,6 +20,14 @@ export interface ToolCard {
   body: string;
 }
 
+export interface VideoDemoCard {
+  id: string;
+  eyebrow: string;
+  title: string;
+  posterImage: string;
+  videoSrc?: string;
+}
+
 export interface ImpactBlock {
   title: string;
   metric?: string;
@@ -99,6 +107,33 @@ export const toolCards: ToolCard[] = [
     number: "03",
     title: "RTD&E Counting",
     body: "A guided restocking workflow that presents items one at a time, compares counts against par levels, and generates a pull list with exact quantities. Partners count what\u2019s on the display \u2014 the app tells them what to pull. Sessions expire after 30 minutes to prevent stale data from carrying over.",
+  },
+];
+
+export const videoDemoCards: VideoDemoCard[] = [
+  {
+    id: "inventory",
+    eyebrow: "Tool 01",
+    title: "Inventory Tracking",
+    posterImage: "/images/sirenbase/placeholders/Inventory-placeholder.png",
+  },
+  {
+    id: "milk-count",
+    eyebrow: "Tool 02",
+    title: "Milk Count",
+    posterImage: "/images/sirenbase/placeholders/Milkcount-placeholder.png",
+  },
+  {
+    id: "rtde",
+    eyebrow: "Tool 03",
+    title: "RTD&E Counting",
+    posterImage: "/images/sirenbase/placeholders/Rtde-placeholder.png",
+  },
+  {
+    id: "dashboard",
+    eyebrow: "Admin",
+    title: "Dashboard & Admin",
+    posterImage: "/images/sirenbase/placeholders/admin-placeholder.png",
   },
 ];
 

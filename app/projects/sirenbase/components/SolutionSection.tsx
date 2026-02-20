@@ -3,7 +3,12 @@
 import React, { useRef } from "react";
 import { useIsVisible } from "@/hooks/useIsVisible";
 import SectionWrapper from "./SectionWrapper";
-import { solutionArchitecture, toolCards } from "../data/sirenbaseData";
+import {
+  solutionArchitecture,
+  toolCards,
+  videoDemoCards,
+} from "../data/sirenbaseData";
+import VideoDemoCarousel from "./VideoDemoCarousel";
 
 const SolutionSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -22,11 +27,9 @@ const SolutionSection = () => {
           {solutionArchitecture}
         </p>
 
-        {/* Demo video placeholder */}
-        <div className="w-full aspect-video rounded-3xl border border-gray-200/80 dark:border-neutral-800/50 bg-neutral-200/10 dark:bg-[#1B1212]/40 backdrop-blur-[4px] flex items-center justify-center mb-16">
-          <span className="text-sm text-neutral-400 dark:text-neutral-400/40">
-            Demo coming soon
-          </span>
+        {/* Video demo carousel */}
+        <div className="mb-16">
+          <VideoDemoCarousel cards={videoDemoCards} />
         </div>
 
         {/* Tool cards */}
