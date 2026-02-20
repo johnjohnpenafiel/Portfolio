@@ -48,32 +48,27 @@ const VideoDemoCarousel = ({ cards }: VideoDemoCarouselProps) => {
     <div ref={carouselRef}>
       <div
         ref={scrollRef}
-        className="flex gap-5 overflow-x-auto snap-x snap-proximity scroll-smooth scrollbar-none pb-4 -mx-8 md:-mx-16 pl-16 md:pl-32 pr-16 md:pr-32 scroll-pl-16 md:scroll-pl-32"
+        className="flex gap-5 overflow-x-auto snap-x snap-proximity scroll-smooth scrollbar-none py-4 -mx-8 md:-mx-16 pl-16 md:pl-32 pr-16 md:pr-32 scroll-pl-16 md:scroll-pl-32"
       >
         {cards.map((card, i) => (
           <div
             key={card.id}
-            className={`flex-shrink-0 snap-start w-[260px] md:w-[280px] lg:w-[300px] relative rounded-2xl overflow-hidden border-2 border-neutral-300 dark:border-neutral-500 bg-neutral-100 dark:bg-[#1B1212]/60 transition-all duration-1000 ease-out ${
+            className={`flex-shrink-0 snap-start w-[260px] md:w-[280px] lg:w-[300px] aspect-[390/844] transition-[opacity,translate] duration-1000 ease-out ${
               hasBeenVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
             }`}
-            style={{
-              aspectRatio: "390 / 844",
-              transitionDelay: `${i * 250}ms`,
-            }}
+            style={{ transitionDelay: `${i * 250}ms` }}
           >
+            <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-neutral-300 dark:border-neutral-500 bg-neutral-100 dark:bg-[#1B1212]/60 transition-transform duration-300 ease-in-out hover:scale-[1.02]">
             {/* Gradient overlay for text readability */}
-            <div className="absolute inset-x-0 top-0 h-[45%] bg-gradient-to-b from-black/80 via-black/30 to-transparent dark:from-[#1B1212]/90 dark:via-[#1B1212]/40 dark:to-transparent pointer-events-none z-10" />
+            <div className="absolute inset-x-0 top-0 h-[30%] bg-gradient-to-b from-neutral-500/80 via-neutral-500/30 to-transparent dark:from-neutral-700/90 dark:via-neutral-700/30 dark:to-transparent pointer-events-none z-10" />
 
             {/* Text overlay at top */}
             <div className="absolute top-0 left-0 right-0 p-5 z-20">
               <span className="inline-block text-[10px] font-semibold text-white mb-2 bg-black rounded-full px-2 py-0.5">
                 {card.eyebrow}
               </span>
-              <h3 className="text-xl font-bold text-white tracking-tight leading-tight">
-                {card.title}
-              </h3>
             </div>
 
             {/* Poster image */}
@@ -89,7 +84,7 @@ const VideoDemoCarousel = ({ cards }: VideoDemoCarouselProps) => {
             {card.videoSrc ? (
               <button
                 onClick={() => setActiveVideo(card)}
-                className="absolute bottom-4 right-4 z-20 w-11 h-11 rounded-full bg-stone-800/80 dark:bg-neutral-200/90 flex items-center justify-center transition-transform duration-200 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                className="absolute bottom-4 right-4 z-20 w-11 h-11 rounded-full bg-stone-800/80 dark:bg-neutral-200/90 flex items-center justify-center transition-transform duration-150 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
                 aria-label={`Play ${card.title} demo video`}
               >
                 <Play
@@ -110,6 +105,7 @@ const VideoDemoCarousel = ({ cards }: VideoDemoCarouselProps) => {
                 />
               </div>
             )}
+            </div>
           </div>
         ))}
       </div>
