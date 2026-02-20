@@ -14,7 +14,7 @@ const ImpactSection = () => {
   const hasBeenVisible = useIsVisible(sectionRef);
 
   return (
-    <SectionWrapper variant="transparent">
+    <SectionWrapper variant="transparent" borderOpen>
       <div ref={sectionRef}>
         <p className="text-xm font-semibold text-neutral-500/70 dark:text-neutral-400/70 tracking-widest mb-4">
           Impact
@@ -51,7 +51,7 @@ const ImpactSection = () => {
 
               {/* Before / After columns */}
               <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="px-8 pt-6 pb-8 border-b md:border-b-0 md:border-r border-gray-200/80 dark:border-neutral-800/50">
+                <div className="px-8 pt-6 pb-8 border-b md:border-b-0">
                   <p className="text-xm font-semibold text-neutral-500/60 dark:text-neutral-400/60 tracking-widest mb-3">
                     Before
                   </p>
@@ -59,7 +59,7 @@ const ImpactSection = () => {
                     {block.before}
                   </p>
                 </div>
-                <div className="px-8 pt-6 pb-8">
+                <div className="px-8 pt-6 pb-8 md:border-l border-gray-200/80 dark:border-neutral-800/50">
                   <p className="text-xm font-semibold text-neutral-500/60 dark:text-neutral-400/60 tracking-widest mb-3">
                     After
                   </p>

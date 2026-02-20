@@ -10,7 +10,7 @@ const SolutionSection = () => {
   const hasBeenVisible = useIsVisible(sectionRef);
 
   return (
-    <SectionWrapper variant="solid">
+    <SectionWrapper variant="solid" borderOpen={false}>
       <div ref={sectionRef}>
         <p className="text-xm font-semibold text-neutral-500/70 dark:text-neutral-400/70 tracking-widest mb-4">
           The Solution
