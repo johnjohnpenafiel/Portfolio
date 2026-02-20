@@ -55,7 +55,7 @@ const SirenbaseHero = () => {
 
   return (
     <section
-      className={`min-h-screen flex flex-col justify-center pt-[8vh] relative transition-opacity duration-500 -mx-8 md:-mx-16 px-8 md:px-16 bg-lightBackground dark:bg-black ${
+      className={`min-h-screen flex flex-col justify-center py-24 md:py-0 md:pt-[8vh] relative transition-opacity duration-500 -mx-8 md:-mx-16 px-8 md:px-16 bg-lightBackground dark:bg-black ${
         visible ? "opacity-100" : "opacity-0"
       }`}
     >
