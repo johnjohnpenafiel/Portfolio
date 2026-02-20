@@ -33,7 +33,19 @@ const VideoDemoCarousel = ({ cards }: VideoDemoCarouselProps) => {
     if (!el) return;
     el.addEventListener("scroll", updateScrollButtons, { passive: true });
     updateScrollButtons();
-    return () => el.removeEventListener("scroll", updateScrollButtons);
+
+    // Prevent Lenis vertical scroll when user is scrolling horizontally
+    const handleWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
+        e.stopPropagation();
+      }
+    };
+    el.addEventListener("wheel", handleWheel);
+
+    return () => {
+      el.removeEventListener("scroll", updateScrollButtons);
+      el.removeEventListener("wheel", handleWheel);
+    };
   }, [updateScrollButtons]);
 
   const scrollPrev = () => {
