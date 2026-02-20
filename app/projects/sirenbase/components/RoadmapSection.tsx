@@ -30,7 +30,7 @@ const RoadmapSection = () => {
           {roadmapItems.map((item) => (
             <div
               key={item.title}
-              className="pl-6 border-l border-gray-200/80 dark:border-neutral-900/80"
+              className="pl-6 border-l border-gray-200/80 dark:border-neutral-800/80"
             >
               <h3 className="text-base font-semibold text-stone-800 dark:text-neutral-200 mb-2">
                 {item.title}

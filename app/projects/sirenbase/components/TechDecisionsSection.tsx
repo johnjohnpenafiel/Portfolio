@@ -30,7 +30,7 @@ const TechDecisionsSection = () => {
           {techDecisions.map((decision, i) => (
             <div
               key={decision.title}
-              className={`p-8 border border-gray-200/80 dark:border-neutral-900/80 rounded-xl bg-neutral-100/50 dark:bg-[#1B1212]/15 transition-all duration-700 ease-out ${
+              className={`p-8 border border-gray-200/80 dark:border-neutral-800/50 rounded-xl bg-neutral-100/50 dark:bg-[#1B1212]/15 transition-all duration-700 ease-out ${
                 hasBeenVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
@@ -52,7 +52,7 @@ const TechDecisionsSection = () => {
           {techStackBadges.map((badge) => (
             <span
               key={badge}
-              className="text-xm text-neutral-500 dark:text-neutral-400 border border-gray-200/80 dark:border-neutral-900/80 rounded-full px-3 py-1 bg-neutral-200/10 dark:bg-[#1B1212]/25"
+              className="text-xm text-neutral-500 dark:text-neutral-400 border border-gray-200/80 dark:border-neutral-800/50 rounded-full px-3 py-1 bg-neutral-200/10 dark:bg-[#1B1212]/25"
             >
               {badge}
             </span>

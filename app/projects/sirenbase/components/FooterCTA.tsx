@@ -51,7 +51,7 @@ const FooterCTA = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-200/80 dark:border-neutral-900/80 pt-6">
+        <div className="border-t border-gray-200/80 dark:border-neutral-800/80 pt-6">
           <p className="text-xm text-neutral-500 dark:text-neutral-400">
             &copy; 2026 John Penafiel
           </p>

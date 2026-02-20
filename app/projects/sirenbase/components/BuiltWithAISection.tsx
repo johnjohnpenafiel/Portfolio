@@ -40,7 +40,7 @@ const BuiltWithAISection = () => {
         </div>
 
         {/* CLAUDE.md artifact */}
-        <div className="mt-8 px-8 py-6 border border-gray-200/80 dark:border-neutral-900/80 rounded-xl bg-neutral-100/50 dark:bg-[#1B1212]/15 font-mono text-sm text-neutral-500 dark:text-neutral-400/80 leading-relaxed max-w-[720px]">
+        <div className="mt-8 px-8 py-6 border border-gray-200/80 dark:border-neutral-800/50 rounded-xl bg-neutral-100/50 dark:bg-[#1B1212]/15 font-mono text-sm text-neutral-500 dark:text-neutral-400/80 leading-relaxed max-w-[720px]">
           <strong className="text-stone-800 dark:text-neutral-200 font-semibold">
             {aiArtifact.name}
           </strong>{" "}

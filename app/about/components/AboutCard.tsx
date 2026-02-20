@@ -12,7 +12,7 @@ const AboutCard = ({ title, content }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="py-5 || border-b border-gray-200/80 dark:border-neutral-900/80">
+    <div className="py-5 || border-b border-gray-200/80 dark:border-neutral-800/50">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex w-full justify-between items-center px-4"

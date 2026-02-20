@@ -26,7 +26,7 @@ const ProblemSection = () => {
           {problemCards.map((card, i) => (
             <div
               key={card.title}
-              className={`border border-gray-200/80 dark:border-neutral-900/80 rounded-xl p-7 bg-neutral-200/10 dark:bg-[#1B1212]/25 backdrop-blur-xm transition-transform ease-in-out duration-1000 ${
+              className={`border border-gray-200/80 dark:border-neutral-800/50 rounded-xl p-7 bg-neutral-200/10 dark:bg-[#1B1212]/25 backdrop-blur-xm transition-transform ease-in-out duration-1000 ${
                 hasBeenVisible
                   ? "translate-y-0"
                   : "translate-y-40"

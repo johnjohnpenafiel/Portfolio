@@ -30,7 +30,7 @@ const ImpactSection = () => {
           {impactBlocks.map((block, i) => (
             <div
               key={block.title}
-              className={`border border-gray-200/80 dark:border-neutral-900/80 rounded-xl overflow-hidden bg-neutral-100/50 dark:bg-[#1B1212]/15 transition-all duration-700 ease-out ${
+              className={`border border-gray-200/80 dark:border-neutral-800/50 rounded-xl overflow-hidden bg-neutral-100/50 dark:bg-[#1B1212]/15 transition-all duration-700 ease-out ${
                 hasBeenVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
@@ -51,7 +51,7 @@ const ImpactSection = () => {
 
               {/* Before / After columns */}
               <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="px-8 pt-6 pb-8 border-b md:border-b-0 md:border-r border-gray-200/80 dark:border-neutral-900/80">
+                <div className="px-8 pt-6 pb-8 border-b md:border-b-0 md:border-r border-gray-200/80 dark:border-neutral-800/50">
                   <p className="text-xm font-semibold text-neutral-500/60 dark:text-neutral-400/60 tracking-widest mb-3">
                     Before
                   </p>
@@ -74,7 +74,7 @@ const ImpactSection = () => {
 
         {/* Summary */}
         <div
-          className={`mt-12 p-8 border border-gray-200/80 dark:border-neutral-900/80 rounded-xl bg-neutral-100/50 dark:bg-[#1B1212]/15 transition-all duration-700 ease-out ${
+          className={`mt-12 p-8 border border-gray-200/80 dark:border-neutral-800/50 rounded-xl bg-neutral-100/50 dark:bg-[#1B1212]/15 transition-all duration-700 ease-out ${
             hasBeenVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-8"

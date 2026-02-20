@@ -23,7 +23,7 @@ const SolutionSection = () => {
         </p>
 
         {/* Demo video placeholder */}
-        <div className="w-full aspect-video rounded-3xl border border-gray-200/80 dark:border-neutral-900/80 bg-neutral-200/10 dark:bg-[#1B1212]/40 backdrop-blur-[4px] flex items-center justify-center mb-16">
+        <div className="w-full aspect-video rounded-3xl border border-gray-200/80 dark:border-neutral-800/50 bg-neutral-200/10 dark:bg-[#1B1212]/40 backdrop-blur-[4px] flex items-center justify-center mb-16">
           <span className="text-sm text-neutral-400 dark:text-neutral-400/40">
             Demo coming soon
           </span>
@@ -34,7 +34,7 @@ const SolutionSection = () => {
           {toolCards.map((tool, i) => (
             <div
               key={tool.number}
-              className={`border border-gray-200/80 dark:border-neutral-900/80 rounded-xl p-7 bg-neutral-200/10 dark:bg-[#1B1212]/25 backdrop-blur-[4px] transition-all duration-700 ease-out ${
+              className={`border border-gray-200/80 dark:border-neutral-800/50 rounded-xl p-7 bg-neutral-200/10 dark:bg-[#1B1212]/25 backdrop-blur-[4px] transition-all duration-700 ease-out ${
                 hasBeenVisible
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
