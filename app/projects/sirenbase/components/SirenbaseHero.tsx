@@ -80,7 +80,7 @@ const SirenbaseHero = () => {
 
       <div className="lg:max-w-[60%] lg:mt-[6vh]">
         {/* Label */}
-        <p className="text-sm font-semibold text-neutral-500 dark:text-neutral-400/90 tracking-wide mb-3">
+        <p className="text-sm font-medium text-neutral-500 dark:text-neutral-400/90 tracking-wide mb-3">
           {heroContent.label}
         </p>
 
