@@ -1,0 +1,252 @@
+import React from "react";
+
+// ── Types ──────────────────────────────────────────────
+
+export interface HeroStat {
+  value: string;
+  label: string;
+}
+
+export interface ProblemCard {
+  icon: string;
+  title: string;
+  body: string;
+}
+
+export interface ToolCard {
+  number: string;
+  title: string;
+  body: string;
+}
+
+export interface ImpactBlock {
+  title: string;
+  metric?: string;
+  before: string;
+  after: string;
+}
+
+export interface TechDecision {
+  title: string;
+  body: React.ReactNode;
+}
+
+export interface RoadmapItem {
+  title: string;
+  body: string;
+}
+
+// ── Hero ───────────────────────────────────────────────
+
+export const heroContent = {
+  label: "Full-Stack Platform",
+  title: "SirenBase",
+  subtitle:
+    "Built for a working coffeehouse, this modular platform replaces fragmented daily workflows with fast, accountable digital operations.",
+};
+
+export const heroStats: HeroStat[] = [
+  { value: "4.5", label: "months" },
+  { value: "281", label: "commits" },
+  { value: "226", label: "tests" },
+  { value: "3", label: "tools" },
+];
+
+export const heroTechStack =
+  "Next.js · React · TypeScript · Tailwind CSS · ShadCN/Radix · Flask · SQLAlchemy · PostgreSQL · JWT · Vercel + Render + Neon";
+
+// ── The Problem ────────────────────────────────────────
+
+export const problemIntro =
+  "Working in a coffeehouse exposes daily processes that silently drain time and energy. Ordering, counting, and restocking rely on outdated, repetitive workflows — tasks that feel simple but stack up into constant friction.";
+
+export const problemCards: ProblemCard[] = [
+  {
+    icon: "\u2610",
+    title: "Inventory Ordering",
+    body: "Daily ordering lacks a reliable source of truth. Inventory changes throughout the day without shared visibility, forcing partners to compensate with time, repetition, and caution. What should be a straightforward decision becomes a recurring liability.",
+  },
+  {
+    icon: "\u2692",
+    title: "Milk Counting",
+    body: "Daily milk counts rely on slow, manual processes that pile up frustration and errors. Partners track totals, carry numbers forward, and calculate orders by hand every day, turning a routine task into repetitive friction.",
+  },
+  {
+    icon: "\u21BB",
+    title: "Display Restocking",
+    body: "Daily restocking depends on repeated checks and back-and-forth trips, as missing items are easy to overlook. Partners spend time verifying what\u2019s needed instead of acting, turning a routine task into a slow, frustrating cycle.",
+  },
+];
+
+// ── The Solution ───────────────────────────────────────
+
+export const solutionArchitecture =
+  "A Next.js frontend backed by a Flask REST API and PostgreSQL database. Partners log in once and access all three tools from a central dashboard. The dashboard doubles as an operational overview \u2014 surfacing milk count progress and time since the last restock so partners know what\u2019s done and what\u2019s overdue without opening each tool.";
+
+export const toolCards: ToolCard[] = [
+  {
+    number: "01",
+    title: "Inventory Tracking",
+    body: "A shared, real-time inventory system that gives every partner immediate visibility into current stock. Items are identified by unique 4-digit codes written directly on them for fast physical lookup. A single search field queries across names, codes, and categories. Every add and remove is logged with ownership and timestamp, creating a persistent audit trail.",
+  },
+  {
+    number: "02",
+    title: "Milk Count",
+    body: "A structured daily workflow that walks partners through each counting phase in sequence \u2014 no steps can be skipped, no math is done by hand. The system collects stock levels from multiple locations, handles all calculations automatically, and logs every completed session. Par levels are admin-configurable.",
+  },
+  {
+    number: "03",
+    title: "RTD&E Counting",
+    body: "A guided restocking workflow that presents items one at a time, compares counts against par levels, and generates a pull list with exact quantities. Partners count what\u2019s on the display \u2014 the app tells them what to pull. Sessions expire after 30 minutes to prevent stale data from carrying over.",
+  },
+];
+
+// ── Impact ─────────────────────────────────────────────
+
+export const impactIntro =
+  "Every tool targets a specific daily bottleneck I experienced firsthand. The improvements below are based on the actual workflows I performed and timed against the original processes.";
+
+export const impactBlocks: ImpactBlock[] = [
+  {
+    title: "Inventory Tracking",
+    before:
+      "Ordering pulls partners off the floor to repeatedly verify stock in the basement. Mid-order questions mean more trips, more interruptions, and more time spent confirming instead of deciding. Inventory counts happen multiple times a day, but without a shared record of changes, each count starts from an uncertain baseline.",
+    after:
+      "Inventory state is visible in real time from any device. Partners place orders and run counts with confidence \u2014 no basement trips, no guesswork. Every add and remove is logged with clear ownership, so the system always reflects the current state.",
+  },
+  {
+    title: "Milk Count",
+    metric: "85%+ faster",
+    before:
+      "A 10\u201315 minute process involving manual counts across multiple fridges, carrying totals forward on paper, cross-referencing a separate system for incoming deliveries, and subtracting from par levels by hand. One wrong number cascaded through the entire calculation.",
+    after:
+      "A guided workflow where the partner just counts and the system handles every calculation. Corrections recalculate instantly. In personal testing, the full process takes under 2 minutes \u2014 an 85%+ reduction in time on a task that happens every single day.",
+  },
+  {
+    title: "RTD&E Restocking",
+    before:
+      "A 5\u201310 minute cycle of rearranging the display to see what\u2019s missing, photographing or writing it down, walking to storage, and trying to match items against a photo. Interruptions meant starting over.",
+    after:
+      "Count what\u2019s on the display, and the app generates a pull list with exact quantities. Fulfillment is tracked with checkboxes, so an interruption doesn\u2019t reset progress. Sessions expire after 30 minutes to prevent stale counts from carrying over.",
+  },
+];
+
+export const impactSummary =
+  "Three daily tasks that used to run on paper, memory, and repeated physical checks now run through a single authenticated platform \u2014 with shared state, audit trails, and no manual math.";
+
+// ── Technical Decisions ────────────────────────────────
+
+export const techDecisionsIntro =
+  "The architecture behind SirenBase was shaped by one constraint: this platform needed to support multiple independent tools without any of them interfering with each other \u2014 and it needed to be built in a way where adding a fourth tool wouldn\u2019t require touching the first three.";
+
+export const techDecisions: TechDecision[] = [
+  {
+    title: "Hub-and-Spoke Multi-Tool Architecture",
+    body: (
+      <>
+        Every tool is isolated at every layer. The backend uses separate Flask
+        Blueprints with prefixed routes (<code>/api/tracking/*</code>,{" "}
+        <code>/api/milk-count/*</code>, <code>/api/rtde/*</code>). The database
+        uses prefixed tables per tool (<code>tracking_items</code>,{" "}
+        <code>milk_count_sessions</code>, <code>rtde_count_sessions</code>)
+        sharing only a central <code>users</code> table. The frontend mirrors
+        this with nested route trees under <code>/tools/</code>. Authentication,
+        UI components, and the design system are shared — everything else is
+        namespaced. This wasn&apos;t how the project started. Migration #3 renamed
+        the original tables to add the <code>tracking_</code> prefix — the
+        moment the architecture shifted from single-tool to multi-tool.
+      </>
+    ),
+  },
+  {
+    title: "Design System as Documentation",
+    body: (
+      <>
+        Before writing components, I wrote the rules they&apos;d follow. Six modular
+        design documents define the system: tokens (OKLCh color space,
+        typography, spacing), component patterns, dialog behaviors, layout
+        structure, tool-specific UI characteristics, and accessibility standards.
+        Performance budgets are defined (page load under 2s, 60fps animations).
+        Touch targets are specified at 44px minimum with 8px gaps. Animation
+        durations are standardized across four tiers. The design system isn&apos;t a
+        style guide — it&apos;s the spec sheet the entire frontend was built against.
+      </>
+    ),
+  },
+  {
+    title: "226 Tests Across the Full API",
+    body: (
+      <>
+        Testing wasn&apos;t added after the fact — it was a requirement defined in the
+        project&apos;s development guidelines. Features without tests are explicitly
+        marked incomplete. The 226 backend tests cover authentication, CRUD
+        operations, session state transitions, calculation accuracy, role-based
+        access enforcement, and edge cases like expired sessions and duplicate
+        entries. Every test runs against a real database with full isolation —{" "}
+        <code>create_all()</code> and <code>drop_all()</code> bracketing per
+        test, no shared state, no interdependencies.
+      </>
+    ),
+  },
+  {
+    title: "Debounced Auto-Save with Optimistic Updates",
+    body: (
+      <>
+        The RTD&amp;E counting interface updates on every tap — partners are
+        counting items quickly and shouldn&apos;t wait for network round-trips.
+        Counts save automatically on a 500ms debounce, with the UI updating
+        optimistically before the API confirms. A saving indicator displays for a
+        minimum of 800ms so it doesn&apos;t flash and disappear. If the save fails,
+        the count reverts. Arrow keys navigate between items. The goal was an
+        interface that feels instant even on a slow connection.
+      </>
+    ),
+  },
+];
+
+export const techStackBadges = [
+  "Next.js",
+  "React",
+  "TypeScript",
+  "Tailwind CSS",
+  "ShadCN / Radix",
+  "Flask",
+  "SQLAlchemy",
+  "PostgreSQL",
+  "JWT",
+  "Vercel",
+  "Render",
+  "Neon",
+];
+
+// ── Built with AI ──────────────────────────────────────
+
+export const aiNarrative = [
+  "SirenBase was built over 4.5 months and 281 commits using Claude Code as a development and research partner throughout the process.",
+  "I drove every product and architecture decision \u2014 which tools to build, how the workflows should feel, how the database should be structured, and what standards the codebase should follow. That direction lives in the project\u2019s CLAUDE.md \u2014 a 500+ line document defining architecture rules, code style, testing requirements, and documentation standards. It\u2019s both the instruction set that guided every implementation session and an artifact of the workflow itself.",
+  "Claude Code accelerated the implementation: generating boilerplate, writing test suites, building out endpoints, and iterating on components faster than I could alone. Directing AI effectively is its own skill \u2014 knowing what to ask for, how to validate the output, and when to override it. The architecture, the testing discipline, the documentation, and the product decisions are mine. The velocity is the partnership.",
+];
+
+export const aiArtifact = {
+  name: "CLAUDE.md",
+  description:
+    "500+ lines defining architecture rules, code style, testing requirements, and documentation standards. The instruction set that guided every implementation session.",
+};
+
+// ── Roadmap ────────────────────────────────────────────
+
+export const roadmapItems: RoadmapItem[] = [
+  {
+    title: "IMS Integration for Milk Count",
+    body: "The milk count workflow currently requires partners to manually enter on-order quantities from the store\u2019s Inventory Management System. With direct IMS access, those numbers would populate automatically \u2014 removing a manual step and eliminating transcription errors. Combined with the existing count data and par levels, the system could then calculate and pre-fill the final milk order automatically.",
+  },
+  {
+    title: "CI/CD Pipeline",
+    body: "The 226 tests exist but run manually. A GitHub Actions pipeline would gate every push to main and enforce the testing discipline that\u2019s currently a convention into an automated requirement.",
+  },
+];
+
+// ── Footer ─────────────────────────────────────────────
+
+export const footerSignoff =
+  "Built to solve real problems I watched happen every day. If you want to talk about it, I\u2019d love to hear from you.";
