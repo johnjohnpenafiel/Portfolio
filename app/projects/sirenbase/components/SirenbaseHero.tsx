@@ -60,7 +60,7 @@ const SirenbaseHero = () => {
       }`}
     >
       {/* Phone mockup — absolute on lg+, stacked below on mobile */}
-      <div className="hidden lg:flex justify-center absolute left-[60%] right-0 top-1/2 -translate-y-1/2 pointer-events-none">
+      <div className="hidden lg:flex justify-center absolute left-[60%] right-16 top-1/2 -translate-y-1/2 pointer-events-none">
         {mounted && (
           <video
             key={videoSrc}
