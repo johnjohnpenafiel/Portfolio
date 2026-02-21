@@ -1,20 +1,20 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { FiPlus } from "react-icons/fi";
 
 interface Props {
   title: string;
   content: string;
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
-const AboutCard = ({ title, content }: Props) => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const AboutCard = ({ title, content, isOpen, onToggle }: Props) => {
   return (
     <div className="py-5 || border-b border-gray-200/80 dark:border-neutral-800/50">
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={onToggle}
         className="flex w-full justify-between items-center px-4"
       >
         <span className="text-lg font-semibold text-stone-900 dark:text-neutral-200">

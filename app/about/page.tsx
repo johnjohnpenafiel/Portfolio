@@ -7,6 +7,7 @@ import { aboutData } from "@/data/aboutData";
 
 const About = () => {
   const [fadeIn, setFadeIn] = useState(false);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -35,11 +36,13 @@ const About = () => {
         </div>
 
         <div className="m-10">
-          {aboutData.map((item) => (
+          {aboutData.map((item, i) => (
             <AboutCard
               key={item.id}
               title={item.title}
               content={item.content}
+              isOpen={openIndex === i}
+              onToggle={() => setOpenIndex(openIndex === i ? null : i)}
             />
           ))}
         </div>
