@@ -71,17 +71,17 @@ export const problemIntro =
 
 export const problemCards: ProblemCard[] = [
   {
-    icon: <Package size={28} strokeWidth={1.5} />,
+    icon: <Package size={28} strokeWidth={1.5} className="text-stone-400" />,
     title: "Inventory Ordering",
     body: "Daily ordering lacks a reliable source of truth. Inventory changes throughout the day without shared visibility, forcing partners to compensate with time, repetition, and caution. What should be a straightforward decision becomes a recurring liability.",
   },
   {
-    icon: <ShoppingBasket size={28} strokeWidth={1.5} />,
+    icon: <Milk size={28} strokeWidth={1.5} className="text-sky-400" />,
     title: "Milk Counting",
     body: "Daily milk counts rely on slow, manual processes that pile up frustration and errors. Partners track totals, carry numbers forward, and calculate orders by hand every day, turning a routine task into repetitive friction.",
   },
   {
-    icon: <Milk size={28} strokeWidth={1.5} />,
+    icon: <ShoppingBasket size={28} strokeWidth={1.5} className="text-emerald-400" />,
     title: "Display Restocking",
     body: "Daily restocking depends on repeated checks and back-and-forth trips, as missing items are easy to overlook. Partners spend time verifying what\u2019s needed instead of acting, turning a routine task into a slow, frustrating cycle.",
   },

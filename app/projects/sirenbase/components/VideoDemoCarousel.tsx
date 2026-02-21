@@ -72,13 +72,13 @@ const VideoDemoCarousel = ({ cards }: VideoDemoCarouselProps) => {
             }`}
             style={{ transitionDelay: `${i * 250}ms` }}
           >
-            <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-neutral-300 dark:border-neutral-500 bg-neutral-100 dark:bg-[#1B1212]/60 transition-transform duration-300 ease-in-out hover:scale-[1.02]">
+            <div className="relative w-full h-full rounded-3xl overflow-hidden border-2 border-neutral-200 dark:border-neutral-500 bg-neutral-100 dark:bg-[#1B1212]/60 transition-transform duration-300 ease-in-out hover:scale-[1.02]">
             {/* Gradient overlay for text readability */}
-            <div className="absolute inset-x-0 top-0 h-[30%] bg-gradient-to-b from-neutral-500/80 via-neutral-500/30 to-transparent dark:from-neutral-700/90 dark:via-neutral-700/30 dark:to-transparent pointer-events-none z-10" />
+            <div className="absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-neutral-500/60 via-neutral-500/20 to-transparent dark:from-neutral-600/65 dark:via-neutral-600/20 dark:to-transparent pointer-events-none z-10" />
 
             {/* Text overlay at top */}
             <div className="absolute top-0 left-0 right-0 p-5 z-20">
-              <span className="inline-block text-[10px] font-semibold text-white mb-2 bg-black rounded-full px-2 py-0.5">
+              <span className="inline-block text-xm font-semibold text-white mb-2 bg-black rounded-full px-2 py-0.5 shadow-[0_0_16px_rgba(200,200,200,0.5)]">
                 {card.eyebrow}
               </span>
             </div>

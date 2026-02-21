@@ -44,7 +44,7 @@ const SolutionSection = () => {
               }`}
               style={{ transitionDelay: `${i * 150}ms` }}
             >
-              <p className="text-xm text-neutral-500/50 dark:text-neutral-400/50 mb-3">
+              <p className="text-xm font-zcool text-neutral-500/50 dark:text-neutral-400/50 mb-3">
                 {tool.number}
               </p>
               <h3 className="text-lg font-semibold text-stone-800 dark:text-neutral-200 mb-3">
