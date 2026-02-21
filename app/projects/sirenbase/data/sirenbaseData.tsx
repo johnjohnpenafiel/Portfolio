@@ -28,11 +28,16 @@ export interface VideoDemoCard {
   videoSrc?: string;
 }
 
-export interface ImpactBlock {
-  title: string;
-  metric?: string;
+export interface ImpactStat {
   before: string;
   after: string;
+  label: string;
+}
+
+export interface ImpactTool {
+  title: string;
+  improvement: string;
+  stats: ImpactStat[];
 }
 
 export interface TechDecision {
@@ -142,33 +147,35 @@ export const videoDemoCards: VideoDemoCard[] = [
 export const impactIntro =
   "Every tool targets a specific daily bottleneck I experienced firsthand. The improvements below are based on the actual workflows I performed and timed against the original processes.";
 
-export const impactBlocks: ImpactBlock[] = [
+export const impactTools: ImpactTool[] = [
   {
     title: "Inventory Tracking",
-    before:
-      "Ordering pulls partners off the floor to repeatedly verify stock in the basement. Mid-order questions mean more trips, more interruptions, and more time spent confirming instead of deciding. Inventory counts happen multiple times a day, but without a shared record of changes, each count starts from an uncertain baseline.",
-    after:
-      "Inventory state is visible in real time from any device. Partners place orders and run counts with confidence \u2014 no basement trips, no guesswork. Every add and remove is logged with clear ownership, so the system always reflects the current state.",
+    improvement: "3x",
+    stats: [
+      { before: "2\u20133 trips", after: "0 trips", label: "to verify stock per order" },
+      { before: "Uncertain", after: "Reliable", label: "order accuracy" },
+      { before: "None", after: "Full log", label: "changes tracked" },
+    ],
   },
   {
     title: "Milk Count",
-    metric: "85%+ faster",
-    before:
-      "A 10\u201315 minute process involving manual counts across multiple fridges, carrying totals forward on paper, cross-referencing a separate system for incoming deliveries, and subtracting from par levels by hand. One wrong number cascaded through the entire calculation.",
-    after:
-      "A guided workflow where the partner just counts and the system handles every calculation. Corrections recalculate instantly. In personal testing, the full process takes under 2 minutes \u2014 an 85%+ reduction in time on a task that happens every single day.",
+    improvement: "4x",
+    stats: [
+      { before: "10\u201315 min", after: "< 3 min", label: "per daily count" },
+      { before: "3 systems", after: "1 workflow", label: "steps to complete" },
+      { before: "Manual", after: "Automated", label: "calculations" },
+    ],
   },
   {
     title: "RTD&E Restocking",
-    before:
-      "A 5\u201310 minute cycle of rearranging the display to see what\u2019s missing, photographing or writing it down, walking to storage, and trying to match items against a photo. Interruptions meant starting over.",
-    after:
-      "Count what\u2019s on the display, and the app generates a pull list with exact quantities. Fulfillment is tracked with checkboxes, so an interruption doesn\u2019t reset progress. Sessions expire after 30 minutes to prevent stale counts from carrying over.",
+    improvement: "3x",
+    stats: [
+      { before: "~5 min", after: "~2 min", label: "per restock cycle" },
+      { before: "Repeat trips", after: "1 pass", label: "to restock" },
+      { before: "None", after: "Restock cycles", label: "tracked" },
+    ],
   },
 ];
-
-export const impactSummary =
-  "Three daily tasks that used to run on paper, memory, and repeated physical checks now run through a single authenticated platform \u2014 with shared state, audit trails, and no manual math.";
 
 // ── Technical Decisions ────────────────────────────────
 
