@@ -30,7 +30,7 @@ const SectionWrapper = ({
           isOpen ? "-mx-8 md:-mx-16" : ""
         }`}
       />
-      <div className="py-20 md:py-24">{children}</div>
+      <div className="pt-14 pb-20 md:py-24">{children}</div>
     </section>
   );
 };

@@ -74,7 +74,7 @@ const VideoDemoCarousel = ({ cards }: VideoDemoCarouselProps) => {
           >
             <div className="relative w-full h-full rounded-3xl overflow-hidden border-2 border-neutral-200 dark:border-neutral-500 bg-neutral-100 dark:bg-[#1B1212]/60 transition-transform duration-300 ease-in-out hover:scale-[1.02]">
             {/* Gradient overlay for text readability */}
-            <div className="absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-neutral-500/60 via-neutral-500/20 to-transparent dark:from-neutral-600/65 dark:via-neutral-600/20 dark:to-transparent pointer-events-none z-10" />
+            <div className="absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-gray-800/70 via-gray-700/30 to-transparent dark:from-gray-900/80 dark:via-gray-800/30 dark:to-transparent pointer-events-none z-10" />
 
             {/* Text overlay at top */}
             <div className="absolute top-0 left-0 right-0 p-5 z-20">
