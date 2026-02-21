@@ -263,11 +263,63 @@ export const aiNarrative = [
   "Claude Code accelerated the implementation: generating boilerplate, writing test suites, building out endpoints, and iterating on components faster than I could alone. Directing AI effectively is its own skill \u2014 knowing what to ask for, how to validate the output, and when to override it. The architecture, the testing discipline, the documentation, and the product decisions are mine. The velocity is the partnership.",
 ];
 
-export const aiArtifact = {
-  name: "CLAUDE.md",
-  description:
-    "500+ lines defining architecture rules, code style, testing requirements, and documentation standards. The instruction set that guided every implementation session.",
-};
+export interface FileTreeNode {
+  name: string;
+  description?: string;
+  children?: FileTreeNode[];
+}
+
+export const aiFileTree: FileTreeNode[] = [
+  {
+    name: "Design/",
+    children: [
+      { name: "README.md", description: "Read before all UI work" },
+      { name: "tokens.md", description: "Colors, typography, spacing" },
+      { name: "components.md", description: "Buttons, cards, forms" },
+      { name: "dialogs.md", description: "Modal/dialog patterns" },
+      { name: "layout.md", description: "Page structure, scrolling" },
+      { name: "tool-specific.md", description: "Per-tool UI" },
+      { name: "tool-redesign-guide.md", description: "Redesign workflow" },
+      { name: "accessibility.md", description: "WCAG, performance" },
+    ],
+  },
+  {
+    name: "Planning/",
+    children: [
+      { name: "PLANNING.md", description: "Multi-tool system design" },
+      { name: "InventoryTracking.md", description: "Tool 1 spec" },
+      { name: "MilkCount.md", description: "Tool 2 spec" },
+      { name: "RTDE.md", description: "Tool 3 spec" },
+      { name: "Deployment.md", description: "Infrastructure plan" },
+    ],
+  },
+  {
+    name: "ChangeLog/",
+    children: [
+      { name: "MULTI_TOOL_ARCHITECTURE.md" },
+      { name: "CATEGORY_FIELD_DECISION.md" },
+      { name: "DOCKER_DECISION.md" },
+      { name: "SQLITE_TESTING_CONFIG.md" },
+      { name: "AUTOCOMPLETE_FEATURE.md" },
+      { name: "ARCHITECTURAL_CHANGES_RULE.md" },
+    ],
+  },
+  {
+    name: "frontend/",
+    children: [
+      { name: "CLAUDE.md", description: "Frontend rules (584 lines)" },
+    ],
+  },
+  {
+    name: "backend/",
+    children: [
+      { name: "CLAUDE.md", description: "Backend rules (907 lines)" },
+    ],
+  },
+  { name: "TASKS.md", description: "Organized by tool and phase" },
+  { name: "BUGS.md", description: "All bugs with IDs and status" },
+  { name: "CLAUDE.md", description: "Project rules (566 lines)" },
+];
 
 // ── Roadmap ────────────────────────────────────────────
 
