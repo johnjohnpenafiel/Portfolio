@@ -7,6 +7,7 @@ import Link from "next/link";
 
 import useInView from "@/hooks/useInView";
 import { useIsVisible } from "@/hooks/useIsVisible";
+import CornerFrame from "@/components/CornerFrame";
 
 interface Link {
   url: string;
@@ -116,17 +117,19 @@ const ProjectCard = ({
       {/* ----- IMAGE SECTION ----- */}
       {/* IMAGE */}
       <div
-        className={`flex h-auto md:w-1/2 order-2 items-center justify-center p-3 md:p-3 transition-all ease-in-out duration-1000 delay-100 ${
-          isInView ? "" : "brightness-75"
-        }`}
+        className="flex h-auto md:w-1/2 order-2 items-center justify-center p-3 md:p-3"
       >
-        <Image
-          src={image}
-          width={500}
-          height={500}
-          alt="Project Picture"
-          className="flex h-full object-contain w-full"
-        />
+        <CornerFrame className="w-fit h-fit">
+          <Image
+            src={image}
+            width={420}
+            height={420}
+            alt="Project Picture"
+            className={`max-w-full h-auto transition-all ease-in-out duration-1000 delay-100 ${
+              isInView ? "" : "brightness-75"
+            }`}
+          />
+        </CornerFrame>
       </div>
     </div>
   );

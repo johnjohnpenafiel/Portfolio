@@ -141,17 +141,17 @@ export const projectData = [
     ],
     images: [
       {
-        src: "/images/ParallaxUICanva1.svg",
+        src: "/images/parallaxui/page/ParallaxUICanva1.svg",
         description: "Costumizable Design",
       },
-      { src: "/images/ParallaxUICanva2.svg", description: "Design Area" },
+      { src: "/images/parallaxui/page/ParallaxUICanva2.svg", description: "Design Area" },
       {
-        src: "/images/ParallaxUICanva4.svg",
+        src: "/images/parallaxui/page/ParallaxUICanva4.svg",
         description: "Export Embeded Design",
       },
       {
-        src: "/images/ParallaxUICanva5.svg",
-        description: "Implementing Design",
+        src: "/images/parallaxui/page/ParallaxUICanva3.svg",
+        description: "Parallax effect preview",
       },
     ],
     links: [
@@ -200,18 +200,18 @@ export const projectData = [
     ],
     images: [
       {
-        src: "/images/NextGameCanva1.svg",
+        src: "/images/nextgame/page/NextGameCanva1.svg",
         description: "Get Platforms, Rating and Score game details",
       },
       {
-        src: "/images/NextGameCanva3.svg",
+        src: "/images/nextgame/page/NextGameCanva3.svg",
         description: "Filter by Genre, Platform and Order",
       },
       {
-        src: "/images/NextGameCanva4.svg",
+        src: "/images/nextgame/page/NextGameCanva4.svg",
         description: "Search through a vast library of games.",
       },
-      { src: "/images/NextGameCanva2.svg", description: "Light/Dark Mode" },
+      { src: "/images/nextgame/page/NextGameCanva2.svg", description: "Light/Dark Mode" },
     ],
     links: [
       {
@@ -262,20 +262,20 @@ export const projectData = [
     ],
     images: [
       {
-        src: "/images/JackSpotCanva1.svg",
+        src: "/images/jackspot/page/JackSpotCanva1.svg",
         description: "View recent created Spots",
       },
-      { src: "/images/JackSpotCanva7.svg", description: "Mobile View" },
-      { src: "/images/JackSpotFigma.svg", description: "Design Structure" },
-      { src: "/images/JackSpotCanva5.svg", description: "Create a Collection" },
-      { src: "/images/JackSpotCanva2.svg", description: "Select a Collection" },
-      { src: "/images/JackSpotCanva6.svg", description: "Create a Spot" },
+      { src: "/images/jackspot/page/JackSpotCanva7.svg", description: "Mobile View" },
+      { src: "/images/jackspot/page/JackSpotFigma.svg", description: "Design Structure" },
+      { src: "/images/jackspot/page/JackSpotCanva5.svg", description: "Create a Collection" },
+      { src: "/images/jackspot/page/JackSpotCanva2.svg", description: "Select a Collection" },
+      { src: "/images/jackspot/page/JackSpotCanva6.svg", description: "Create a Spot" },
       {
-        src: "/images/JackSpotCanva3.svg",
+        src: "/images/jackspot/page/JackSpotCanva3.svg",
         description: "Select a Spot to view related information",
       },
       {
-        src: "/images/JackSpotCanva4.svg",
+        src: "/images/jackspot/page/JackSpotCanva4.svg",
         description: "Search by name or type",
       },
     ],

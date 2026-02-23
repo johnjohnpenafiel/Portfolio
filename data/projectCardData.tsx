@@ -35,7 +35,7 @@ export const projectCards: ProjectCard[] = [
       "PostgreSQL",
     ],
     duration: "Nov - Dec 2025",
-    imageCard: "/images/sirenbase/RTD&E Tool Mobile.svg",
+    imageCard: "/images/sirenbase/cover/sirenbase-cover.png",
     href: "/projects/sirenbase",
     links: [
       {
@@ -65,7 +65,7 @@ export const projectCards: ProjectCard[] = [
       "Material UI",
     ],
     duration: "Oct - Present",
-    imageCard: "/images/ParallaxUICanva2.svg",
+    imageCard: "/images/parallaxui/cover/parallax-cover.png",
     href: "/projects/parallaxui",
     links: [
       {
@@ -95,7 +95,7 @@ export const projectCards: ProjectCard[] = [
       "Chakra UI",
     ],
     duration: "Sept - Oct 2024",
-    imageCard: "/images/NextGameCanva1.svg",
+    imageCard: "/images/nextgame/cover/nextgame-cover.png",
     href: "/projects/nextgame",
     links: [
       {
@@ -119,7 +119,7 @@ export const projectCards: ProjectCard[] = [
       "Tailwind CSS",
     ],
     duration: "Aug 2024",
-    imageCard: "/images/JackSpotCanva2.svg",
+    imageCard: "/images/jackspot/cover/jackspot-cover.png",
     href: "/projects/jackspot",
     links: [
       {
