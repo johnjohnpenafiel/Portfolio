@@ -8,6 +8,7 @@ import Link from "next/link";
 import useInView from "@/hooks/useInView";
 import { useIsVisible } from "@/hooks/useIsVisible";
 import CornerFrame from "@/components/CornerFrame";
+import MobileTriple from "@/components/MobileTriple";
 
 interface Link {
   url: string;
@@ -20,6 +21,7 @@ interface Props {
   description: string;
   stack: string[];
   image: string;
+  mobileImages?: string[];
   duration: string;
   links: Link[];
 }
@@ -30,6 +32,7 @@ const ProjectCard = ({
   description,
   stack,
   image,
+  mobileImages,
   duration,
   links,
 }: Props) => {
@@ -119,16 +122,25 @@ const ProjectCard = ({
       <div
         className="flex h-auto md:w-1/2 order-2 items-center justify-center p-3 md:p-3"
       >
-        <CornerFrame className="w-fit h-fit">
-          <Image
-            src={image}
-            width={420}
-            height={420}
-            alt="Project Picture"
-            className={`max-w-full h-auto transition-all ease-in-out duration-1000 delay-100 ${
-              isInView ? "" : "brightness-75"
-            }`}
-          />
+        <CornerFrame className="w-full max-w-[460px] h-fit">
+          {mobileImages ? (
+            <MobileTriple
+              images={mobileImages}
+              className={`transition-all ease-in-out duration-1000 delay-100 ${
+                isInView ? "" : "brightness-75"
+              }`}
+            />
+          ) : (
+            <Image
+              src={image}
+              width={420}
+              height={420}
+              alt="Project Picture"
+              className={`w-full h-auto rounded-lg transition-all ease-in-out duration-1000 delay-100 ${
+                isInView ? "" : "brightness-75"
+              }`}
+            />
+          )}
         </CornerFrame>
       </div>
     </div>

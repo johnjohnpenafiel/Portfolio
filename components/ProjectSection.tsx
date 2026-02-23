@@ -15,6 +15,7 @@ const ProjectSection = () => {
             description={project.description}
             stack={project.stack}
             image={project.imageCard}
+            mobileImages={project.mobileImages}
             duration={project.duration}
             links={project.links || []}
           />

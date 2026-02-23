@@ -6,7 +6,7 @@ interface CornerFrameProps {
 }
 
 const cornerBase =
-  "absolute w-[10%] h-[10%] border-dashed border-neutral-300 dark:border-neutral-600 pointer-events-none";
+  "absolute w-8 h-8 border-dashed border-neutral-300 dark:border-neutral-600 pointer-events-none";
 
 const CornerFrame = ({ children, className = "" }: CornerFrameProps) => {
   return (
