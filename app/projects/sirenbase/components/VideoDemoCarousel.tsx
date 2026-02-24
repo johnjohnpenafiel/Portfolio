@@ -96,12 +96,12 @@ const VideoDemoCarousel = ({ cards }: VideoDemoCarouselProps) => {
             {card.videoSrc ? (
               <button
                 onClick={() => setActiveVideo(card)}
-                className="absolute bottom-4 right-4 z-20 w-11 h-11 rounded-full bg-stone-800/80 dark:bg-neutral-200/90 flex items-center justify-center transition-transform duration-150 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                className="absolute bottom-4 right-4 z-20 w-11 h-11 rounded-full bg-black flex items-center justify-center transition-transform duration-150 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
                 aria-label={`Play ${card.title} demo video`}
               >
                 <Play
                   size={18}
-                  className="text-white dark:text-stone-900 ml-0.5"
+                  className="text-white ml-0.5"
                   fill="currentColor"
                 />
               </button>

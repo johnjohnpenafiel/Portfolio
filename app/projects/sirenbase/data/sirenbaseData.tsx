@@ -26,6 +26,7 @@ export interface VideoDemoCard {
   title: string;
   posterImage: string;
   videoSrc?: string;
+  vertical?: boolean;
 }
 
 export interface ImpactStat {
@@ -121,6 +122,8 @@ export const videoDemoCards: VideoDemoCard[] = [
     eyebrow: "Tool 01",
     title: "Inventory Tracking",
     posterImage: "/images/sirenbase/placeholders/Inventory-placeholder.png",
+    videoSrc: "/video/inventory-demo.mp4",
+    vertical: true,
   },
   {
     id: "milk-count",

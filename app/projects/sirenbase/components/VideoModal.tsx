@@ -60,7 +60,9 @@ const VideoModal = ({ card, onClose }: VideoModalProps) => {
         role="dialog"
         aria-modal="true"
         aria-label={`${card.title} demo video`}
-        className="relative z-10 w-full max-w-3xl outline-none"
+        className={`relative z-10 w-full outline-none ${
+          card.vertical ? "max-w-sm" : "max-w-3xl"
+        }`}
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -78,7 +80,9 @@ const VideoModal = ({ card, onClose }: VideoModalProps) => {
           <h3 className="text-lg font-semibold text-white">{card.title}</h3>
         </div>
 
-        <div className="rounded-2xl overflow-hidden bg-black aspect-video">
+        <div className={`rounded-2xl overflow-hidden bg-black ${
+          card.vertical ? "aspect-[9/16] max-h-[80vh]" : "aspect-video"
+        }`}>
           <video
             src={card.videoSrc}
             controls
