@@ -65,19 +65,20 @@ const VideoModal = ({ card, onClose }: VideoModalProps) => {
         }`}
         onClick={(e) => e.stopPropagation()}
       >
-        <button
-          onClick={onClose}
-          className="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-          aria-label="Close video"
-        >
-          <X size={20} className="text-white" />
-        </button>
-
-        <div className="mb-4">
-          <p className="text-xm text-neutral-400 tracking-widest">
-            {card.eyebrow}
-          </p>
-          <h3 className="text-lg font-semibold text-white">{card.title}</h3>
+        <div className="mb-4 flex items-start justify-between">
+          <div>
+            <p className="text-xm text-neutral-400 tracking-widest">
+              {card.eyebrow}
+            </p>
+            <h3 className="text-lg font-semibold text-white">{card.title}</h3>
+          </div>
+          <button
+            onClick={onClose}
+            className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            aria-label="Close video"
+          >
+            <X size={20} className="text-white" />
+          </button>
         </div>
 
         <div className={`rounded-2xl ${
