@@ -52,7 +52,7 @@ const VideoModal = ({ card, onClose }: VideoModalProps) => {
       className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-8"
       onClick={onClose}
     >
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-xl" />
 
       <div
         ref={modalRef}
@@ -80,15 +80,16 @@ const VideoModal = ({ card, onClose }: VideoModalProps) => {
           <h3 className="text-lg font-semibold text-white">{card.title}</h3>
         </div>
 
-        <div className={`rounded-2xl overflow-hidden bg-black ${
-          card.vertical ? "aspect-[9/16] max-h-[80vh]" : "aspect-video"
+        <div className={`rounded-2xl ${
+          card.vertical ? "max-h-[80vh]" : "aspect-video"
         }`}>
           <video
             src={card.videoSrc}
             controls
             autoPlay
             playsInline
-            className="w-full h-full object-contain"
+            className="w-full rounded-2xl"
+            style={{ maxHeight: "80vh" }}
           >
             Your browser does not support the video tag.
           </video>
