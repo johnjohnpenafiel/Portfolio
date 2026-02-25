@@ -61,39 +61,41 @@ const VideoModal = ({ card, onClose }: VideoModalProps) => {
         aria-modal="true"
         aria-label={`${card.title} demo video`}
         className={`relative z-10 w-full outline-none ${
-          card.vertical ? "max-w-sm" : "max-w-3xl"
+          card.vertical ? "max-w-md" : "max-w-4xl"
         }`}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="mb-4 flex items-start justify-between">
-          <div>
-            <p className="text-xm text-neutral-400 tracking-widest">
-              {card.eyebrow}
-            </p>
-            <h3 className="text-lg font-semibold text-white">{card.title}</h3>
+        <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-7 border border-white/10">
+          <div className="flex items-center justify-between mb-4">
+            <div>
+              <p className="text-xm text-neutral-300 tracking-widest">
+                {card.eyebrow}
+              </p>
+              <h3 className="text-lg font-semibold text-white">{card.title}</h3>
+            </div>
+            <button
+              onClick={onClose}
+              className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              aria-label="Close video"
+            >
+              <X size={20} className="text-white" />
+            </button>
           </div>
-          <button
-            onClick={onClose}
-            className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
-            aria-label="Close video"
-          >
-            <X size={20} className="text-white" />
-          </button>
-        </div>
 
-        <div className={`rounded-2xl ${
-          card.vertical ? "max-h-[80vh]" : "aspect-video"
-        }`}>
-          <video
-            src={card.videoSrc}
-            controls
-            autoPlay
-            playsInline
-            className="w-full rounded-2xl"
-            style={{ maxHeight: "80vh" }}
-          >
-            Your browser does not support the video tag.
-          </video>
+          <div className={`rounded-2xl ${
+            card.vertical ? "max-h-[85vh]" : "aspect-video"
+          }`}>
+            <video
+              src={card.videoSrc}
+              controls
+              autoPlay
+              playsInline
+              className="w-full"
+              style={{ maxHeight: "85vh" }}
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
       </div>
     </div>

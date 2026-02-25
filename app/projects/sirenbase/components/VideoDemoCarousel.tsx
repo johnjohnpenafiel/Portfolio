@@ -72,15 +72,17 @@ const VideoDemoCarousel = ({ cards }: VideoDemoCarouselProps) => {
             }`}
             style={{ transitionDelay: `${i * 250}ms` }}
           >
-            <div className="relative w-full h-full rounded-3xl overflow-hidden border-2 border-neutral-200 dark:border-neutral-500 bg-neutral-100 dark:bg-[#1B1212]/60 transition-transform duration-300 ease-in-out hover:scale-[1.02]">
+            <div className="relative w-full h-full rounded-3xl overflow-hidden border-2 border-neutral-200 dark:border-neutral-500 bg-neutral-100/80 dark:bg-[#1B1212]/60 backdrop-blur-sm transition-transform duration-300 ease-in-out hover:scale-[1.02]">
             {/* Gradient overlay for text readability */}
-            <div className="absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-gray-800/70 via-gray-700/30 to-transparent dark:from-gray-900/80 dark:via-gray-800/30 dark:to-transparent pointer-events-none z-10" />
 
-            {/* Text overlay at top */}
-            <div className="absolute top-0 left-0 right-0 p-5 z-20">
-              <span className="inline-block text-xm font-semibold text-white mb-2 bg-black rounded-full px-2 py-0.5 shadow-[0_0_16px_rgba(200,200,200,0.5)]">
+            {/* Text bar at top */}
+            <div className="absolute top-0 left-0 right-0 bg-black/20 dark:bg-neutral-700/50 backdrop-blur-sm px-5 py-4 z-20">
+              <span className="inline-block text-[10px] tracking-widest text-white bg-black rounded-full px-2.5 py-1 mb-2">
                 {card.eyebrow}
               </span>
+              <h3 className="text-xl font-extrabold text-white">
+                {card.title}
+              </h3>
             </div>
 
             {/* Poster image */}
@@ -88,7 +90,7 @@ const VideoDemoCarousel = ({ cards }: VideoDemoCarouselProps) => {
               src={card.posterImage}
               alt={`${card.title} preview`}
               fill
-              className="object-cover object-top"
+              className="object-cover object-top brightness-[0.90]"
               sizes="(max-width: 768px) 260px, (max-width: 1024px) 280px, 300px"
             />
 
@@ -96,12 +98,12 @@ const VideoDemoCarousel = ({ cards }: VideoDemoCarouselProps) => {
             {card.videoSrc ? (
               <button
                 onClick={() => setActiveVideo(card)}
-                className="absolute bottom-4 right-4 z-20 w-11 h-11 rounded-full bg-black flex items-center justify-center transition-transform duration-150 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                className="absolute bottom-6 right-6 z-20 w-14 h-14 rounded-full bg-black shadow-[0_4px_20px_rgba(0,0,0,0.35)] flex items-center justify-center transition-transform duration-150 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
                 aria-label={`Play ${card.title} demo video`}
               >
                 <Play
-                  size={18}
-                  className="text-white ml-0.5"
+                  size={24}
+                  className="text-neutral-200 ml-0.5"
                   fill="currentColor"
                 />
               </button>
