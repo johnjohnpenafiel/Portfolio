@@ -28,10 +28,12 @@ const About = () => {
             John Penafiel
           </h1>
           <p className="pt-5 || text-gray-600 text-sm md:text-md font-light dark:text-neutral-100 text-pretty">
-            I am a Full Stack Software Engineer who sees programming as a
-            creative and logical platform for solving complex challenges and
-            building impactful solutions. To me, it’s a blend of art and
-            science, where creativity meets precision.
+            I&apos;m a Full Stack Software Engineer with a strong focus on
+            frontend development. Turning complex problems into seamless
+            experiences is what I care about most, and it&apos;s why I obsess over
+            design, structure, and usability. I want to bring the best of what
+            technology can do to everyone, not just the people already deep in
+            it.
           </p>
         </div>
 
@@ -41,6 +43,7 @@ const About = () => {
               key={item.id}
               title={item.title}
               content={item.content}
+              link={item.link}
               isOpen={openIndex === i}
               onToggle={() => setOpenIndex(openIndex === i ? null : i)}
             />

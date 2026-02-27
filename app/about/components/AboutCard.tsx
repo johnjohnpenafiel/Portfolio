@@ -3,14 +3,17 @@
 import React from "react";
 import { FiPlus } from "react-icons/fi";
 
+import { AboutLink } from "@/data/aboutData";
+
 interface Props {
   title: string;
   content: string;
+  link?: AboutLink;
   isOpen: boolean;
   onToggle: () => void;
 }
 
-const AboutCard = ({ title, content, isOpen, onToggle }: Props) => {
+const AboutCard = ({ title, content, link, isOpen, onToggle }: Props) => {
   return (
     <div className="py-5 || border-b border-gray-200/80 dark:border-neutral-800/50">
       <button
@@ -40,7 +43,23 @@ const AboutCard = ({ title, content, isOpen, onToggle }: Props) => {
               : "opacity-0 duration-300"
           }`}
         >
-          {content}
+          {link
+            ? content.split(link.label).map((part, i, arr) => (
+                <React.Fragment key={i}>
+                  {part}
+                  {i < arr.length - 1 && (
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-4 hover:text-stone-900 dark:hover:text-white transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  )}
+                </React.Fragment>
+              ))
+            : content}
         </p>
       </div>
     </div>
