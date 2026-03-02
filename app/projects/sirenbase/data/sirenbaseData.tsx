@@ -83,8 +83,8 @@ export const problemCards: ProblemCard[] = [
   },
   {
     icon: <Milk size={28} strokeWidth={1.5} className="text-sky-400" />,
-    title: "Milk Counting",
-    body: "Daily milk counts rely on slow, manual processes that pile up frustration and errors. Partners track totals, carry numbers forward, and calculate orders by hand every day, turning a routine task into repetitive friction.",
+    title: "Milk Ordering",
+    body: "Daily milk orders rely on slow, manual processes that pile up frustration and errors. Partners track totals, carry numbers forward, and calculate orders by hand every day, turning a routine task into repetitive friction.",
   },
   {
     icon: <ShoppingBasket size={28} strokeWidth={1.5} className="text-emerald-400" />,
@@ -96,7 +96,7 @@ export const problemCards: ProblemCard[] = [
 // ── The Solution ───────────────────────────────────────
 
 export const solutionArchitecture =
-  "A Next.js frontend backed by a Flask REST API and PostgreSQL database. Partners log in once and access all three tools from a central dashboard. The dashboard doubles as an operational overview \u2014 surfacing milk count progress and time since the last restock so partners know what\u2019s done and what\u2019s overdue without opening each tool.";
+  "A Next.js frontend backed by a Flask REST API and PostgreSQL database. Partners log in once and access all three tools from a central dashboard. The dashboard doubles as an operational overview \u2014 surfacing milk order progress and time since the last restock so partners know what\u2019s done and what\u2019s overdue without opening each tool.";
 
 export const toolCards: ToolCard[] = [
   {
@@ -106,7 +106,7 @@ export const toolCards: ToolCard[] = [
   },
   {
     number: "02",
-    title: "Milk Count",
+    title: "Milk Order",
     body: "A structured daily workflow that walks partners through each counting phase in sequence \u2014 no steps can be skipped, no math is done by hand. The system collects stock levels from multiple locations, handles all calculations automatically, and logs every completed session. Par levels are admin-configurable.",
   },
   {
@@ -126,10 +126,10 @@ export const videoDemoCards: VideoDemoCard[] = [
     vertical: true,
   },
   {
-    id: "milk-count",
+    id: "milk-order",
     eyebrow: "Tool 02",
-    title: "Milk Count",
-    posterImage: "/images/sirenbase/placeholders/Milkcount-placeholder.png",
+    title: "Milk Order",
+    posterImage: "/images/sirenbase/placeholders/Milkorder-placeholder.png",
   },
   {
     id: "rtde",
@@ -161,7 +161,7 @@ export const impactTools: ImpactTool[] = [
     ],
   },
   {
-    title: "Milk Count",
+    title: "Milk Order",
     improvement: "4x",
     stats: [
       { before: "10\u201315 min", after: "< 3 min", label: "per daily count" },
@@ -192,9 +192,9 @@ export const techDecisions: TechDecision[] = [
       <>
         Every tool is isolated at every layer. The backend uses separate Flask
         Blueprints with prefixed routes (<code>/api/tracking/*</code>,{" "}
-        <code>/api/milk-count/*</code>, <code>/api/rtde/*</code>). The database
+        <code>/api/milk-order/*</code>, <code>/api/rtde/*</code>). The database
         uses prefixed tables per tool (<code>tracking_items</code>,{" "}
-        <code>milk_count_sessions</code>, <code>rtde_count_sessions</code>)
+        <code>milk_order_sessions</code>, <code>rtde_count_sessions</code>)
         sharing only a central <code>users</code> table. The frontend mirrors
         this with nested route trees under <code>/tools/</code>. Authentication,
         UI components, and the design system are shared — everything else is
@@ -298,7 +298,7 @@ export const aiFileTree: FileTreeNode[] = [
     children: [
       { name: "PLANNING.md", description: "Multi-tool system design" },
       { name: "InventoryTracking.md", description: "Tool 1 spec" },
-      { name: "MilkCount.md", description: "Tool 2 spec" },
+      { name: "MilkOrder.md", description: "Tool 2 spec" },
       { name: "RTDE.md", description: "Tool 3 spec" },
       { name: "Deployment.md", description: "Infrastructure plan" },
     ],
@@ -335,8 +335,8 @@ export const aiFileTree: FileTreeNode[] = [
 
 export const roadmapItems: RoadmapItem[] = [
   {
-    title: "IMS Integration for Milk Count",
-    body: "The milk count workflow currently requires partners to manually enter on-order quantities from the store\u2019s Inventory Management System. With direct IMS access, those numbers would populate automatically \u2014 removing a manual step and eliminating transcription errors. Combined with the existing count data and par levels, the system could then calculate and pre-fill the final milk order automatically.",
+    title: "IMS Integration for Milk Order",
+    body: "The milk order workflow currently requires partners to manually enter on-order quantities from the store\u2019s Inventory Management System. With direct IMS access, those numbers would populate automatically \u2014 removing a manual step and eliminating transcription errors. Combined with the existing count data and par levels, the system could then calculate and pre-fill the final milk order automatically.",
   },
   {
     title: "CI/CD Pipeline",

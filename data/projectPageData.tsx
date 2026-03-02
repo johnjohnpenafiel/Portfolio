@@ -34,7 +34,7 @@ export const projectData = [
     name: "Sirenbase",
     title: "A Digital Operations Platform for Coffee House Partners",
     description:
-      "SirenBase is a comprehensive digital operations platform built for coffee house partners. It replaces manual paper-based systems with a unified suite of specialized tools: an Inventory Tracking System with unique 4-digit codes for basement stock, a Milk Count System with automated calculations for dairy ordering, and an RTD&E System for display restocking with auto-generated pull lists. Built with Next.js, Flask, and PostgreSQL, the platform features JWT authentication, role-based access control, drag-and-drop interfaces, and complete audit logging. Mobile-first design ensures fast, touch-friendly access from anywhere in the store.",
+      "SirenBase is a comprehensive digital operations platform built for coffee house partners. It replaces manual paper-based systems with a unified suite of specialized tools: an Inventory Tracking System with unique 4-digit codes for basement stock, a Milk Order System with automated calculations for dairy ordering, and an RTD&E System for display restocking with auto-generated pull lists. Built with Next.js, Flask, and PostgreSQL, the platform features JWT authentication, role-based access control, drag-and-drop interfaces, and complete audit logging. Mobile-first design ensures fast, touch-friendly access from anywhere in the store.",
     details: [
       {
         name: "Frontend:",
