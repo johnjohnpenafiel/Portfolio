@@ -11,9 +11,9 @@ const Iframe = () => {
     <div>
       <h3 className="text-center text-xl -mb-8 pt-10">Demo</h3>
       <iframe
-        src="https://parallaxui.com/embed/41"
-        width="410"
-        height="410"
+        src="https://parallaxui.com/embed/3"
+        width="341"
+        height="341"
         className={`transition-opacity duration-500 ${
           !loadedIframe ? "opacity-0" : "opacity-100"
         }`}
