@@ -20,20 +20,30 @@ function ScrollReset() {
 }
 
 export function Providers({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const disableLenis = pathname === "/projects/parallaxui";
+
   return (
     <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-      <ReactLenis
-        root
-        options={{
-          duration: 1.2,
-          easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-          smoothWheel: true,
-          autoRaf: true,
-        }}
-      >
-        <ScrollReset />
-        {children}
-      </ReactLenis>
+      {disableLenis ? (
+        <>
+          <ScrollReset />
+          {children}
+        </>
+      ) : (
+        <ReactLenis
+          root
+          options={{
+            duration: 1.2,
+            easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smoothWheel: true,
+            autoRaf: true,
+          }}
+        >
+          <ScrollReset />
+          {children}
+        </ReactLenis>
+      )}
     </ThemeProvider>
   );
 }

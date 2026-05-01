@@ -46,7 +46,7 @@ const Projects = () => {
         </div>
       </div>
       {/* ----- IFRAME ----- */}
-      <div className="hidden lg:flex lg:justify-center xl:justify-start">
+      <div className="hidden lg:flex lg:justify-center xl:justify-start px-10 pb-16 xl:pl-20">
         {project?.id === "parallaxui" ? <Iframe /> : <></>}
       </div>
     </div>
