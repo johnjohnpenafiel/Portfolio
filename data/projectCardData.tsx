@@ -20,6 +20,37 @@ export interface ProjectCard {
 }
 
 export const projectCards: ProjectCard[] = [
+  // THE GARAGE AI
+  {
+    id: "garageai",
+    title: "The Garage AI",
+    description:
+      "An automated AI publication covering dealership technology — researched, written, quality-judged, illustrated, and published by a multi-model pipeline three mornings a week, with zero human bylines.",
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Anthropic API",
+      "Perplexity",
+      "fal.ai",
+    ],
+    duration: "May - Jul 2026",
+    imageCard: "/images/garageai/cover/garageai-cover.png",
+    href: "/projects/garageai",
+    links: [
+      {
+        url: "https://www.thegarageai.com/",
+        icon: TfiWorld,
+      },
+      {
+        url: "https://github.com/johnjohnpenafiel/AI-Blog",
+        icon: FaGithub,
+      },
+    ],
+  },
   // SIRENBASE
   {
     id: "sirenbase",
