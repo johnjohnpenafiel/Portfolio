@@ -11,13 +11,16 @@ const StepRow = ({ step, isLast }: { step: PipelineStep; isLast: boolean }) => {
   const hasBeenVisible = useIsVisible(rowRef);
 
   return (
-    <li ref={rowRef} className="relative grid grid-cols-[3rem_1fr] md:grid-cols-[5rem_1fr] gap-x-4 md:gap-x-8">
+    <li
+      ref={rowRef}
+      className="relative grid grid-cols-[3rem_1fr] md:grid-cols-[5rem_1fr] gap-x-4 md:gap-x-8"
+    >
       {/* Rail */}
       <div className="flex flex-col items-center">
         <span
-          className={`font-mono text-sm md:text-base tabular-nums border px-2 py-1 transition-colors duration-700 ${
+          className={`text-sm md:text-base tabular-nums border rounded-xl px-2.5 py-1 transition-colors duration-700 ${
             hasBeenVisible
-              ? "border-[#e85002] text-[#e85002]"
+              ? "border-neutral-700 text-neutral-800 dark:border-neutral-300 dark:text-neutral-200"
               : "border-gray-300 dark:border-neutral-700 text-neutral-400 dark:text-neutral-600"
           }`}
         >
@@ -26,7 +29,7 @@ const StepRow = ({ step, isLast }: { step: PipelineStep; isLast: boolean }) => {
         {!isLast && (
           <span className="relative w-px flex-1 mt-2 mb-2 bg-gray-200/80 dark:bg-neutral-800/80 overflow-hidden">
             <span
-              className={`absolute inset-x-0 top-0 bg-[#e85002] transition-[height] duration-1000 ease-out ${
+              className={`absolute inset-x-0 top-0 bg-neutral-400 dark:bg-neutral-500 transition-[height] duration-1000 ease-out ${
                 hasBeenVisible ? "h-full" : "h-0"
               }`}
             />
@@ -43,10 +46,10 @@ const StepRow = ({ step, isLast }: { step: PipelineStep; isLast: boolean }) => {
         }`}
       >
         <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-3">
-          <h3 className="[font-family:var(--font-archivo)] text-xl md:text-2xl font-bold text-stone-900 dark:text-neutral-100 tracking-tight">
+          <h3 className="text-xl md:text-2xl font-bold text-neutral-800 dark:text-neutral-200">
             {step.title}
           </h3>
-          <span className="font-mono text-xm uppercase tracking-wider text-[#e85002]">
+          <span className="text-xm font-semibold text-neutral-500 dark:text-neutral-400/90">
             {step.agent}
           </span>
         </div>
@@ -54,8 +57,8 @@ const StepRow = ({ step, isLast }: { step: PipelineStep; isLast: boolean }) => {
           {step.body}
         </p>
         {step.footnote && (
-          <p className="font-mono text-xm text-neutral-500/80 dark:text-neutral-400/70 tracking-wide mt-3">
-            [ {step.footnote} ]
+          <p className="text-xm text-neutral-500/80 dark:text-neutral-400/70 mt-3">
+            {step.footnote}
           </p>
         )}
       </div>

@@ -12,14 +12,8 @@ import {
 } from "../data/garageaiData";
 
 const EvalBadge = ({ label, score }: { label: string; score: number }) => (
-  <span
-    className={`font-mono text-[0.65rem] tracking-wider px-1.5 py-0.5 border ${
-      score >= 2
-        ? "border-[#00c47d]/60 text-[#00c47d]"
-        : "border-[#ff9a40]/60 text-[#ff9a40]"
-    }`}
-  >
-    {label}:{score}
+  <span className="text-[0.65rem] px-2 py-0.5 rounded-full border border-gray-300 dark:border-neutral-700 text-neutral-500 dark:text-neutral-400">
+    {label}: {score}
   </span>
 );
 
@@ -36,22 +30,25 @@ const SurfacesSection = () => {
       intro={surfacesIntro}
     >
       {/* The Stage — framed figures */}
-      <div ref={figuresRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+      <div
+        ref={figuresRef}
+        className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+      >
         {stageFigures.map((fig, i) => (
           <figure
             key={fig.figure}
-            className={`border border-gray-200/80 dark:border-neutral-800/80 transition-all duration-700 ease-out ${
+            className={`rounded-2xl overflow-hidden border border-gray-200/80 dark:border-neutral-800/50 bg-neutral-200/10 dark:bg-[#1B1212]/25 transition-all duration-700 ease-out ${
               figuresVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-8"
             }`}
             style={{ transitionDelay: `${i * 150}ms` }}
           >
-            <figcaption className="flex items-baseline gap-3 px-4 py-2.5 border-b border-gray-200/80 dark:border-neutral-800/80">
-              <span className="font-mono text-xm uppercase tracking-wider text-[#e85002] shrink-0">
+            <figcaption className="flex items-baseline gap-3 px-4 py-2.5 border-b border-gray-200/80 dark:border-neutral-800/50">
+              <span className="text-xm font-semibold text-neutral-600 dark:text-neutral-300 shrink-0">
                 {fig.figure}
               </span>
-              <span className="font-mono text-xm text-neutral-500 dark:text-neutral-400 truncate">
+              <span className="text-xm text-neutral-500 dark:text-neutral-400/90 truncate">
                 {fig.caption}
               </span>
             </figcaption>
@@ -73,21 +70,24 @@ const SurfacesSection = () => {
         </p>
 
         <div
-          className={`bg-[#0a0a0a] border border-neutral-800 max-w-[860px] transition-all duration-700 ease-out ${
+          className={`rounded-2xl border border-gray-200/80 dark:border-neutral-800/50 bg-neutral-200/10 dark:bg-[#1B1212]/25 max-w-[860px] transition-all duration-700 ease-out ${
             cockpitVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-8"
           }`}
         >
           {/* Panel header */}
-          <div className="flex flex-wrap items-center justify-between gap-2 px-5 py-3 border-b border-neutral-800">
-            <span className="flex items-center gap-2 font-mono text-xm uppercase tracking-widest text-neutral-400">
-              <span className="w-2 h-2 rounded-full bg-[#00c47d] animate-pulse" />
+          <div className="flex flex-wrap items-center justify-between gap-2 px-5 py-3 border-b border-gray-200/80 dark:border-neutral-800/50">
+            <span className="flex items-center gap-2 text-xm text-neutral-500 dark:text-neutral-400/90">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
               Review queue
             </span>
-            <span className="font-mono text-xm uppercase tracking-widest text-neutral-500">
+            <span className="text-xm text-neutral-500 dark:text-neutral-400/90">
               Mode:{" "}
-              <span className="text-[#e85002]">Approve only</span> / Auto
+              <span className="font-semibold text-neutral-700 dark:text-neutral-200">
+                Approve only
+              </span>{" "}
+              / Auto
             </span>
           </div>
 
@@ -95,13 +95,13 @@ const SurfacesSection = () => {
           {queueRows.map((row) => (
             <div
               key={row.title}
-              className="px-5 py-4 border-b border-neutral-800/70"
+              className="px-5 py-4 border-b border-gray-200/80 dark:border-neutral-800/50"
             >
               <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-2">
-                <span className="font-mono text-xm text-neutral-500 tabular-nums shrink-0">
+                <span className="text-xm text-neutral-500 dark:text-neutral-400/90 tabular-nums shrink-0">
                   {row.date}
                 </span>
-                <span className="text-sm text-neutral-200 font-light">
+                <span className="text-sm font-light text-gray-600 dark:text-neutral-200">
                   {row.title}
                 </span>
               </div>
@@ -110,13 +110,13 @@ const SurfacesSection = () => {
                 <EvalBadge label="FMT" score={row.format} />
                 <EvalBadge label="GND" score={row.grounding} />
                 <span
-                  className={`font-mono text-[0.65rem] tracking-wider px-1.5 py-0.5 ${
+                  className={`text-[0.65rem] px-2 py-0.5 rounded-full ${
                     row.passed
-                      ? "bg-[#00c47d]/15 text-[#00c47d]"
-                      : "bg-[#e03434]/15 text-[#e03434]"
+                      ? "bg-green-500/10 text-green-600 dark:text-green-400"
+                      : "bg-red-500/10 text-red-500 dark:text-red-400"
                   }`}
                 >
-                  {row.passed ? "PASS" : "FLAG"}
+                  {row.passed ? "Pass" : "Flag"}
                 </span>
               </div>
             </div>
@@ -124,21 +124,21 @@ const SurfacesSection = () => {
 
           {/* Operator controls */}
           <div className="flex flex-wrap gap-3 px-5 py-4">
-            <span className="font-mono text-xm uppercase tracking-widest px-4 py-2 border border-[#00c47d]/60 text-[#00c47d]">
+            <span className="text-sm px-5 py-1.5 border border-neutral-500 rounded-3xl text-neutral-700 dark:text-neutral-200">
               Accept
             </span>
-            <span className="font-mono text-xm uppercase tracking-widest px-4 py-2 border border-[#e03434]/60 text-[#e03434]">
+            <span className="text-sm px-5 py-1.5 border border-neutral-500 rounded-3xl text-neutral-700 dark:text-neutral-200">
               Reject
             </span>
-            <span className="font-mono text-xm uppercase tracking-widest px-4 py-2 border border-neutral-600 text-neutral-400">
+            <span className="text-sm px-5 py-1.5 border border-neutral-500 rounded-3xl text-neutral-700 dark:text-neutral-200">
               Regenerate ↺
             </span>
           </div>
         </div>
 
-        <p className="font-mono text-xm text-neutral-500/80 dark:text-neutral-400/70 tracking-wide mt-4">
-          [ every draft arrives pre-graded by the editor — the judge&apos;s scores
-          are stored on the post, permanently ]
+        <p className="text-xm text-neutral-500 dark:text-neutral-400/90 mt-4">
+          Every draft arrives pre-graded by the editor — the judge&apos;s scores
+          are stored on the post, permanently.
         </p>
       </div>
     </GarageSection>

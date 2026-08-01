@@ -2,12 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import {
-  heroMeta,
   heroTitle,
   heroSubtitle,
   heroStats,
   heroLinks,
-  tickerHeadlines,
 } from "../data/garageaiData";
 
 const GarageHero = () => {
@@ -23,63 +21,43 @@ const GarageHero = () => {
   }`;
 
   return (
-    <section className="pt-28 md:pt-36 pb-0">
-      {/* Meta row */}
-      <div
-        className={`flex flex-wrap justify-between gap-2 font-mono text-xm uppercase tracking-widest text-neutral-500 dark:text-neutral-400 pb-3 ${reveal}`}
-      >
-        <span>{heroMeta}</span>
-        <span className="hidden sm:inline">Mon · Thu · Fri — 08:00</span>
-      </div>
+    <section className="pt-32 md:pt-40 pb-10 md:pb-14">
+      <p className={`font-kodchasan text-gray-400 mb-4 ${reveal}`}>
+        An AI publication that writes itself
+      </p>
 
-      {/* Boxed wordmark, like the paper's own masthead */}
-      <div
-        className={`border-y border-stone-900/80 dark:border-neutral-200/70 py-4 md:py-6 ${reveal}`}
+      <h1
+        className={`text-4xl md:text-5xl lg:text-title font-bold text-neutral-900 dark:text-neutral-200 tracking-tighter leading-[1.05] mb-8 ${reveal}`}
         style={{ transitionDelay: "100ms" }}
       >
-        <h1 className="[font-family:var(--font-archivo)] font-black uppercase text-[#e85002] leading-[0.95] tracking-tight text-[9.8vw] lg:text-[7.2rem] whitespace-nowrap">
-          {heroTitle}
-        </h1>
-      </div>
+        {heroTitle}
+      </h1>
 
-      {/* Sub-meta row under the box */}
-      <div
-        className={`flex flex-wrap justify-between gap-2 font-mono text-xm uppercase tracking-widest text-neutral-500 dark:text-neutral-400 pt-3 mb-12 md:mb-16 ${reveal}`}
-        style={{ transitionDelay: "150ms" }}
-      >
-        <span>An AI publication that writes itself</span>
-        <span className="hidden md:inline">thegarageai.com</span>
-      </div>
-
-      <div
-        className={reveal}
-        style={{ transitionDelay: "250ms" }}
-      >
-        <p className="text-md font-light text-gray-600 dark:text-neutral-200 max-w-[640px] leading-relaxed mb-12">
+      <div className={reveal} style={{ transitionDelay: "200ms" }}>
+        <p className="text-md font-light text-gray-600 dark:text-neutral-100 max-w-[640px] leading-relaxed mb-12">
           {heroSubtitle}
         </p>
 
         {/* Stats strip */}
-        <div className="flex flex-wrap border border-gray-200/80 dark:border-neutral-800/80 divide-x divide-gray-200/80 dark:divide-neutral-800/80 mb-12 max-w-fit">
+        <div className="flex flex-wrap rounded-2xl border border-gray-200/80 dark:border-neutral-800/50 bg-neutral-200/10 dark:bg-[#1B1212]/25 divide-x divide-gray-200/80 dark:divide-neutral-800/50 mb-12 max-w-fit overflow-hidden">
           {heroStats.map((stat) => (
             <div key={stat.label} className="px-5 py-3">
-              <span className="block font-mono text-xl md:text-2xl text-stone-900 dark:text-neutral-100 tabular-nums">
+              <span className="block text-xl md:text-2xl font-semibold text-neutral-800 dark:text-neutral-100 tabular-nums">
                 {stat.value}
               </span>
-              <span className="block font-mono text-xm uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mt-1">
+              <span className="block text-xm text-neutral-500 dark:text-neutral-400/90 mt-1">
                 {stat.label}
               </span>
             </div>
           ))}
         </div>
 
-        {/* CTAs — square, mono, editorial */}
-        <div className="flex flex-wrap gap-3 mb-16">
+        <div className="flex flex-wrap gap-3">
           <a
             href={heroLinks.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-xm uppercase tracking-widest px-6 py-3 border border-stone-900 dark:border-neutral-200 text-stone-900 dark:text-neutral-100 hover:bg-[#e85002] hover:border-[#e85002] hover:text-white dark:hover:text-white transition-colors duration-200"
+            className="px-6 py-2 text-sm border border-neutral-500 rounded-3xl text-neutral-700 dark:text-neutral-200 hover:text-neutral-400 hover:border-neutral-400 transition-colors duration-200"
           >
             Read the paper &#8599;
           </a>
@@ -87,39 +65,12 @@ const GarageHero = () => {
             href={heroLinks.source}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-xm uppercase tracking-widest px-6 py-3 border border-neutral-400 dark:border-neutral-600 text-neutral-600 dark:text-neutral-300 hover:bg-[#e85002] hover:border-[#e85002] hover:text-white dark:hover:text-white transition-colors duration-200"
+            className="px-6 py-2 text-sm border border-neutral-500 rounded-3xl text-neutral-700 dark:text-neutral-200 hover:text-neutral-400 hover:border-neutral-400 transition-colors duration-200"
           >
             Open the machine &#8599;
           </a>
         </div>
       </div>
-
-      {/* Headline ticker — real dispatches, written by the machine */}
-      <div
-        className={`-mx-8 md:-mx-16 bg-[#0a0a0a] border-y border-neutral-800 overflow-hidden ${reveal}`}
-        style={{ transitionDelay: "350ms" }}
-      >
-        <div className="flex w-max animate-ticker hover:[animation-play-state:paused] py-3">
-          {[0, 1].map((copy) => (
-            <div
-              key={copy}
-              aria-hidden={copy === 1}
-              className="flex shrink-0 font-mono text-xm uppercase tracking-widest text-[#e85002]"
-            >
-              {tickerHeadlines.map((headline) => (
-                <span key={headline} className="flex items-center">
-                  <span className="px-6">{headline}</span>
-                  <span className="text-neutral-600">—</span>
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-      <p className="font-mono text-xm text-neutral-500/70 dark:text-neutral-400/60 tracking-wide mt-3 mb-14 md:mb-20">
-        ↑ live headlines. every one researched, written, and illustrated by the
-        pipeline.
-      </p>
     </section>
   );
 };

@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Archivo } from "next/font/google";
 
 import GarageHero from "./components/GarageHero";
 import StaffBoxSection from "./components/StaffBoxSection";
@@ -9,11 +8,6 @@ import SurfacesSection from "./components/SurfacesSection";
 import LedgerSection from "./components/LedgerSection";
 import GarageFooter from "./components/GarageFooter";
 
-const archivo = Archivo({
-  subsets: ["latin"],
-  variable: "--font-archivo",
-});
-
 export const metadata: Metadata = {
   title: "The Garage AI | John John's Portfolio",
   description:
@@ -22,11 +16,13 @@ export const metadata: Metadata = {
 
 export default function GarageAIPage() {
   return (
-    <div
-      className={`${archivo.variable} min-h-screen -mt-[64px] cursor-default`}
-    >
+    <div className="min-h-screen -mt-[64px] cursor-default">
+      <div className="bg-[#f9fafb] dark:bg-black">
+        <div className="px-8 md:px-16">
+          <GarageHero />
+        </div>
+      </div>
       <div className="px-8 md:px-16">
-        <GarageHero />
         <StaffBoxSection />
         <PipelineSection />
         <CadenceSection />

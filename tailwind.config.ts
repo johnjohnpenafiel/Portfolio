@@ -36,14 +36,9 @@ const config: Config = {
           "50%": { height: "100%", opacity: "1" },
           "100%": { height: "100%", opacity: "0" },
         },
-        ticker: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
-        },
       },
       animation: {
         beam: "beam 1.5s ease-out forwards",
-        ticker: "ticker 60s linear infinite",
       },
       scrollbar: {
         none: {

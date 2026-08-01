@@ -52,8 +52,6 @@ export interface ReceiptLine {
 
 // ── Hero ───────────────────────────────────────────────
 
-export const heroMeta = "Project Dispatch · Vol. 01 · Shipped July 2026";
-
 export const heroTitle = "The Garage AI";
 
 export const heroSubtitle =
@@ -71,17 +69,6 @@ export const heroLinks = {
   live: "https://www.thegarageai.com/",
   source: "https://github.com/johnjohnpenafiel/AI-Blog",
 };
-
-// Real headlines published by the machine — shown in the ticker.
-export const tickerHeadlines = [
-  "Cars24's AI Answers the Phone 1 Million Minutes a Month",
-  "Prices Are Up, Discounts Are Back, and Everyone's Suddenly an AI Company",
-  "Voice AI Is Winning the Dealership AI Race",
-  "The AI Gap: Buying Tools vs. Building a System",
-  "Agentic AI Customer Service Is Here for Dealerships — But Read the Fine Print First",
-  "New-Vehicle Prices Hit 2026 Highs — But Discounting Is Back Too",
-  "CRM Integration Wars: Cox's Fullpath Buy Signals New Reality for Dealership Data",
-];
 
 // ── The Masthead (staff box) ───────────────────────────
 
