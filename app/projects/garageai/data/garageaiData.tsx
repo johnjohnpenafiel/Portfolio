@@ -62,7 +62,6 @@ export const heroStats = [
   { value: "243", label: "tests" },
   { value: "5", label: "AI systems" },
   { value: "3", label: "drops / week" },
-  { value: "0", label: "human bylines" },
 ];
 
 export const heroLinks = {
