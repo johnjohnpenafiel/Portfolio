@@ -17,9 +17,11 @@ const GarageSection = ({
     <section className={className}>
       <div className="border-t border-gray-200/80 dark:border-neutral-800/80 -mx-8 md:-mx-16" />
       <div className="pt-14 pb-20 md:py-24">
-        <p className="font-kodchasan text-gray-400 mb-4">{eyebrow}</p>
+        <p className="font-kodchasan text-neutral-500 dark:text-gray-400 mb-4">
+          {eyebrow}
+        </p>
         {headline && (
-          <h2 className="text-2xl md:text-3xl font-bold text-neutral-800 dark:text-neutral-200 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-stone-900 dark:text-neutral-200 mb-6">
             {headline}
           </h2>
         )}

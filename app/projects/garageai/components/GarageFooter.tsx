@@ -18,7 +18,7 @@ const GarageFooter = () => {
 
   return (
     <GarageSection
-      eyebrow="Colophon"
+      eyebrow="Running Costs"
       headline="The nine-dollar newsroom"
       intro={receiptIntro}
     >
@@ -82,7 +82,7 @@ const GarageFooter = () => {
             rel="noopener noreferrer"
             className="px-6 py-2 text-sm border border-neutral-500 rounded-3xl text-neutral-700 dark:text-neutral-200 hover:text-neutral-400 hover:border-neutral-400 transition-colors duration-200"
           >
-            Open the machine &#8599;
+            Source code &#8599;
           </a>
           <a
             href="https://www.linkedin.com/in/john-penafiel"

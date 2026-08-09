@@ -11,8 +11,8 @@ const LedgerSection = () => {
 
   return (
     <GarageSection
-      eyebrow="The Decision Ledger"
-      headline="Kept like sources: dated, on the record"
+      eyebrow="The Decision Log"
+      headline="Decisions, dated and on the record"
       intro={ledgerIntro}
     >
       <div ref={sectionRef} className="flex flex-col gap-0">

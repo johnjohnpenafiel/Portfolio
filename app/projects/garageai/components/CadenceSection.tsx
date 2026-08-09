@@ -11,8 +11,8 @@ const CadenceSection = () => {
 
   return (
     <GarageSection
-      eyebrow="The Cadence"
-      headline="Three mornings, three shapes"
+      eyebrow="The Schedule"
+      headline="Three mornings, three formats"
       intro={cadenceIntro}
     >
       <div
@@ -32,7 +32,7 @@ const CadenceSection = () => {
             <p className="text-xm font-semibold text-neutral-500 dark:text-neutral-400/90 mb-4">
               {col.day} — 08:00
             </p>
-            <h3 className="text-2xl font-bold text-neutral-800 dark:text-neutral-200 mb-1">
+            <h3 className={`text-2xl font-bold ${col.accent} mb-1`}>
               {col.format}
             </h3>
             <p className="text-xm text-neutral-500 dark:text-neutral-400/90 mb-5">

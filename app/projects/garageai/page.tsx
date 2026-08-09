@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 
 import GarageHero from "./components/GarageHero";
-import StaffBoxSection from "./components/StaffBoxSection";
 import PipelineSection from "./components/PipelineSection";
 import CadenceSection from "./components/CadenceSection";
 import SurfacesSection from "./components/SurfacesSection";
@@ -23,7 +22,6 @@ export default function GarageAIPage() {
         </div>
       </div>
       <div className="px-8 md:px-16">
-        <StaffBoxSection />
         <PipelineSection />
         <CadenceSection />
         <SurfacesSection />

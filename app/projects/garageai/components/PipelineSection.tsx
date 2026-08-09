@@ -3,7 +3,11 @@
 import React, { useRef } from "react";
 import { useIsVisible } from "@/hooks/useIsVisible";
 import GarageSection from "./GarageSection";
-import { pipelineIntro, pipelineSteps } from "../data/garageaiData";
+import {
+  pipelineIntro,
+  pipelineSteps,
+  pipelineSignoff,
+} from "../data/garageaiData";
 import type { PipelineStep } from "../data/garageaiData";
 
 const StepRow = ({ step, isLast }: { step: PipelineStep; isLast: boolean }) => {
@@ -29,7 +33,7 @@ const StepRow = ({ step, isLast }: { step: PipelineStep; isLast: boolean }) => {
         {!isLast && (
           <span className="relative w-px flex-1 mt-2 mb-2 bg-gray-200/80 dark:bg-neutral-800/80 overflow-hidden">
             <span
-              className={`absolute inset-x-0 top-0 bg-neutral-400 dark:bg-neutral-500 transition-[height] duration-1000 ease-out ${
+              className={`absolute inset-x-0 top-0 bg-[#e85002] transition-[height] duration-1000 ease-out ${
                 hasBeenVisible ? "h-full" : "h-0"
               }`}
             />
@@ -69,8 +73,8 @@ const StepRow = ({ step, isLast }: { step: PipelineStep; isLast: boolean }) => {
 const PipelineSection = () => {
   return (
     <GarageSection
-      eyebrow="The Press Run"
-      headline="Six steps, no bylines"
+      eyebrow="The Pipeline"
+      headline="A full newsroom, no people in it"
       intro={pipelineIntro}
     >
       <ol>
@@ -82,6 +86,9 @@ const PipelineSection = () => {
           />
         ))}
       </ol>
+      <p className="text-xm text-neutral-500 dark:text-neutral-400/90 mt-2">
+        {pipelineSignoff}
+      </p>
     </GarageSection>
   );
 };

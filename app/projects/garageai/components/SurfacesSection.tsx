@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { useIsVisible } from "@/hooks/useIsVisible";
 import GarageSection from "./GarageSection";
@@ -17,6 +17,73 @@ const EvalBadge = ({ label, score }: { label: string; score: number }) => (
   </span>
 );
 
+const StageCarousel = ({ visible }: { visible: boolean }) => {
+  const [index, setIndex] = useState(0);
+  const count = stageFigures.length;
+  const current = stageFigures[index];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((i) => (i + 1) % count);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, [index, count]);
+
+  return (
+    <figure
+      className={`rounded-2xl overflow-hidden border border-gray-200/80 dark:border-neutral-800/50 bg-neutral-200/10 dark:bg-[#1B1212]/25 max-w-[860px] transition-all duration-700 ease-out ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
+      <figcaption className="flex items-center justify-between gap-4 px-4 py-2.5 border-b border-gray-200/80 dark:border-neutral-800/50">
+        <div className="flex items-baseline gap-3 min-w-0">
+          <span className="text-xm font-semibold text-neutral-600 dark:text-neutral-300 shrink-0">
+            {current.figure}
+          </span>
+          <span className="text-xm text-neutral-500 dark:text-neutral-400/90 truncate">
+            {current.caption}
+          </span>
+        </div>
+        <div className="flex items-center gap-3 shrink-0">
+          <button
+            aria-label="Previous figure"
+            onClick={() => setIndex((i) => (i - 1 + count) % count)}
+            className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors duration-200"
+          >
+            &#8592;
+          </button>
+          <span className="text-xm text-neutral-500 dark:text-neutral-400/90 tabular-nums">
+            {String(index + 1).padStart(2, "0")} /{" "}
+            {String(count).padStart(2, "0")}
+          </span>
+          <button
+            aria-label="Next figure"
+            onClick={() => setIndex((i) => (i + 1) % count)}
+            className="text-sm text-neutral-500 dark:text-neutral-400 hover:text-neutral-800 dark:hover:text-neutral-200 transition-colors duration-200"
+          >
+            &#8594;
+          </button>
+        </div>
+      </figcaption>
+      <div className="relative aspect-[1440/900]">
+        {stageFigures.map((fig, i) => (
+          <Image
+            key={fig.figure}
+            src={fig.src}
+            alt={fig.alt}
+            width={1440}
+            height={900}
+            priority={i === 0}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+              i === index ? "opacity-100" : "opacity-0"
+            }`}
+          />
+        ))}
+      </div>
+    </figure>
+  );
+};
+
 const SurfacesSection = () => {
   const figuresRef = useRef<HTMLDivElement>(null);
   const cockpitRef = useRef<HTMLDivElement>(null);
@@ -25,42 +92,13 @@ const SurfacesSection = () => {
 
   return (
     <GarageSection
-      eyebrow="The Two Surfaces"
-      headline="The Stage and the Cockpit"
+      eyebrow="The Product"
+      headline="A public site and an admin dashboard"
       intro={surfacesIntro}
     >
-      {/* The Stage — framed figures */}
-      <div
-        ref={figuresRef}
-        className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
-      >
-        {stageFigures.map((fig, i) => (
-          <figure
-            key={fig.figure}
-            className={`rounded-2xl overflow-hidden border border-gray-200/80 dark:border-neutral-800/50 bg-neutral-200/10 dark:bg-[#1B1212]/25 transition-all duration-700 ease-out ${
-              figuresVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-8"
-            }`}
-            style={{ transitionDelay: `${i * 150}ms` }}
-          >
-            <figcaption className="flex items-baseline gap-3 px-4 py-2.5 border-b border-gray-200/80 dark:border-neutral-800/50">
-              <span className="text-xm font-semibold text-neutral-600 dark:text-neutral-300 shrink-0">
-                {fig.figure}
-              </span>
-              <span className="text-xm text-neutral-500 dark:text-neutral-400/90 truncate">
-                {fig.caption}
-              </span>
-            </figcaption>
-            <Image
-              src={fig.src}
-              alt={fig.alt}
-              width={1440}
-              height={900}
-              className="w-full h-auto"
-            />
-          </figure>
-        ))}
+      {/* The Stage — framed figure carousel */}
+      <div ref={figuresRef}>
+        <StageCarousel visible={figuresVisible} />
       </div>
 
       {/* The Cockpit — a rendered slice of the review queue */}

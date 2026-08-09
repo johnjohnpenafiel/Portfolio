@@ -1,11 +1,5 @@
 // ── Types ──────────────────────────────────────────────
 
-export interface StaffMember {
-  role: string;
-  model: string;
-  duty: string;
-}
-
 export interface PipelineStep {
   number: string;
   title: string;
@@ -19,6 +13,7 @@ export interface CadenceColumn {
   format: string;
   budget: string;
   body: string;
+  accent: string;
 }
 
 export interface SurfaceFigure {
@@ -62,6 +57,7 @@ export const heroStats = [
   { value: "243", label: "tests" },
   { value: "5", label: "AI systems" },
   { value: "3", label: "drops / week" },
+  { value: "~$9", label: "monthly cost" },
 ];
 
 export const heroLinks = {
@@ -69,70 +65,24 @@ export const heroLinks = {
   source: "https://github.com/johnjohnpenafiel/AI-Blog",
 };
 
-// ── The Masthead (staff box) ───────────────────────────
-
-export const staffIntro =
-  "Every newsroom has a masthead. This one just doesn't have any people on it. Each editorial job is held by a different model, chosen for that job's shape — and each one can fail without taking the paper down with it.";
-
-export const staffBox: StaffMember[] = [
-  {
-    role: "The Researcher",
-    model: "Perplexity Sonar",
-    duty: "Runs six intent-tuned news queries per issue, one per dealership department, and returns raw articles with citations.",
-  },
-  {
-    role: "The Curator",
-    model: "Claude Haiku 4.5",
-    duty: "Reads everything the researcher brings back, throws out press releases and vendor noise, and scores what's left by how much an operator would care.",
-  },
-  {
-    role: "The Writer",
-    model: "Claude Sonnet 5",
-    duty: "Drafts every dispatch against a strict format spec — title, slug, summary, body, tags, sources — via structured tool-calling. No freeform output.",
-  },
-  {
-    role: "The Editor",
-    model: "Claude Haiku 4.5",
-    duty: "Judges each draft against its own source excerpts — point of view, format, grounding, scored 0–2 each. The grades are stored on the post, permanently.",
-  },
-  {
-    role: "The Art Director",
-    model: "Claude Opus 4.8",
-    duty: "Turns each story's tension into a symbolic image brief — rotating metaphor devices, never a literal depiction, never stock photography.",
-  },
-  {
-    role: "The Illustrator",
-    model: "Recraft V4.1",
-    duty: "Renders the cover from the art director's brief in the publication's orange-forward palette.",
-  },
-  {
-    role: "The Pressman",
-    model: "APScheduler",
-    duty: "Runs the presses Monday, Thursday, and Friday at 8:00 AM sharp. Doesn't negotiate.",
-  },
-];
-
-export const staffSignoff =
-  "Human staff: one operator, standing off to the side with an accept and a reject button.";
-
 // ── The Pipeline ───────────────────────────────────────
 
 export const pipelineIntro =
-  "Every issue is one unattended run through six stages. The design constraint that shaped all of them: no stage is allowed to crash the paper. The classifier fails open, the judge and the illustrator fail soft, and a thin news week gets skipped — never padded.";
+  "Each editorial job is held by a different AI model, chosen for that job's shape, and every issue is one unattended run through six stages. The design constraint that shaped all of them: no stage is allowed to crash the publication. The classifier fails open, the judge and the illustrator fail soft, and a thin news week gets skipped — never padded.";
 
 export const pipelineSteps: PipelineStep[] = [
   {
     number: "01",
     title: "Research",
-    agent: "Perplexity Sonar",
+    agent: "The Researcher · Perplexity Sonar",
     body: "Six news-intent queries hit Perplexity's search endpoint — one HTTP call per dealership department, so every article's section is known by attribution. A deterministic blocklist drops PR wires and social posts before any model sees them.",
     footnote: "dedup by URL · anti-repetition vs. all prior citations",
   },
   {
     number: "02",
     title: "Curate",
-    agent: "Claude Haiku 4.5",
-    body: "A classifier separates news from promotion and scores each story's operator-importance from 0 to 2. If the classifier errors, it fails open — a bad filter shouldn't kill an issue.",
+    agent: "The Curator · Claude Haiku 4.5",
+    body: "A classifier separates news from promotion and scores each story's operator-importance from 0 to 2, by how much an operator would care. If the classifier errors, it fails open — a bad filter shouldn't kill an issue.",
     footnote: "fails open",
   },
   {
@@ -145,25 +95,28 @@ export const pipelineSteps: PipelineStep[] = [
   {
     number: "04",
     title: "Write & Judge",
-    agent: "Claude Sonnet 5 → Claude Haiku 4.5",
-    body: "Sonnet drafts the dispatch against the day's format spec with the operator-first POV baked into the prompt. Then a Haiku judge grades the draft against its own sources — POV, format, grounding — and the scores are persisted on the post and shown in the dashboard.",
+    agent: "The Writer · Claude Sonnet 5 → The Editor · Claude Haiku 4.5",
+    body: "Sonnet drafts the post against the day's format spec — title, slug, summary, body, tags, sources — via structured tool-calling, no freeform output, with the operator-first POV baked into the prompt. Then a Haiku judge grades the draft against its own sources — POV, format, grounding, scored 0–2 each — and the scores are persisted on the post and shown in the dashboard.",
     footnote: "eval fails soft · scores stored forever",
   },
   {
     number: "05",
     title: "Illustrate",
-    agent: "Claude Opus 4.8 → Recraft V4.1",
-    body: "Opus reads the finished piece and writes a symbolic image brief — a rotating metaphor device against a rotating backdrop, never a literal scene. Recraft renders it. If either fails, the post ships with a placeholder instead of dying.",
+    agent: "The Art Director · Claude Opus 4.8 → The Illustrator · Recraft V4.1",
+    body: "Opus reads the finished piece and writes a symbolic image brief — a rotating metaphor device against a rotating backdrop, never a literal scene, never stock photography. Recraft renders it in the publication's orange-forward palette. If either fails, the post ships with a placeholder instead of dying.",
     footnote: "fails soft → placeholder",
   },
   {
     number: "06",
     title: "Publish",
-    agent: "APScheduler",
-    body: "In auto mode the finished post goes straight to the live site. In approve-only mode it waits in the review queue for the one human in the building. A one-minute interval job flips scheduled posts live the moment their time passes.",
+    agent: "The Scheduler · APScheduler",
+    body: "Issues go out Monday, Thursday, and Friday at 8:00 AM sharp. In auto mode the finished post goes straight to the live site; in approve-only mode it waits in the review queue for the one human in the building. A one-minute interval job flips scheduled posts live the moment their time passes.",
     footnote: "auto or approve-only · cron owns the calendar",
   },
 ];
+
+export const pipelineSignoff =
+  "Human staff: one operator, standing off to the side with an accept and a reject button.";
 
 // ── The Cadence ────────────────────────────────────────
 
@@ -176,55 +129,58 @@ export const cadenceColumns: CadenceColumn[] = [
     format: "The Brief",
     budget: "200–400 words",
     body: "A Smart-Brevity memo: what happened, why an operator should care, what to do about it. Built to be read standing up, between customers.",
+    accent: "text-[#0e7c9c] dark:text-[#56e1ff]",
   },
   {
     day: "Thursday",
     format: "The Deep Dive",
     budget: "600–900 words",
     body: "A multi-source synthesis of the week's most important cluster — the piece that connects vendor claims to what actually changes on the lot.",
+    accent: "text-[#d61f7d] dark:text-[#ff3d97]",
   },
   {
     day: "Friday",
     format: "The Roundup",
     budget: "±500 words",
-    body: "The only issue that never touches the news wire. It reads the week's own published dispatches back out of the database and writes the recap.",
+    body: "The only issue that never touches the news wire. It reads the week's own published posts back out of the database and writes the recap.",
+    accent: "text-[#0f9e58] dark:text-[#3ef58c]",
   },
 ];
 
-// ── The Two Surfaces ───────────────────────────────────
+// ── The Product ────────────────────────────────────────
 
 export const surfacesIntro =
-  "The product is two rooms. The Stage is the public paper — print-broadsheet-meets-terminal, one dark theme, no light mode, ever. The Cockpit is the admin dashboard where the operator watches the machine work: pipeline status, the review queue, and every post's judge scores on its record.";
+  "The product is two apps. The public site is the publication itself — print-broadsheet-meets-terminal, one dark theme, no light mode, ever. The admin dashboard is where the operator watches the machine work: pipeline status, the review queue, and every post's judge scores on its record.";
 
 export const stageFigures: SurfaceFigure[] = [
   {
     figure: "fig. 01",
-    caption: "The masthead — every issue stamped with volume, number, and the next drop time",
+    caption: "The homepage — every issue stamped with volume, number, and the next drop time",
     src: "/images/garageai/site/home-masthead.png",
-    alt: "The Garage AI homepage masthead with orange wordmark and editor's note",
+    alt: "The Garage AI homepage header with orange wordmark and editor's note",
   },
   {
     figure: "fig. 02",
-    caption: "Featured and latest dispatches, each wearing a cover the art director invented",
+    caption: "Featured and latest posts, each wearing a cover the art director invented",
     src: "/images/garageai/site/featured.png",
     alt: "Featured post band with symbolic AI-generated cover art",
   },
   {
     figure: "fig. 03",
-    caption: "The archive as a filterable ledger — hover floods a row magenta",
+    caption: "The archive — filterable by format and section, hover floods a row magenta",
     src: "/images/garageai/site/index-rows.png",
     alt: "News index rows with date, title, and filters by format and section",
   },
   {
     figure: "fig. 04",
-    caption: "A dispatch page — metadata rail, sources block, symbolic cover",
+    caption: "A post page — metadata rail, sources block, symbolic cover",
     src: "/images/garageai/site/post-cover.png",
     alt: "Post page with metadata sidebar and AI-generated cover illustration",
   },
 ];
 
 export const cockpitIntro =
-  "No screenshots of the Cockpit — it lives behind a login. But the review queue looks like this: every AI draft arrives already graded by the editor, and the operator's whole job is three buttons.";
+  "No screenshots of the admin dashboard — it lives behind a login. But the review queue looks like this: every AI draft arrives already graded by the editor, and the operator's whole job is three buttons.";
 
 export const queueRows: QueueRow[] = [
   {
@@ -253,10 +209,10 @@ export const queueRows: QueueRow[] = [
   },
 ];
 
-// ── The Decision Ledger ────────────────────────────────
+// ── The Decision Log ───────────────────────────────────
 
 export const ledgerIntro =
-  "The repository keeps a dated decision log the same way the paper keeps sources. A few entries that shaped the build:";
+  "The repository keeps a dated log of engineering decisions, incidents, and migrations. A few entries that shaped the build:";
 
 export const ledgerEntries: LedgerEntry[] = [
   {
@@ -294,7 +250,7 @@ export const receiptIntro =
   "The entire newsroom — hosting, database, and the whole editorial staff — runs on about nine dollars a month.";
 
 export const receiptLines: ReceiptLine[] = [
-  { item: "Vercel", detail: "the Stage, frontend hosting", amount: "$0" },
+  { item: "Vercel", detail: "public site, frontend hosting", amount: "$0" },
   { item: "Render", detail: "FastAPI + the cron, always-on", amount: "$7" },
   { item: "Neon", detail: "PostgreSQL, 3 GB", amount: "$0" },
   { item: "Anthropic", detail: "writer · editor · art director", amount: "~$1" },
