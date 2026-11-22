@@ -17,7 +17,7 @@ const About = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex -mt-[64px] || bg-[#f9fafb] dark:bg-black cursor-default">
+    <div className="flex -mt-[64px] || bg-[#f9fafb] dark:bg-black cursor-default">
       <section
         className={`md:mx-[17%] transition-opacity duration-500 ${
           !fadeIn ? "opacity-0" : "opacity-100"
@@ -37,7 +37,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="m-10">
+        <div className="mx-10 mt-10 mb-12 md:mb-28">
           {aboutData.map((item, i) => (
             <AboutCard
               key={item.id}
