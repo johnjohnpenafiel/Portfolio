@@ -37,7 +37,7 @@ const About = () => {
           </p>
         </div>
 
-        <div className="mx-10 mt-10 mb-12 md:mb-28">
+        <div className="mx-10 mt-10 mb-[58px] md:mb-[122px]">
           {aboutData.map((item, i) => (
             <AboutCard
               key={item.id}
