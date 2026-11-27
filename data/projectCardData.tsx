@@ -17,6 +17,7 @@ export interface ProjectCard {
   mobileImages?: string[]; // If present, renders MobileTriple instead of single image
   href: string; // Link to the detailed project page
   links: ProjectCardLink[]; // Links for the project
+  archived?: boolean; // Hidden from the site, kept for reference
 }
 
 export const projectCards: ProjectCard[] = [
@@ -118,6 +119,7 @@ export const projectCards: ProjectCard[] = [
   // NEXTGAME
   {
     id: "nextgame",
+    archived: true,
     title: "NextGame",
     description:
       "NextGame is a sleek video game discovery app that lets users explore, filter, and sort games using a modern UI.",
@@ -144,6 +146,7 @@ export const projectCards: ProjectCard[] = [
   // JACKSPOT
   {
     id: "jackspot",
+    archived: true,
     title: "JackSpot",
     description:
       "JackSpot lets users create, share, and discover personalized collections of favorite locations based on friends' recommendations.",

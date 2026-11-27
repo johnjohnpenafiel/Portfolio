@@ -7,7 +7,7 @@ const ProjectSection = () => {
   return (
     <div className="h-fit flex flex-col mb-4 || border-gray-200/80 cursor-default">
       <div className="flex flex-col items-center mx-8">
-        {projectCards.map((project) => (
+        {projectCards.filter((project) => !project.archived).map((project) => (
           <ProjectCard
             key={project.title}
             id={project.id}

@@ -26,6 +26,7 @@ export interface Project {
   images: ProjectImage[];
   video?: string;
   links: ProjectLink[];
+  archived?: boolean; // Hidden from the site, kept for reference
 }
 export const projectData = [
   // SIRENBASE
@@ -170,6 +171,7 @@ export const projectData = [
   // NEXTGAME
   {
     id: "nextgame",
+    archived: true,
     name: "NextGame",
     title:
       "Discover, Explore, and Filter Games with a Seamless React & TypeScript Web App",
@@ -229,6 +231,7 @@ export const projectData = [
   // JACKSPOT
   {
     id: "jackspot",
+    archived: true,
     name: "JackSpot",
     title:
       "Explore New Places Through Personalized Collections and Friend-Driven Recommendations",

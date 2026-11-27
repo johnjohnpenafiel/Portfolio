@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-import { useParams } from "next/navigation";
+import { notFound, useParams } from "next/navigation";
 
 import { projectData } from "@/data/projectPageData";
 import ImageCarousel from "../components/ImageCarousel";
@@ -14,6 +14,7 @@ const Projects = () => {
   const project = projectData.find((project) => project.id === projectId);
 
   if (!project) throw new Error("No Data");
+  if (project.archived) notFound();
 
   return (
     <div className="min-h-screen -mt-[64px] bg-[#f9fafb] dark:bg-black cursor-default">

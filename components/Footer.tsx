@@ -71,7 +71,7 @@ const Footer = () => {
               Projects
             </h1>
             <ul>
-              {projectCards.map((project) => (
+              {projectCards.filter((project) => !project.archived).map((project) => (
                 <li key={project.id}>
                   <Link
                     href={project.href}
